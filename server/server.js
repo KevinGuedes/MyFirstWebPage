@@ -38,6 +38,10 @@ const server = http.createServer((req, res) => {
             documentType = "image/png";
             folder = "./client/images/" + documentName;
         }
+        else if (type === "jpg") {
+            documentType = "image/jpg";
+            folder = "./client/images/" + documentName;
+        }
         else if (type === "css") {
             documentType = "text/css";
             folder = "./client/css/" + documentName;
