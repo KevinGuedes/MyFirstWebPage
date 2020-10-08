@@ -1,5 +1,5 @@
 .menu {
-    padding: 2.5rem;
+    padding: 1rem 2.5rem;
     border-radius: 2rem;
     background-color: var(--color-blue-0);
     color: var(--color-gray-1);
@@ -18,13 +18,21 @@
     color: var(--color-gray-1);
 }
 
-.menu a {
+.menu br+a {
     text-decoration: none;
     color: var(--color-gray-1);
     padding: 1rem;
     border-radius: 2rem;
     transition: background 0.2s;
 }
-.menu a:hover{
+.menu br+a:hover{
     background-color: var(--color-blue-1);
+}
+
+.menu a+a{
+    margin-top: 3rem;
+    font-size: 1rem;
+    text-decoration: none;
+    color: var(--color-gray-1);
+
 }
