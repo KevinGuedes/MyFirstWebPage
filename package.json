@@ -1,0 +1,20 @@
+{
+  "name": "myfirstwebpage",
+  "version": "1.0.0",
+  "description": "Primeira página com node",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KevinGuedes/MyFirstWebPage.git"
+  },
+  "author": "Kevin Santos Guedes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KevinGuedes/MyFirstWebPage/issues"
+  },
+  "homepage": "https://github.com/KevinGuedes/MyFirstWebPage#readme"
+}
