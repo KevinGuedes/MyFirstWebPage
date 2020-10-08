@@ -1,29 +1,10 @@
-/*
-Cascading Style Sheets 
-- root: Definindo vaiáveis para o CSS
-- pode mudar os tipos de cores clicando no hexa
-*/
 :root {
     --color-background: #F0F0F7;
-    --color-primary-lighter: #9871F5;
-    --color-primary-light: #916BEA;
-    --color-primary: #8257E5;
-    --color-primary-dark: #774DD6;
-    --color-primary-darker: #6842c2;
-    --color-secondary: #04D361;
-    --color-secondary-dark: #04BF58;
-    --color-title-in-primary: #FFFFFF;
-    --color-text-in-primary: #D4C2FF;
-    --color-text-title: #32264D;
-    --color-text-complement: #9C98A6;
-    --color-text-base: #6A6180;
-    --color-line-in-white: #E6E6F0;
-    --color-input-background: #f8f8fc;
-    --color-button-text: #FFFFFF;
-    --color-box-base: #FFFFFF;
-    --color-box-footer: #FAFAFC;
-    --color-small-info: #C1BCCC;
-
+    --color-blue-0: #b3ccff;
+    --color-blue-1: #80aaff;
+    --color-blue-2: #3377ff;
+    --color-gray-0: #dbdbdbf8;
+    --color-gray-1: #323232;
 
     font-size: 60%;
 }
@@ -40,7 +21,7 @@ body{
 }
 
 body {
-    background: var(--color-background);
+    background-color: var(--color-gray-0);
     display: flex;
     align-items: center;
     justify-content: center;
