@@ -11,12 +11,13 @@
 <body>
     <div class="menu">
         <h1>Test if a number is prime or not</h1>
-        <div class="run-algorithm">
-            <label for="input-number">Insert a number </label>
-            <input class="input-number" type="number">
-            <button clas="run">Test if prime</button>
+        <div class="prime-tester">
+            <label for="input-number">Insert a number</label>
+            <input id="input-number" type="number" value="0">
+            <button clas="run" onclick="testIfPrime()">Test</button>
+            <p id="result"></p>
         </div>
     </div>
 </body>
-<script src=""></script>
+<script src="/server/prime.js" type="text/javascript"></script>
 </html>

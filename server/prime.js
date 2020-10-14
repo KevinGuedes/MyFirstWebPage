@@ -1,8 +1,16 @@
-function testIfPrime(number) {
+function testIfPrime() {
+    var number = document.getElementById("input-number").value;
     for (let i = 2; i < number; i++) {
         if (number % i === 0) {
-            return false;
+            return document.getElementById("result").innerHTML = "The number " + number + " is not Prime";
         }
     }
-    return num !== 1;
+    
+    var isPrime = number !== 1
+    if (isPrime) {
+        return document.getElementById("result").innerHTML = "The number " + number + " is Prime";
+    }
+    else {
+        return document.getElementById("result").innerHTML = "The number " + number + " is not Prime";
+    }
 }
