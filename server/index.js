@@ -46,6 +46,10 @@ const server = http.createServer((req, res) => {
             documentType = "text/css";
             folder = "./client/css/" + documentName;
         }
+        else if (type === "js") {
+            documentType = "text/javascript";
+            folder = "./server/" + documentName;
+        }
         else {
             res.statusCode = 404;
             res.end("Document type not implemented");

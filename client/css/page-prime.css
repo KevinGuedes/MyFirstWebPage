@@ -41,6 +41,8 @@
     width: 40%;
     text-align: center;
     background-color: var(--color-gray-0);
+    border-radius: 2rem;
+    padding: 0.5rem 2rem;
 }
 
 .prime-tester #input-number:focus {
