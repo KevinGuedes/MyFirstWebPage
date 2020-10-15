@@ -24,7 +24,7 @@ const gcd = () => {
         return document.getElementById("result").innerHTML = "Invalid numbers. They cannot be both 0";
     }
     else if (Number.isNaN(n1) || Number.isNaN(n2)){
-        return document.getElementById("result").innerHTML = "Insert the two numbers";
+        return document.getElementById("result").innerHTML = "Insert both numbers";
     }
     else {
         return document.getElementById("result").innerHTML = "The greatest common divisor<br>of " + n1 + " and " + n2 + " is " + process(n1, n2);
