@@ -1,4 +1,4 @@
-function testIfPrime() {
+const testIfPrime = () => {
 
     var number = parseInt(document.getElementById("input-number").value);
     var count = 0;

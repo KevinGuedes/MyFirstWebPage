@@ -1,0 +1,51 @@
+.gcd {
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 40rem;
+    width: 80%;
+    padding: 2rem;
+    border-radius: 2rem;
+    border: 1px solid var(--color-gray-1);
+    color: var(--color-gray-1);
+}
+
+.gcd .run {
+    background-color: var(--color-blue-0);
+    color: var(--color-gray-1);
+    text-align: center;
+    padding: 0.5rem 2rem;
+    text-decoration: none;
+    font-size: 2rem;
+    font-family: 'Times New Roman';
+    border-radius: 2rem;
+    border: 1px solid var(--color-gray-1);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.gcd .run:hover {
+    background-color: var(--color-blue-1);
+    
+}
+.gcd .run:focus { 
+    outline: none; 
+}
+
+.gcd #input-number {
+    border: 1px solid var(--color-gray-1);
+    font-size: 2rem;
+    font-family: 'Times New Roman';
+    width: 40%;
+    text-align: center;
+    background-color: var(--color-gray-0);
+    border-radius: 2rem;
+    padding: 0.5rem 2rem;
+}
+
+.gcd #input-number:focus {
+
+    outline: none; 
+}

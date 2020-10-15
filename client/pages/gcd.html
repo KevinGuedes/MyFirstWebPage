@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greatest Common Divisor</title>
+    <link rel="stylesheet" href="/client/css/main.css">
+    <link rel="stylesheet" href="/client/css/page-gcd.css">
+</head>
+
+<body>
+    <div class="menu">
+        <h1>Greatest common divisor of two numbers</h1>
+        <div class="gcd">
+            <label for="first-number">Insert a number</label>
+            <input id="input-number" type="number" min="0" onfocus="this.placeholder = ''"
+                onblur="this.placeholder = 'Number greater than 0'" placeholder="Number greater than 0"
+                onKeyDown="if(event.keyCode==13) greatestCommonDivisor()">
+
+            <label for="first-number">Insert another number</label>
+            <input id="input-number" type="number" min="0" onfocus="this.placeholder = ''"
+                onblur="this.placeholder = 'Number greater than 0'" placeholder="Number greater than 0"
+                onKeyDown="if(event.keyCode==13) greatestCommonDivisor()">
+
+            <button class="run" onclick="testIfPrime()">Test</button>
+
+            <p id="result"></p>
+        </div>
+    </div>
+</body>
+
+</html>
