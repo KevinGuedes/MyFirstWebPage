@@ -14,20 +14,20 @@
         <h1>Greatest common divisor of two numbers</h1>
         <div class="gcd">
             <label for="first-number">Insert a number</label>
-            <input id="input-number" type="number" min="0" onfocus="this.placeholder = ''"
+            <input id="first-number" type="number" min="0" onfocus="this.placeholder = ''"
                 onblur="this.placeholder = 'Number greater than 0'" placeholder="Number greater than 0"
-                onKeyDown="if(event.keyCode==13) greatestCommonDivisor()">
+                onKeyDown="if(event.keyCode==13) gcd()">
 
-            <label for="first-number">Insert another number</label>
-            <input id="input-number" type="number" min="0" onfocus="this.placeholder = ''"
+            <label for="second-number">Insert another number</label>
+            <input id="second-number" type="number" min="0" onfocus="this.placeholder = ''"
                 onblur="this.placeholder = 'Number greater than 0'" placeholder="Number greater than 0"
-                onKeyDown="if(event.keyCode==13) greatestCommonDivisor()">
+                onKeyDown="if(event.keyCode==13) gcd()">
 
-            <button class="run" onclick="testIfPrime()">Test</button>
+            <button class="run" onclick="gcd()">Test</button>
 
             <p id="result"></p>
         </div>
     </div>
 </body>
-
+<script src="/server/greatestCommonDivisor.js" type="text/javascript"></script>
 </html>

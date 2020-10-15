@@ -34,7 +34,8 @@
     outline: none; 
 }
 
-.gcd #input-number {
+#first-number,
+#second-number {
     border: 1px solid var(--color-gray-1);
     font-size: 2rem;
     font-family: 'Times New Roman';
@@ -45,7 +46,8 @@
     padding: 0.5rem 2rem;
 }
 
-.gcd #input-number:focus {
+#first-number:focus,
+#second-number:focus {
 
     outline: none; 
 }
