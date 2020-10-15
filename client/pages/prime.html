@@ -14,7 +14,7 @@
         <h1>Test if a number is prime or not</h1>
         <div class="prime-tester">
             <label for="input-number">Insert a number</label>
-            <input id="input-number" type="number" min="0" placeholder="Number greater than 0" onKeyDown="if(event.keyCode==13) testIfPrime()">
+            <input id="input-number" type="number" min="0" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Number greater than 0'" placeholder="Number greater than 0" onKeyDown="if(event.keyCode==13) testIfPrime()">
             <button class="run" onclick="testIfPrime()">Test</button>
             <p id="result"></p>
         </div>
