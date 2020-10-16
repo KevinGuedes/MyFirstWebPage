@@ -40,3 +40,22 @@ body {
     font-size: 3rem;
     text-align: center;
 }
+
+.madeby {
+    margin-top: 3rem;
+    font-size: 1rem;
+    text-decoration: none;
+    color: var(--color-gray-1);
+}
+
+.back {
+    color: var(--color-gray-1);
+    text-decoration: none;
+    margin: 0rem 1rem 1rem 1rem;
+    border-radius: 2rem;
+    padding: 1rem;
+}
+
+.back:hover{
+    background-color: var(--color-blue-1);
+}
