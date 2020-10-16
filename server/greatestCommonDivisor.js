@@ -27,6 +27,6 @@ const gcd = () => {
         return document.getElementById("result").innerHTML = "Insert both numbers";
     }
     else {
-        return document.getElementById("result").innerHTML = "The greatest common divisor<br>of " + n1 + " and " + n2 + " is " + process(n1, n2);
+        return document.getElementById("result").innerHTML = "The greatest common divisor of " + n1 + " and " + n2 + " is " + process(n1, n2);
     }
 }

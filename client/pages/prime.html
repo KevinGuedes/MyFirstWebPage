@@ -11,11 +11,11 @@
 </head>
 <body>
     <div class="menu">
-        <h1>Test if a number is prime or not</h1>
+        <h1 class="page-title">Test if a number is prime or not</h1>
         <div class="prime-tester">
             <label for="input-number">Insert a number</label>
-            <input id="input-number" type="number" min="0" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Number greater than 0'" placeholder="Number greater than 0" onKeyDown="if(event.keyCode==13) testIfPrime()">
-            <button class="run" onclick="testIfPrime()">Test</button>
+            <input id="input-number" class="input-number" type="number" min="0" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Number greater than 0'" placeholder="Number greater than 0" onKeyDown="if(event.keyCode==13) testIfPrime()">
+            <button class="run" onclick="testIfPrime()">Test if the number is prime</button>
             <p id="result"></p>
         </div>
         <a class="back" href="/client/pages/index.html">Choose another algorithm</a>
