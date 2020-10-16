@@ -14,8 +14,8 @@
         <h1 class="page-title">Show the i-<i>th</i> element in a Fibonacci sequence</h1>
         <div class="fibonacci-element">
             <label for="element-number">Insert a number</label>
-            <input id="element-number" class="input-number" type="number" min="0" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Number greater than 0'" placeholder="Number greater than 0" onKeyDown="if(event.keyCode==13) testIfPrime()">
-            <button class="run" onclick="testIfPrime()">Get element</button>
+            <input id="element-number" class="input-number" type="number" min="0" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Number greater than 0'" placeholder="Number greater than 0" onKeyDown="if(event.keyCode==13) fibonacci()">
+            <button class="run" onclick="fibonacci()">Get element</button>
             <p id="result"></p>
         </div>
         <a class="back" href="/client/pages/index.html">Choose another algorithm</a>
