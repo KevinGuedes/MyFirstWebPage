@@ -48,7 +48,7 @@ const server = http.createServer((req, res) => {
         }
         else if (type === "js") {
             documentType = "text/javascript";
-            folder = "./server/" + documentName;
+            folder = "./server/scripts/" + documentName;
         }
         else {
             res.statusCode = 404;

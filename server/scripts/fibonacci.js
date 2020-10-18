@@ -9,5 +9,5 @@ function fibonacci(elementNumber) {
 
 const fibonacciElement = () => {
 	var elementNumber = parseInt(document.getElementById("element-number").value);
-	document.getElementById("result").innerHTML = "The element #" + elementNumber +  " is " + fibonacci(elementNumber - 1);
+	return document.getElementById("result").innerHTML = "The element #" + elementNumber +  " is " + fibonacci(elementNumber - 1);
 }
