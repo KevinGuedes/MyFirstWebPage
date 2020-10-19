@@ -35,6 +35,7 @@ body {
     color: var(--color-gray-1);
     text-decoration: none;
     display: flex;
+    width: 60%;
     flex-direction: column;
     align-items: center;
     font-size: 3rem;
