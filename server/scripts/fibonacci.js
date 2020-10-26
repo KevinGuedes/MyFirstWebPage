@@ -1,13 +1,19 @@
-function fibonacci(elementNumber) {
-	if (elementNumber < 2) {
-		return elementNumber;
+const fibonacci = (elementNumber) => {
+	let sequence = [0, 1];
+	for (let i = 2; i < elementNumber; i++) {
+		sequence.push(sequence[i - 2] + sequence[i - 1])
 	}
-	else {
-		return fibonacci(elementNumber - 1) + fibonacci(elementNumber - 2);
-	}
+	return sequence[elementNumber - 1];
 }
+
 
 const fibonacciElement = () => {
 	var elementNumber = parseInt(document.getElementById("element-number").value);
-	return document.getElementById("result").innerHTML = "The element #" + elementNumber +  " is " + fibonacci(elementNumber - 1);
+
+	if (elementNumber <= 0) {
+		return document.getElementById("result").innerHTML = "Insert a number greater than 0";
+	}
+	else {
+		return document.getElementById("result").innerHTML = "The element #" + elementNumber + " is " + fibonacci(elementNumber);
+	}
 }
