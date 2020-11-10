@@ -5,4 +5,4 @@
 
 
 # Progreso do Projeto
-![70%](https://progress-bar.dev/50)
+![70%](https://progress-bar.dev/70)
