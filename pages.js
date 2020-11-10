@@ -1,6 +1,8 @@
 const mathFunction = require("./mathFunctions");
 
-
+const pageIndex = (req, res) => {
+    res.render('index')
+}
 const pagePrime = (req, res) => {
     var inputNumber = parseInt(req.body.inputNumber);
     const data = {
@@ -12,5 +14,6 @@ const pagePrime = (req, res) => {
 
 
 module.exports = {
+    pageIndex,
     pagePrime
 }

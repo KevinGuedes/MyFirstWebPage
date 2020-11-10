@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const server = express();
 const bodyParser = require('body-parser');
-const {pagePrime} = require("./pages");
+const {pageIndex, pagePrime} = require("./pages");
 const port = 3001;
 
 
@@ -15,6 +15,7 @@ server
 
 //Routes
 server
+.get("/", pageIndex)
 .get("/prime", pagePrime)
 
 
