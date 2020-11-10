@@ -1,4 +1,4 @@
-const mathFunction = require("./mathFunctions");
+const mathFunction = require("./utils/mathFunctions");
 
 
 const pageIndex = (req, res) => {
