@@ -4,24 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prime Numbers</title>
+    <title>Count Numbers</title>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="/styles/main.css">
-    <link rel="stylesheet" href="/styles/page-prime.css">
+    <link rel="stylesheet" href="/styles/page-count.css">
 </head>
 
 <body>
     <div class="menu">
-        <h1 class="page-title">Test if a number is prime or not</h1>
-        <form class="prime-tester" action="/testIfPrime" method="POST">
+        <h1 class="page-title">Count Numbers Within A Range</h1>
+        <form class="count" action="/getCount" method="POST">
             <label for="input-number">Insert a number</label>
 
             <% if(inputNumber){ %>
-                <input id="input-number" class="input-number" type="number" name="inputNumber" value="<%= inputNumber%>" min="1" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Number greater than 0'" placeholder="Number greater than 0">
-            <%} else{ %>
+                <input id="input-number" class="input-number" type="number" name="inputNumber" value="<%= inputNumber%>"
+                min="1" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Number greater than 0'"
+                placeholder="Number greater than 0">
+            <% } else { %>
                 <input id="input-number" class="input-number" type="number" name="inputNumber" min="1"
                 onfocus="this.placeholder = ''" onblur="this.placeholder = 'Number greater than 0'"
                 placeholder="Number greater than 0">
@@ -31,7 +33,7 @@
 
             <% if(result){ %>
             <p id="result"><%= result %></p>
-            <%} else{ %>
+            <% } else { %>
             <p id="result"><%= result %></p>
             <% } %>
 

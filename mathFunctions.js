@@ -24,6 +24,7 @@ const testIfPrime = (number) => {
     }
 };
 
+
 // Fibonacci
 const getFibonacciElement = (elementNumber) => {
 
@@ -75,13 +76,13 @@ const getGcd = (req, res) => {
     }
 };
 
-//Count
-const getCount = () => {
 
-    var number = parseInt(req.body.inputNumber);
+//Count
+const getCount = (number) => {
+
     var count = 0;
 
-    if (number < 0) {
+    if (number <= 0) {
         return "Insert a number greanter than zero";
     }
     else if (!Number.isInteger(number)) {
@@ -91,23 +92,20 @@ const getCount = () => {
         for (var i = 1; i <= number; i++) {
             count++;
         }
-        return "There are " + count + " between 0 and " + number + "!";
+        return "There are " + count + " integer numbers between 1 and " + number + "!";
     }
 };
 
 
 
-
 //Quicksort
-const getQuickSortedArray = () => {
-    var arr = req.body.inputArray;
+const getQuickSortedArray = (arr) => {
+
 }
 
 
 //Sum of numbers
-const getSumOfNumbers = () => {
-    var arr = req.body.inputArray;
-
+const getSumOfNumbers = (arr) => {
 
 }
 

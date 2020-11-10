@@ -1,30 +1,35 @@
 const mathFunction = require("./mathFunctions");
 
+
 const pageIndex = (req, res) => {
     res.render('index')
 }
 
-const pagePrime = (req, res) => {
-    var inputNumber = parseInt(req.body.inputNumber);
 
+const pagePrime = (req, res) => {
+    
+    var inputNumber = parseInt(req.body.inputNumber);
+    
     const data = {
         inputNumber : inputNumber,
-        result : mathFunction.testIfPrime(inputNumber)
+        result : inputNumber ? mathFunction.testIfPrime(inputNumber) : ""
     }
 
     res.render('prime', data)
 };
+
 
 const pageFibonacci = (req, res) => {
     var inputNumber = parseInt(req.body.inputNumber);
 
     const data = {
         inputNumber : inputNumber,
-        result : mathFunction.getFibonacciElement(inputNumber)
+        result :  inputNumber ? mathFunction.getFibonacciElement(inputNumber) : ""
     }
 
     res.render('fibonacci', data)
 }
+
 
 const pageGcd = (req, res) => {
     var firstNumber = parseInt(req.body.firstNumber);
@@ -32,17 +37,21 @@ const pageGcd = (req, res) => {
 
     const data = {
         firstNumber : firstNumber,
-        secondNumber :secondNumber,
+        secondNumber : secondNumber,
         result : mathFunction.getGcd(firstNumber, secondNumber)
     }
 
-    res.render('fibonacci', data)
+    res.render('gcd', data)
 }
-
 
 
 const pageCount = (req, res) => {
 
+    var inputNumber = parseInt(req.body.inputNumber);
+    const data = {
+        inputNumber : inputNumber,
+        result : inputNumber ? mathFunction.getCount(inputNumber) : ""
+    }
     res.render('count', data)
 }
 
@@ -51,6 +60,7 @@ const pageQuickSort = (req, res) => {
 
     res.render('quickSort', data)
 }
+
 
 const pageSum = (req, res) => {
 

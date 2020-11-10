@@ -13,12 +13,14 @@ const {
 const server = express();
 const port = 3001;
 
+
 //Configurando Servidor
 server
     .use(express.static('public'))
     .use(bodyParser.urlencoded({ extended: true }))
     .set('view engine', 'ejs')
     .set('views', path.join(__dirname, '/views'));
+
 
 //Rotas
 server
@@ -30,6 +32,7 @@ server
     .get("/quickSort", pageQuickSort)
     .get("/sum", pageSum)
 
+    
 //Post
 server
     .post("/testIfPrime", pagePrime)
