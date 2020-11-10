@@ -1,3 +1,29 @@
+//Prime Number
+const testIfPrime = (number) => {
+
+    var count = 0;
+
+    if (number === 1 || number === 0) {
+        return "The number " + number + " is neither a prime nor a composite number";
+    }
+    else if (Number.isNaN(number) || number < 0) {
+        return "Insert a number greater than 0";
+    }
+    else {
+        for (let i = 1; i <= number; i++) {
+            if (number % i === 0) {
+                count++;
+            }
+        }
+        if (count === 2) {
+            return "The number " + number + " is Prime";
+        }
+        else {
+            return "The number " + number + " is not Prime";
+        }
+    }
+};
+
 // Fibonacci
 const getFibonacciElement = (elementNumber) => {
 
@@ -49,32 +75,6 @@ const getGcd = (req, res) => {
     }
 };
 
-//Prime Number
-const testIfPrime = (number) => {
-
-    var count = 0;
-
-    if (number === 1 || number === 0) {
-        return "The number " + number + " is neither a prime nor a composite number";
-    }
-    else if (Number.isNaN(number) || number < 0) {
-        return "Insert a number greater than 0";
-    }
-    else {
-        for (let i = 1; i <= number; i++) {
-            if (number % i === 0) {
-                count++;
-            }
-        }
-        if (count === 2) {
-            return "The number " + number + " is Prime";
-        }
-        else {
-            return "The number " + number + " is not Prime";
-        }
-    }
-};
-
 //Count
 const getCount = () => {
 
@@ -96,24 +96,27 @@ const getCount = () => {
 };
 
 
-//Sum of numbers
 
-const sumOfNumbers = () => {
+
+//Quicksort
+const getQuickSortedArray = () => {
+    var arr = req.body.inputArray;
+}
+
+
+//Sum of numbers
+const getSumOfNumbers = () => {
     var arr = req.body.inputArray;
 
 
 }
 
 
-//Quicksort
-
-const getQuickSortedArray = () => {
-    
-}
-
 module.exports = {
-    getFibonacciElement,
     testIfPrime,
+    getFibonacciElement,
     getGcd,
-    getCount
+    getCount,
+    getQuickSortedArray,
+    getSumOfNumbers
 }
