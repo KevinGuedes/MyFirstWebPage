@@ -1,27 +1,36 @@
 const express = require('express');
 const path = require('path');
-const server = express();
 const bodyParser = require('body-parser');
-const {pageIndex, pagePrime} = require("./pages");
+const {pageIndex, pagePrime, pageGcd, pageFibonacci, pageCount, pageQuickSort, pageSum} = require("./pages");
 const port = 3001;
+const server = express();
 
-
+//Configurando Servidor
 server
 .use(express.static('public'))
 .use(bodyParser.urlencoded({extended: true}))
 .set('view engine', 'ejs')
 .set('views', path.join(__dirname, '/views'));
 
-
-//Routes
-server
+//Rotas
+server 
 .get("/", pageIndex)
 .get("/prime", pagePrime)
-
+.get("/gcd", pageGcd)
+.get("/fibonacci", pageFibonacci)
+.get("/count", pageCount)
+.get("/quickSort", pageQuickSort)
+.get("/sum", pageSum)
 
 //Post
 server
 .post("/testIfPrime", pagePrime)
+.post("/getGcd", pageGcd)
+.post("/getFibonacciElement", pageFibonacci)
+.post("/getCount", pageCount)
+.post("/getQuickSortedArray", pageQuickSort)
+.post("/getSum", pageSum)
+
 
 server.listen(port, function () {
     console.log(`App de Exemplo escutando na porta http://localhost:${port}/`);
