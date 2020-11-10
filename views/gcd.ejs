@@ -5,31 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Greatest Common Divisor</title>
-    <link rel="stylesheet" href="/client/css/main.css">
-    <link rel="stylesheet" href="/client/css/page-gcd.css">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/page-gcd.css">
 </head>
 
 <body>
     <div class="menu">
         <h1 class="page-title">Greatest common divisor of two numbers</h1>
-        <div class="gcd">
+        <form class="gcd" action="getGcd" method="POST">
             <label for="first-number">Insert a number</label>
             <input id="first-number" class="input-number" type="number" min="0" onfocus="this.placeholder = ''"
-                onblur="this.placeholder = 'Number greater than 0'" placeholder="Number greater than 0"
-                onKeyDown="if(event.keyCode==13) gcd()">
+                onblur="this.placeholder = 'Number greater than 0'" placeholder="Number greater than 0">
 
             <label for="second-number">Insert another number</label>
             <input id="second-number" class="input-number" type="number" min="0" onfocus="this.placeholder = ''"
-                onblur="this.placeholder = 'Number greater than 0'" placeholder="Number greater than 0"
-                onKeyDown="if(event.keyCode==13) gcd()">
+                onblur="this.placeholder = 'Number greater than 0'" placeholder="Number greater than 0">
 
-            <button class="run" onclick="gcd()">Find greatest common divisor</button>
+            <button class="run" type="submit">Find greatest common divisor</button>
 
             <p id="result"></p>
-        </div>
+        </form>
 
         <a class="back" href="/">Choose another algorithm</a>
         <a class="madeby" href="https://www.linkedin.com/in/kevinsantosguedes/" target="_blank">Made by Kevin Guedes</a>
     </div>
 </body>
+
 </html>

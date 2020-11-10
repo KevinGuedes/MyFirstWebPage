@@ -21,10 +21,10 @@
 
             <% if(inputNumber){ %>
             <input id="input-number" class="input-number" type="number" name="inputNumber" value="<%= inputNumber%>"
-                min="0" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Number greater than 0'"
+                min="1" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Number greater than 0'"
                 placeholder="Number greater than 0">
             <%} else{ %>
-            <input id="input-number" class="input-number" type="number" name="inputNumber" min="0"
+            <input id="input-number" class="input-number" type="number" name="inputNumber" min="1"
                 onfocus="this.placeholder = ''" onblur="this.placeholder = 'Number greater than 0'"
                 placeholder="Number greater than 0">
             <% } %>

@@ -12,8 +12,18 @@ const pagePrime = (req, res) => {
     res.render('prime', data)
 };
 
+const pageFibonacci = (req, res) => {
+    var inputNumber = parseInt(req.body.inputNumber);
+    const data = {
+        inputNumber : inputNumber,
+        result : mathFunction.getFibonacciElement(inputNumber)
+    }
+    res.render('fibonacci', data)
+
+}
 
 module.exports = {
     pageIndex,
-    pagePrime
+    pagePrime,
+    pageFibonacci
 }

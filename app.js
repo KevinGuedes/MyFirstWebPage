@@ -16,20 +16,20 @@ server
 server 
 .get("/", pageIndex)
 .get("/prime", pagePrime)
+.get("/fibonacci", pageFibonacci)/*
 .get("/gcd", pageGcd)
-.get("/fibonacci", pageFibonacci)
 .get("/count", pageCount)
 .get("/quickSort", pageQuickSort)
-.get("/sum", pageSum)
+.get("/sum", pageSum)*/
 
 //Post
 server
 .post("/testIfPrime", pagePrime)
+.post("/getFibonacciElement", pageFibonacci)/*
 .post("/getGcd", pageGcd)
-.post("/getFibonacciElement", pageFibonacci)
 .post("/getCount", pageCount)
 .post("/getQuickSortedArray", pageQuickSort)
-.post("/getSum", pageSum)
+.post("/getSum", pageSum)*/
 
 
 server.listen(port, function () {

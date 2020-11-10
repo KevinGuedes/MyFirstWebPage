@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fibonacci Sequence</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/client/css/main.css">
-    <link rel="stylesheet" href="/client/css/page-fibonacci.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/page-fibonacci.css">
 </head>
+
 <body>
     <div class="menu">
         <h1 class="page-title">Show the i-<i>th</i> element in a Fibonacci sequence</h1>
-        <div class="fibonacci-element">
+        <form class="fibonacci-element" action="getFibonacciElement" method="POST">
             <label for="element-number">Insert a number</label>
-            <input id="element-number" class="input-number" type="number" min="0" onfocus="this.placeholder = ''"
-                onblur="this.placeholder = 'Number greater than 0'" placeholder="Number greater than 0"
-                onKeyDown="if(event.keyCode==13) fibonacciElement()">
-            <button class="run" onclick="fibonacciElement()">Get element</button>
-            <p id="result"></p>
-        </div>
+            <% if(inputNumber){ %>
+                <input id="element-number" class="input-number" type="number" name="inputNumber" value="<%= inputNumber%>" min="1" onfocus="this.placeholder = ''"
+                onblur="this.placeholder = 'Number greater than 0'" placeholder="Number greater than 0">
+            <%} else{ %>
+                <input id="element-number" class="input-number" type="number" name="inputNumber" min="1" onfocus="this.placeholder = ''"
+                onblur="this.placeholder = 'Number greater than 0'" placeholder="Number greater than 0">
+            <% } %>
+            <button class="run" type="submit">Get element</button>
+            <p id="result"><%= result %></p>
+        </form>
         <a class="back" href="/">Choose another algorithm</a>
         <a class="madeby" href="https://www.linkedin.com/in/kevinsantosguedes/" target="_blank">Made by Kevin Guedes</a>
     </div>
 </body>
+
 </html>

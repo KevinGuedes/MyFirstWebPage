@@ -1,6 +1,6 @@
 // Fibonacci
-const getFibonacciElement = (req, res) => {
-    var elementNumber = parseInt(req.body.inputNumber);
+const getFibonacciElement = (elementNumber) => {
+
     let sequence = [0, 1];
 
     for (let i = 2; i < elementNumber; i++) {
