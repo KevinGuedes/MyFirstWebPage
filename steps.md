@@ -3,6 +3,7 @@
 - [ ] Averiguar se convém criar a pasta das Routes
 - [ ] ESLint para organizar o código
 - [ ] Finalização das páginas (E das href's) 
+- [ ] Corrigir lógica do array na pages.js
 
 # Após a Finalização do Projeto
 - [ ] Testar o 'duplo if'
