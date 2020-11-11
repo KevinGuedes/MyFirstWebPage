@@ -2,7 +2,35 @@ const mathFunction = require("./utils/mathFunctions");
 
 
 const pageIndex = (req, res) => {
-    res.render('index')
+    const data = {
+        menu : [
+            {
+                href : "/prime",
+                method : "Test if a number is prime or not"
+            },
+            {
+                href : "/fibonacci",
+                method : "Show the i-"+ "<i>" + "th" + "</i>" + "element in a Fibonacci sequence"
+            },
+            {
+                href : "/gcd",
+                method : "Show the greatest common divisor of two numbers"
+            },
+            {
+                href : "/count",
+                method : "Count numbers within a range"
+            },
+            {
+                href : "/quickSort",
+                method : "Sort an array using Quick Sort method"
+            },
+            {
+                href : "/sum",
+                method : "Calculate the sum of numbers inside an array"
+            }
+        ]
+    }
+    res.render('index', data)
 }
 
 
