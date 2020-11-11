@@ -21,7 +21,7 @@
 
             <% if(inputNumber){ %>
                 <input id="input-number" class="input-number" type="number" name="inputNumber" value="<%= inputNumber%>" min="1" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Number greater than 0'" placeholder="Number greater than 0">
-            <%} else{ %>
+            <% } else { %>
                 <input id="input-number" class="input-number" type="number" name="inputNumber" min="1"
                 onfocus="this.placeholder = ''" onblur="this.placeholder = 'Number greater than 0'"
                 placeholder="Number greater than 0">
@@ -31,14 +31,13 @@
 
             <% if(result){ %>
             <p id="result"><%= result %></p>
-            <%} else{ %>
+            <% } else { %>
             <p id="result"><%= result %></p>
             <% } %>
 
         </form>
-        <a class="back" href="/">Choose another algorithm</a>
-        <a class="madeby" href="https://www.linkedin.com/in/kevinsantosguedes/" target="_blank">Made by Kevin Guedes</a>
+        <%- include("./partials/back") %>
+        <%- include("./partials/madeby") %>
     </div>
 </body>
-
 </html>
