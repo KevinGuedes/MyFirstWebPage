@@ -2,6 +2,7 @@ const mathFunctions = require("./utils/mathFunctions");
 const formatArray = require("./utils/formatArray")
 
 const pageIndex = (req, res) => {
+
     const data = {
         menu : [
             {
@@ -30,6 +31,7 @@ const pageIndex = (req, res) => {
             }
         ]
     }
+
     res.render('index', data)
 }
 
@@ -48,6 +50,7 @@ const pagePrime = (req, res) => {
 
 
 const pageFibonacci = (req, res) => {
+
     var inputNumber = parseInt(req.body.inputNumber);
 
     const data = {
@@ -56,10 +59,11 @@ const pageFibonacci = (req, res) => {
     }
 
     res.render('fibonacci', data)
-}
+};
 
 
 const pageGcd = (req, res) => {
+
     var firstNumber = parseInt(req.body.firstNumber);
     var secondNumber = parseInt(req.body.secondNumber);
 
@@ -70,31 +74,34 @@ const pageGcd = (req, res) => {
     }
 
     res.render('gcd', data)
-}
+};
 
 
 const pageCount = (req, res) => {
 
     var inputNumber = parseInt(req.body.inputNumber);
+
     const data = {
         inputNumber : inputNumber,
         result : inputNumber ? mathFunctions.getCount(inputNumber) : ""
     }
+
     res.render('count', data)
-}
+};
 
 
 const pageQuickSort = (req, res) => {
-
-    var inputArray = formatArray.stringToArray(req.body.inputArray);
+    var inputArray = req.body.inputArray
+    inputArray = inputArray ? formatArray.stringToArray(inputArray) : "";
     var result = mathFunctions.getQuickSortedArray(inputArray);
 
     const data = {
-        inputArray : formatArray.arrayToString(inputArray),
-        result : formatArray.arrayToString(result)
+        inputArray : formatArray.arrayValidator(inputArray) ? formatArray.arrayToString(inputArray) : "",
+        result : formatArray.arrayValidator(result) ? formatArray.arrayToString(result) : ""
     }
+
     res.render('quickSort', data)
-}
+};
 
 
 const pageSum = (req, res) => {
@@ -103,12 +110,12 @@ const pageSum = (req, res) => {
     var result = mathFunctions.getSumOfNumbers(inputArray);
 
     const data = {
-        inputArray : formatArray.arrayToString(inputArray),
-        result : formatArray.arrayToString(result)
+        inputArray : formatArray.arrayValidator(inputArray) ? formatArray.arrayToString(inputArray) : "",
+        result : formatArray.arrayValidator(result) ? formatArray.arrayToString(result) : ""
     }
-    
+
     res.render('sum', data)
-}
+};
 
 
 module.exports = {

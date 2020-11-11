@@ -1,8 +1,12 @@
+# Antes de Finalizar o Projeto
 - [x] Refatoração das páginas
 - [ ] Averiguar se convém criar a pasta das Routes
 - [ ] ESLint para organizar o código
 - [ ] Finalização das páginas (E das href's) 
 
+# Após a Finalização do Projeto
+- [ ] Testar o 'duplo if'
+- [ ] Ver css da .input-array
 
 # Progreso do Projeto
-![70%](https://progress-bar.dev/70)
+![80%](https://progress-bar.dev/80)

@@ -43,7 +43,7 @@ body {
 }
 
 .madeby {
-    margin-top: 3rem;
+    margin-top: 4rem;
     font-size: 1rem;
     text-decoration: none;
     color: var(--color-gray-1);
@@ -92,6 +92,17 @@ body {
     font-size: 2rem;
     font-family: 'Times New Roman';
     width: 25rem;
+    text-align: center;
+    background-color: var(--color-gray-0);
+    border-radius: 2rem;
+    padding: 0.5rem 2rem;
+}
+
+.input-array {
+    border: 1px solid var(--color-gray-1);
+    font-size: 2rem;
+    font-family: 'Times New Roman';
+    width: 40rem;
     text-align: center;
     background-color: var(--color-gray-0);
     border-radius: 2rem;
