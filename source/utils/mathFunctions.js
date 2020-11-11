@@ -99,15 +99,67 @@ const getCount = (number) => {
 
 
 //Quicksort
-const getQuickSortedArray = (arr) => {
+const swap = (arr, leftIndex, rightIndex) => {
 
-}
+    var temp = arr[leftIndex];
+    arr[leftIndex] = arr[rightIndex];
+    arr[rightIndex] = temp;
+};
+
+const partition = (arr, leftPointer, rightPointer) => {
+
+    var pivot = arr[Math.floor((rightPointer + leftPointer) / 2)];
+    var i = leftPointer;
+    var j = rightPointer;
+
+    while (i <= j) {
+
+        while (arr[i] < pivot) {
+            i++
+        }
+        while (arr[j] > pivot) {
+            j--;
+        }
+
+        if (i <= j) {
+            swap(arr, i, j);
+            i++;
+            j--;
+        }
+    }
+
+    return i;
+};
+
+
+const getQuickSortedArray = (arr, leftPointer, rightPointer) => {
+
+    var index;
+    if (arr.length > 1) {
+
+        index = partition(arr, leftPointer, rightPointer);
+
+        if (leftPointer < index - 1) {
+            getQuickSortedArray(arr, leftPointer, index - 1);
+        }
+
+        if (index < rightPointer) {
+            getQuickSortedArray(arr, index, rightPointer);
+        }
+    }
+
+    return arr;
+};
 
 
 //Sum of numbers
 const getSumOfNumbers = (arr) => {
-
-}
+    var sum = 0;
+    arr.forEach(element => {
+        sum += element;
+    });
+    return sum;
+};
 
 
 module.exports = {

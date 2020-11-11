@@ -1,5 +1,5 @@
-const mathFunction = require("./utils/mathFunctions");
-
+const mathFunctions = require("./utils/mathFunctions");
+const formatArray = require("./utils/formatArray")
 
 const pageIndex = (req, res) => {
     const data = {
@@ -10,7 +10,7 @@ const pageIndex = (req, res) => {
             },
             {
                 href : "/fibonacci",
-                method : "Show the i-"+ "<i>" + "th" + "</i>" + "element in a Fibonacci sequence"
+                method : "Show the i-th element in a Fibonacci sequence"
             },
             {
                 href : "/gcd",
@@ -40,7 +40,7 @@ const pagePrime = (req, res) => {
     
     const data = {
         inputNumber : inputNumber,
-        result : inputNumber ? mathFunction.testIfPrime(inputNumber) : ""
+        result : inputNumber ? mathFunctions.testIfPrime(inputNumber) : ""
     }
 
     res.render('prime', data)
@@ -52,7 +52,7 @@ const pageFibonacci = (req, res) => {
 
     const data = {
         inputNumber : inputNumber,
-        result :  inputNumber ? mathFunction.getFibonacciElement(inputNumber) : ""
+        result :  inputNumber ? mathFunctions.getFibonacciElement(inputNumber) : ""
     }
 
     res.render('fibonacci', data)
@@ -66,7 +66,7 @@ const pageGcd = (req, res) => {
     const data = {
         firstNumber : firstNumber,
         secondNumber : secondNumber,
-        result : mathFunction.getGcd(firstNumber, secondNumber)
+        result : mathFunctions.getGcd(firstNumber, secondNumber)
     }
 
     res.render('gcd', data)
@@ -78,7 +78,7 @@ const pageCount = (req, res) => {
     var inputNumber = parseInt(req.body.inputNumber);
     const data = {
         inputNumber : inputNumber,
-        result : inputNumber ? mathFunction.getCount(inputNumber) : ""
+        result : inputNumber ? mathFunctions.getCount(inputNumber) : ""
     }
     res.render('count', data)
 }
@@ -86,12 +86,27 @@ const pageCount = (req, res) => {
 
 const pageQuickSort = (req, res) => {
 
+    var inputArray = formatArray.stringToArray(req.body.inputArray);
+    var result = mathFunctions.getQuickSortedArray(inputArray);
+
+    const data = {
+        inputArray : formatArray.arrayToString(inputArray),
+        result : formatArray.arrayToString(result)
+    }
     res.render('quickSort', data)
 }
 
 
 const pageSum = (req, res) => {
 
+    var inputArray = formatArray.stringToArray(req.body.inputArray);
+    var result = mathFunctions.getSumOfNumbers(inputArray);
+
+    const data = {
+        inputArray : formatArray.arrayToString(inputArray),
+        result : formatArray.arrayToString(result)
+    }
+    
     res.render('sum', data)
 }
 
