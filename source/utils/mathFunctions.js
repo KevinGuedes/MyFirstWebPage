@@ -45,17 +45,13 @@ const getFibonacciElement = (elementNumber) => {
 
 //Greatest Common Divisor
 const calculateGcd = (firstNumber, secondNumber) => {
-    if (Number.isInteger(firstNumber) && Number.isInteger(secondNumber) && !(firstNumber === 0 && secondNumber === 0)) {
-        if (!secondNumber) {
-            return firstNumber;
-        }
-        return processGcd(secondNumber, firstNumber % secondNumber);
+    if (!secondNumber) {
+        return firstNumber;
     }
+    return calculateGcd(secondNumber, firstNumber % secondNumber);
 };
 
-const getGcd = (req, res) => {
-    var firstNumber = parseInt(req.body.firstNumber);
-    var secondNumber = parseInt(req.body.secondNumber);
+const getGcd = (firstNumber, secondNumber) => {
 
     if (firstNumber < 0) {
         firstNumber = -firstNumber;
@@ -65,15 +61,7 @@ const getGcd = (req, res) => {
         secondNumber = -secondNumber;
     }
 
-    if (firstNumber === 0 && secondNumber === 0) {
-        return "Invalid numbers. They cannot be both 0";
-    }
-    else if (Number.isNaN(firstNumber) || Number.isNaN(secondNumber)) {
-        return "Insert both numbers";
-    }
-    else {
-        return "The greatest common divisor of " + firstNumber + " and " + secondNumber + " is " + calculateGcd(n1, n2);
-    }
+    return "The greatest common divisor of " + firstNumber + " and " + secondNumber + " is " + calculateGcd(firstNumber, secondNumber);
 };
 
 

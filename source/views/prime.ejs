@@ -21,11 +21,8 @@
 
             <button class="run" type="submit">Test if the number is prime</button>
 
-            <% if(result){ %>
-            <p id="result"><%= result %></p>
-            <% } else { %>
-            <p id="result"><%= result %></p>
-            <% } %>
+            <%- include("./partials/result") %>
+
 
         </form>
         <%- include("./partials/back") %>

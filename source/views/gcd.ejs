@@ -8,18 +8,30 @@
 <body>
     <div class="menu">
         <h1 class="page-title">Greatest common divisor of two numbers</h1>
-        <form class="gcd" action="getGcd" method="POST">
+        <form class="gcd" action="/getGcd" method="POST">
+
+
             <label for="first-number">Insert a number</label>
-            <input id="first-number" class="input-number" type="number" min="0" onfocus="this.placeholder = ''"
-                onblur="this.placeholder = 'Number greater than 0'" placeholder="Number greater than 0">
+
+            <% if(firstNumber || firstNumber == 0){ %>
+                <input id="first-number" class="input-number" type="number" name="firstNumber" value="<%= firstNumber %>" min="0" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Number greater or equal to 0'" placeholder="Number greater or equal to 0">    
+            <% } else { %>
+                <input id="first-number" class="input-number" type="number" name="firstNumber" min="0" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Number greater or equal to 0'" placeholder="Number greater or equal to 0">  
+            <% } %>
 
             <label for="second-number">Insert another number</label>
-            <input id="second-number" class="input-number" type="number" min="0" onfocus="this.placeholder = ''"
-                onblur="this.placeholder = 'Number greater than 0'" placeholder="Number greater than 0">
-
+            <% if(secondNumber || secondNumber == 0){ %>
+                <input id="second-number" class="input-number" type="number" name="secondNumber" value ="<%= secondNumber %>" min="0" onfocus="this.placeholder = ''"
+                onblur="this.placeholder = 'Number greater or equal to 0'" placeholder="Number greater or equal to 0">
+            <% } else { %>
+                <input id="second-number" class="input-number" type="number" name="secondNumber" min="0" onfocus="this.placeholder = ''"
+                onblur="this.placeholder = 'Number greater or equal to 0'" placeholder="Number greater or equal to 0">
+            <% } %> 
+                
             <button class="run" type="submit">Find greatest common divisor</button>
 
-            <p id="result"></p>
+            <%- include("./partials/result") %>
+
         </form>
         <%- include("./partials/back") %>
         <%- include("./partials/madeby") %>
