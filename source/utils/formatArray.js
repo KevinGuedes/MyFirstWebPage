@@ -15,12 +15,18 @@ const arrayToString = (arr) => {
 
 
 const stringToArray = (arr) => {
-    return arr.replace(/\s/g, '').split(",").filter(Boolean).map(element => +element);
+    return arr.replace(/\s/g, '')
+        .split(",")
+        .filter(Boolean)
+        .map(element => +element);
 };
 
 
 const numericArrayValidator = (arr) => {
-    return Array.isArray(arr) && arr.length && arr.every(function (element) { return typeof element === 'number'}) && !arr.includes(NaN);
+    return Array.isArray(arr) && 
+        arr.length && 
+        arr.every(function (element) { return typeof element === 'number'}) && 
+        !arr.includes(NaN);
 };
 
 
