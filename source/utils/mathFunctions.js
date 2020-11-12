@@ -133,7 +133,7 @@ const partition = (arr, leftPointer, rightPointer) => {
 
 
 const getQuickSortedArray = (arr, leftPointer, rightPointer) => {
-
+    
     var index;
     if (arr.length > 1) {
 

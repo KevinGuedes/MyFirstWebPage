@@ -109,7 +109,7 @@ body {
     padding: 0.5rem 2rem;
 }
 
-.input-number:focus {
-
+.input-number:focus,
+.input-array:focus {
     outline: none; 
 }

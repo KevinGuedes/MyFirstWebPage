@@ -1,8 +1,15 @@
 const arrayToString = (arr) => {
     var stringfiedArray = "";
-    arr.forEach(element => {
-        stringfiedArray += element + " ";
-    });
+   
+    for (let i = 0; i < arr.length; i++) {
+        if (i == arr.length - 1) {
+            stringfiedArray += arr[i];
+        }
+        else {
+            stringfiedArray += arr[i] + ", ";
+        }
+    }
+
     return stringfiedArray;
 };
 
