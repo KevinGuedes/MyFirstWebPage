@@ -1,9 +1,9 @@
 # Antes de Finalizar o Projeto
 - [x] Refatoração das páginas
-- [ ] Averiguar se convém criar a pasta das Routes
+- [x] Averiguar se convém criar a pasta das Routes
 - [ ] ESLint para organizar o código
-- [ ] Finalização das páginas (E das href's) 
-- [ ] Corrigir lógica do array na pages.js
+- [x] Finalização das páginas (E das href's) 
+- [x] Corrigir lógica do array na pages.js
 
 # Após a Finalização do Projeto
 - [ ] Testar o 'duplo if'
