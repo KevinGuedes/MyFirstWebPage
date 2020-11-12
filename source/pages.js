@@ -92,12 +92,13 @@ const pageCount = (req, res) => {
 
 const pageQuickSort = (req, res) => {
 
-    var inputArray = (req.body.inputArray) ? formatArray.stringToArray(req.body.inputArray) : "";
+    const copiedInput = inputArray.slice();
     
+    var inputArray = (req.body.inputArray) ? formatArray.stringToArray(req.body.inputArray) : "";
     var result = mathFunctions.getQuickSortedArray(inputArray, 0, inputArray.length - 1);
     
     const data = {
-        inputArray : formatArray.arrayValidator(inputArray) ? formatArray.arrayToString(inputArray) : "",
+        inputArray : formatArray.arrayValidator(copiedInput) ? formatArray.arrayToString(copiedInput) : "",
         result : formatArray.arrayValidator(result) ? formatArray.arrayToString(result) : ""
     }
 
