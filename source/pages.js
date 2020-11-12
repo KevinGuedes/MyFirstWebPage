@@ -1,6 +1,5 @@
 const mathFunctions = require("./utils/mathFunctions");
 const formatArray = require("./utils/formatArray");
-const { sec } = require("mathjs");
 
 const pageIndex = (req, res) => {
 
@@ -33,9 +32,9 @@ const pageIndex = (req, res) => {
                 method: "Calculate the sum of numbers inside an array"
             }
         ]
-    }
+    };
 
-    res.render('index', data)
+    res.render('index', data);
 }
 
 
@@ -48,9 +47,9 @@ const pagePrime = (req, res) => {
         result: inputNumber ? mathFunctions.testIfPrime(inputNumber) : "",
         hrefCss: "/styles/page-prime.css",
         title: "Prime Numbers"
-    }
+    };
 
-    res.render('prime', data)
+    res.render('prime', data);
 };
 
 
@@ -63,9 +62,9 @@ const pageFibonacci = (req, res) => {
         result: inputNumber ? mathFunctions.getFibonacciElement(inputNumber) : "",
         hrefCss: "/styles/page-fibonacci.css",
         title: "Fibonacci Sequence"
-    }
+    };
 
-    res.render('fibonacci', data)
+    res.render('fibonacci', data);
 };
 
 
@@ -87,10 +86,7 @@ const pageGcd = (req, res) => {
     }
     else {
         result = "Insert both numbers";
-    }
-
-    console.log(firstNumber)
-    console.log(secondNumber)
+    };
 
     const data = {
         firstNumber: !Number.isNaN(firstNumber) ? firstNumber : "",
@@ -98,9 +94,9 @@ const pageGcd = (req, res) => {
         result: result,
         hrefCss: "/styles/page-gcd.css",
         title: "Greatest Common Divisor"
-    }
+    };
 
-    res.render('gcd', data)
+    res.render('gcd', data);
 };
 
 
@@ -115,7 +111,7 @@ const pageCount = (req, res) => {
         title: "Count Numbers"
     }
 
-    res.render('count', data)
+    res.render('count', data);
 };
 
 
@@ -138,16 +134,16 @@ const pageQuickSort = (req, res) => {
         else {
             result = "Please verify your array";
         }
-    }
+    };
 
     const data = {
         inputArray: copiedInputArray,
         result: result,
         hrefCss: "/styles/page-quickSort.css",
         title: "Quick Sort"
-    }
+    };
 
-    res.render('quickSort', data)
+    res.render('quickSort', data);
 };
 
 
@@ -172,16 +168,16 @@ const pageSum = (req, res) => {
             result = "Please verify your array";
         }
 
-    }
+    };
 
     const data = {
         inputArray: copiedInputArray,
         result: result,
         hrefCss: "/styles/page-sum.css",
         title: "Sum"
-    }
+    };
 
-    res.render('sum', data)
+    res.render('sum', data);
 };
 
 
