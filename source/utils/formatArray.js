@@ -15,16 +15,17 @@ const arrayToString = (arr) => {
 
 
 const stringToArray = (arr) => {
-    return arr.replace(/\s/g, '').split(",").map(element => +element);
+    return arr.replace(/\s/g, '').split(",").filter(Boolean).map(element => +element);
 };
 
 
-const arrayValidator = (arr) => {
-    return Array.isArray(arr) && arr.length;
-}
+const numericArrayValidator = (arr) => {
+    return Array.isArray(arr) && arr.length && arr.every(function (element) { return typeof element === 'number'});
+};
+
 
 module.exports = {
     arrayToString,
     stringToArray,
-    arrayValidator
+    numericArrayValidator
 }
