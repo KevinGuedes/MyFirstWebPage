@@ -44,5 +44,5 @@ server
 
 
 server.listen(port, function () {
-    console.log(`App de Exemplo escutando na porta http://localhost:${port}/`);
+    console.log(`http://localhost:${port}/`);
 });
