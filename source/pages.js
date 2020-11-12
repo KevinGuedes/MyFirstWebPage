@@ -4,6 +4,8 @@ const formatArray = require("./utils/formatArray")
 const pageIndex = (req, res) => {
 
     const data = {
+        hrefCss : "/styles/page-index.css",
+        title : "Kevin's First Web Page | Basic Algorithms",
         menu : [
             {
                 href : "/prime",
@@ -42,7 +44,9 @@ const pagePrime = (req, res) => {
     
     const data = {
         inputNumber : inputNumber,
-        result : inputNumber ? mathFunctions.testIfPrime(inputNumber) : ""
+        result : inputNumber ? mathFunctions.testIfPrime(inputNumber) : "",
+        hrefCss : "/styles/page-prime.css",
+        title : "Prime Numbers"
     }
 
     res.render('prime', data)
@@ -55,7 +59,9 @@ const pageFibonacci = (req, res) => {
 
     const data = {
         inputNumber : inputNumber,
-        result :  inputNumber ? mathFunctions.getFibonacciElement(inputNumber) : ""
+        result :  inputNumber ? mathFunctions.getFibonacciElement(inputNumber) : "",
+        hrefCss : "/styles/page-fibonacci.css",
+        title : "Fibonacci Sequence"
     }
 
     res.render('fibonacci', data)
@@ -70,7 +76,9 @@ const pageGcd = (req, res) => {
     const data = {
         firstNumber : firstNumber,
         secondNumber : secondNumber,
-        result : mathFunctions.getGcd(firstNumber, secondNumber)
+        result : mathFunctions.getGcd(firstNumber, secondNumber),
+        hrefCss : "/styles/page-gcd.css",
+        title : "Greatest Common Divisor"
     }
 
     res.render('gcd', data)
@@ -83,7 +91,9 @@ const pageCount = (req, res) => {
 
     const data = {
         inputNumber : inputNumber,
-        result : inputNumber ? mathFunctions.getCount(inputNumber) : ""
+        result : inputNumber ? mathFunctions.getCount(inputNumber) : "",
+        hrefCss : "/styles/page-count.css",
+        title : "Count Numbers"
     }
 
     res.render('count', data)
@@ -92,14 +102,11 @@ const pageCount = (req, res) => {
 
 const pageQuickSort = (req, res) => {
 
-    var inputArray = req.body.inputArray; //Primeiro vem como nada
+    var inputArray = req.body.inputArray; 
     var result = "";
     var copiedInputArray = "";
 
-    console.log(inputArray)
-    console.log(copiedInputArray)
-
-    if(inputArray !== undefined) {
+    if(inputArray) {
         
         copiedInputArray = inputArray;
         inputArray = formatArray.stringToArray(inputArray);
@@ -115,13 +122,11 @@ const pageQuickSort = (req, res) => {
         
     }
     
-    console.log(inputArray)
-    console.log(copiedInputArray)
-    
-    
     const data = {
         inputArray : copiedInputArray,
-        result : result
+        result : result,
+        hrefCss : "/styles/page-quickSort.css",
+        title : "Quick Sort"
     }
 
     res.render('quickSort', data)
@@ -130,12 +135,32 @@ const pageQuickSort = (req, res) => {
 
 const pageSum = (req, res) => {
 
-    var inputArray = formatArray.stringToArray(req.body.inputArray);
-    var result = mathFunctions.getSumOfNumbers(inputArray);
+    var inputArray = req.body.inputArray; 
+    var result = "";
+    var copiedInputArray = "";
 
+    if(inputArray) {
+
+        copiedInputArray = inputArray
+        inputArray = formatArray.stringToArray(inputArray);
+
+        if(formatArray.numericArrayValidator(inputArray)) {
+            copiedInputArray = inputArray.slice();
+            copiedInputArray = formatArray.arrayToString(copiedInputArray);
+            var result = "The sum is " + mathFunctions.getSumOfNumbers(inputArray);
+            inputArray = formatArray.arrayToString(inputArray);
+        }
+        else {
+            result = "Please verify your array";
+        }
+        
+    }
+    
     const data = {
-        inputArray : formatArray.arrayValidator(inputArray) ? formatArray.arrayToString(inputArray) : "",
-        result : formatArray.arrayValidator(result) ? formatArray.arrayToString(result) : ""
+        inputArray : copiedInputArray,
+        result : result,
+        hrefCss : "/styles/page-sum.css",
+        title : "Sum"
     }
 
     res.render('sum', data)

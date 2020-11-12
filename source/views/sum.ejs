@@ -8,7 +8,7 @@
 <body>
     <div class="menu">
         <h1 class="page-title">Sort an array using Quick Sort method</h1>
-        <form class="quickSort" action="/getQuickSortedArray" method="POST">
+        <form class="sum" action="/getSum" method="POST">
             <label for="input-array">Insert your array</label>
 
             <% if(inputArray){ %>
@@ -21,7 +21,7 @@
                 placeholder="Numbers separeted by comma">
             <% } %>
 
-            <button class="run" type="submit">Sort the array</button>
+            <button class="run" type="submit">Get sum of numbers</button>
 
             <% if(result){ %>
             <p id="result"><%= result %></p>
