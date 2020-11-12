@@ -14,3 +14,4 @@ Projeto finalizado. Todo o site está funcional. O código, porém, tem pontos a
 - [ ] Testar o 'duplo if'
 - [ ] Ver css da .input-array
 - [ ] ESLint para organizar o código
+- [ ] Criar um layout ejs

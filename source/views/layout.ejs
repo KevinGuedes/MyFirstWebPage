@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="<%= hrefCss %>">
+</head>
+
+<body>
+    <div class="menu">
+        <h1 class="page-title"><%= pageTitle %></h1>
+        <form class="<%= formClass %>" action="<%= action %>" method="POST">
+
+            <%- content %>
+                
+            <!-- <%- contentFor('content') %> -->
+            <button class="run" type="submit"><%= buttonText %></button>
+
+            <% if(result){ %>
+                <p id="result"><%= result %></p>
+            <% } else { %>
+                <p id="result"><%= result %></p>
+            <% } %>
+
+        </form>
+        <a class="back" href="/">Choose another algorithm</a>
+        <%- include("./partials/madeby") %>
+    </div>
+</body>
+</html>
