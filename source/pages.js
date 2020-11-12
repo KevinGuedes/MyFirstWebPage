@@ -91,15 +91,30 @@ const pageCount = (req, res) => {
 
 
 const pageQuickSort = (req, res) => {
-
-    const copiedInput = inputArray.slice();
     
-    var inputArray = (req.body.inputArray) ? formatArray.stringToArray(req.body.inputArray) : "";
-    var result = mathFunctions.getQuickSortedArray(inputArray, 0, inputArray.length - 1);
+    var inputArray = req.body.inputArray;
+    var result;
+    
+    if(inputArray) {
+        inputArray = formatArray.stringToArray(req.body.inputArray);
+        
+        if(formatArray.numericArrayValidator(inputArray)) {
+            var result = mathFunctions.getQuickSortedArray(inputArray, 0, inputArray.length - 1);
+            var copiedInputArray = inputArray.slice();
+        }
+        else {
+            result = "Please, verify your array";
+        }
+    }
+    else {
+        var copiedInputArray = inputArray.slice();
+        result = "Please, verify your array";
+    }
+    
     
     const data = {
-        inputArray : formatArray.arrayValidator(copiedInput) ? formatArray.arrayToString(copiedInput) : "",
-        result : formatArray.arrayValidator(result) ? formatArray.arrayToString(result) : ""
+        inputArray : formatArray.arrayToString(copiedInputArray),
+        result : formatArray.arrayToString(result)
     }
 
     res.render('quickSort', data)
