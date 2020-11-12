@@ -91,30 +91,37 @@ const pageCount = (req, res) => {
 
 
 const pageQuickSort = (req, res) => {
-    
-    var inputArray = req.body.inputArray;
-    var result;
-    
-    if(inputArray) {
-        inputArray = formatArray.stringToArray(req.body.inputArray);
+
+    var inputArray = req.body.inputArray; //Primeiro vem como nada
+    var result = "";
+    var copiedInputArray = "";
+
+    console.log(inputArray)
+    console.log(copiedInputArray)
+
+    if(inputArray !== undefined) {
         
+        copiedInputArray = inputArray;
+        inputArray = formatArray.stringToArray(inputArray);
+
         if(formatArray.numericArrayValidator(inputArray)) {
-            var result = mathFunctions.getQuickSortedArray(inputArray, 0, inputArray.length - 1);
-            var copiedInputArray = inputArray.slice();
+            copiedInputArray = inputArray.slice();
+            copiedInputArray = formatArray.arrayToString(copiedInputArray);
+            var result = "Your 'Quick Sorted' array is: " + formatArray.arrayToString(mathFunctions.getQuickSortedArray(inputArray, 0, inputArray.length - 1));
         }
         else {
-            result = "Please, verify your array";
+            result = "Please verify your array";
         }
+        
     }
-    else {
-        var copiedInputArray = inputArray.slice();
-        result = "Please, verify your array";
-    }
+    
+    console.log(inputArray)
+    console.log(copiedInputArray)
     
     
     const data = {
-        inputArray : formatArray.arrayToString(copiedInputArray),
-        result : formatArray.arrayToString(result)
+        inputArray : copiedInputArray,
+        result : result
     }
 
     res.render('quickSort', data)
