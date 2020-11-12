@@ -10,4 +10,4 @@
 - [ ] Ver css da .input-array
 
 # Progreso do Projeto
-![90%](https://progress-bar.dev/90)
+![95%](https://progress-bar.dev/95)

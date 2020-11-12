@@ -78,22 +78,17 @@ const pageGcd = (req, res) => {
 
     if (both) {
         result = mathFunctions.getGcd(firstNumber, secondNumber);
-        console.log("1") // dois ok
     }
     else if (firstNumber === 0 && secondNumber === 0) {
         result = "Invalid numbers. They cannot be both 0";
-        console.log("2")
     }
     else if (Number.isNaN(firstNumber) && Number.isNaN(secondNumber)) {
-        result = ""; //inicio tela
-        console.log("4")
+        result = ""; 
     }
     else {
-        result = "Insert both numbers" //colocando só 1
+        result = "Insert both numbers";
     }
 
-    //Inserir só 1
-    //Inserir os 2 zero
     console.log(firstNumber)
     console.log(secondNumber)
 
@@ -143,7 +138,6 @@ const pageQuickSort = (req, res) => {
         else {
             result = "Please verify your array";
         }
-
     }
 
     const data = {
