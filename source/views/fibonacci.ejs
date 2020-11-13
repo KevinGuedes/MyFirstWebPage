@@ -8,7 +8,7 @@
 <body>
     <div class="menu">
         <h1 class="page-title">Show the i-<i>th</i> element in a Fibonacci sequence</h1>
-        <form class="fibonacci-element" action="getFibonacciElement" method="POST">
+        <form class="fibonacci-element" action="/getFibonacciElement" method="POST">
             <label for="element-number">Insert a number</label>
             <% if(inputNumber){ %>
                 <input id="element-number" class="input-number" type="number" name="inputNumber" value="<%= inputNumber%>" min="1" onfocus="this.placeholder = ''"

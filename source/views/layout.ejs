@@ -11,12 +11,11 @@
 
 <body>
     <div class="menu">
-        <h1 class="page-title"><%= pageTitle %></h1>
+        <h1 class="page-title"><%= pageHeader %></h1>
         <form class="<%= formClass %>" action="<%= action %>" method="POST">
 
-            <%- content %>
+            <%- w %>
                 
-            <!-- <%- contentFor('content') %> -->
             <button class="run" type="submit"><%= buttonText %></button>
 
             <% if(result){ %>

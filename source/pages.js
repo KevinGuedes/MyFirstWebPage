@@ -43,10 +43,14 @@ const pagePrime = (req, res) => {
     var inputNumber = parseInt(req.body.inputNumber);
 
     const data = {
-        inputNumber: inputNumber,
-        result: inputNumber ? mathFunctions.testIfPrime(inputNumber) : "",
-        hrefCss: "/styles/page-prime.css",
-        title: "Prime Numbers"
+        inputNumber : inputNumber,
+        result : inputNumber ? mathFunctions.testIfPrime(inputNumber) : "",
+        hrefCss : "/styles/page-prime.css",
+        title : "Prime Numbers",
+        pageHeader : "Show the i-<i>th</i> element in a Fibonacci sequence",
+        formClass : "prime-tester",
+        action : "/testIfPrime",
+        buttonText : "Test if the number is prime"
     };
 
     res.render('prime', data);
@@ -61,7 +65,11 @@ const pageFibonacci = (req, res) => {
         inputNumber: inputNumber,
         result: inputNumber ? mathFunctions.getFibonacciElement(inputNumber) : "",
         hrefCss: "/styles/page-fibonacci.css",
-        title: "Fibonacci Sequence"
+        title: "Fibonacci Sequence",
+        pageHeader : "Show the i-<i>th</i> element in a Fibonacci sequence",
+        formClass : "fibonacci-element",
+        action : "/getFibonacciElement",
+        buttonText : "Get element"
     };
 
     res.render('fibonacci', data);
@@ -89,11 +97,15 @@ const pageGcd = (req, res) => {
     };
 
     const data = {
-        firstNumber: !Number.isNaN(firstNumber) ? firstNumber : "",
-        secondNumber: !Number.isNaN(secondNumber) ? secondNumber : "",
+        firstNumber : !Number.isNaN(firstNumber) ? firstNumber : "",
+        secondNumber : !Number.isNaN(secondNumber) ? secondNumber : "",
         result: result,
         hrefCss: "/styles/page-gcd.css",
-        title: "Greatest Common Divisor"
+        title: "Greatest Common Divisor",
+        pageHeader : "Greatest common divisor of two numbers",
+        formClass : "gcd",
+        action : "/getGcd",
+        buttonText : "Find greatest common divisor"
     };
 
     res.render('gcd', data);
@@ -105,10 +117,14 @@ const pageCount = (req, res) => {
     var inputNumber = parseInt(req.body.inputNumber);
 
     const data = {
-        inputNumber: inputNumber,
-        result: inputNumber ? mathFunctions.getCount(inputNumber) : "",
-        hrefCss: "/styles/page-count.css",
-        title: "Count Numbers"
+        inputNumber : inputNumber,
+        result : inputNumber ? mathFunctions.getCount(inputNumber) : "",
+        hrefCss : "/styles/page-count.css",
+        title : "Count Numbers",
+        pageHeader : "Count Numbers Within A Range",
+        formClass : "count",
+        action : "/getCount",
+        buttonText : "Get count"
     }
 
     res.render('count', data);
@@ -137,10 +153,14 @@ const pageQuickSort = (req, res) => {
     };
 
     const data = {
-        inputArray: copiedInputArray,
-        result: result,
-        hrefCss: "/styles/page-quickSort.css",
-        title: "Quick Sort"
+        inputArray : copiedInputArray,
+        result : result,
+        hrefCss : "/styles/page-quickSort.css",
+        title : "Quick Sort",
+        pageHeader : "Sort an array using Quick Sort method",
+        formClass : "quickSort",
+        action : "/getQuickSortedArray",
+        buttonText : "Sort the array"
     };
 
     res.render('quickSort', data);
@@ -171,10 +191,14 @@ const pageSum = (req, res) => {
     };
 
     const data = {
-        inputArray: copiedInputArray,
-        result: result,
-        hrefCss: "/styles/page-sum.css",
-        title: "Sum"
+        inputArray : copiedInputArray,
+        result : result,
+        hrefCss : "/styles/page-sum.css",
+        title : "Sum",
+        pageHeader : "Calculate the sum of numbers inside an array",
+        formClass : "sum",
+        action : "/getSum",
+        buttonText : "Get sum of numbers"
     };
 
     res.render('sum', data);
