@@ -4,6 +4,7 @@ const formatArray = require("./utils/formatArray");
 const pageIndex = (req, res) => {
 
     const data = {
+        layout : 'layout',
         hrefCss: "/styles/page-index.css",
         title: "Kevin's First Web Page | Basic Algorithms",
         menu: [

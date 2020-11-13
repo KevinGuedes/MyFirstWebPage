@@ -23,7 +23,8 @@ server
 
 server
     .set('view engine', 'ejs')
-    .set('views', path.join(__dirname, '/views'));
+    .set('views', path.join(__dirname, '/views'))
+    .set('layout', 'layouts/layout')
 
 
 server
