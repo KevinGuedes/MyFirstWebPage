@@ -1,34 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <%- include("./partials/head") %>
-</head>
-
-<body>
-    <div class="menu">
-        <h1 class="page-title">Calculate the sum of numbers inside an array</h1>
-        <form class="sum" action="/getSum" method="POST">
-            <label for="input-array">Insert your array</label>
-
-            <% if(inputArray){ %>
-                <input id="input-array" class="input-array" type="text" name="inputArray" value="<%= inputArray %>"
-                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Numbers separeted by comma'"
-                placeholder="Numbers separeted by comma">
-            <% } else { %>
-                <input id="input-array" class="input-array" type="text" name="inputArray"
-                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Numbers separeted by comma'"
-                placeholder="Numbers separeted by comma">
-            <% } %>
-
-            <button class="run" type="submit">Get sum of numbers</button>
-            
-            <%- include("./partials/result") %>
-
-        </form>
-        <%- include("./partials/back") %>
-        <%- include("./partials/madeby") %>    
-    </div>
-</body>
-
-</html>
+<%- contentFor('inputField') %>
+<label for="input-array">Insert your array</label>
+<% if(inputArray){ %>
+<input id="input-array" class="input-array" type="text" name="inputArray" value="<%= inputArray %>"
+    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Numbers separeted by comma'"
+    placeholder="Numbers separeted by comma">
+<% } else { %>
+<input id="input-array" class="input-array" type="text" name="inputArray" onfocus="this.placeholder = ''"
+    onblur="this.placeholder = 'Numbers separeted by comma'" placeholder="Numbers separeted by comma">
+<% } %>

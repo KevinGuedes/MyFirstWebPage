@@ -2,11 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
-    <link rel="stylesheet" href="/styles/main.css">
-    <link rel="stylesheet" href="<%= hrefCss %>">
+    <%- include("./partials/head") %>
 </head>
 
 <body>
@@ -14,7 +10,7 @@
         <h1 class="page-title"><%= pageHeader %></h1>
         <form class="<%= formClass %>" action="<%= action %>" method="POST">
 
-            <%- w %>
+            <%- inputField %>
                 
             <button class="run" type="submit"><%= buttonText %></button>
 
@@ -26,7 +22,7 @@
 
         </form>
         <a class="back" href="/">Choose another algorithm</a>
-        <%- include("../partials/madeby") %>
+        <%- include("./partials/madeby") %>
     </div>
 </body>
 </html>

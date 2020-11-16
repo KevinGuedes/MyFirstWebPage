@@ -4,7 +4,7 @@ const formatArray = require("./utils/formatArray");
 const pageIndex = (req, res) => {
 
     const data = {
-        layout : 'layout',
+        layout : 'indexLayout',
         hrefCss: "/styles/page-index.css",
         title: "Kevin's First Web Page | Basic Algorithms",
         menu: [
@@ -48,10 +48,11 @@ const pagePrime = (req, res) => {
         result : inputNumber ? mathFunctions.testIfPrime(inputNumber) : "",
         hrefCss : "/styles/page-prime.css",
         title : "Prime Numbers",
-        pageHeader : "Show the i-<i>th</i> element in a Fibonacci sequence",
+        pageHeader : "Show the i-th element in a Fibonacci sequence",
         formClass : "prime-tester",
         action : "/testIfPrime",
-        buttonText : "Test if the number is prime"
+        buttonText : "Test if the number is prime",
+        layout : 'pagesLayout'
     };
 
     res.render('prime', data);
@@ -70,7 +71,8 @@ const pageFibonacci = (req, res) => {
         pageHeader : "Show the i-<i>th</i> element in a Fibonacci sequence",
         formClass : "fibonacci-element",
         action : "/getFibonacciElement",
-        buttonText : "Get element"
+        buttonText : "Get element",
+        layout : 'pagesLayout'
     };
 
     res.render('fibonacci', data);
@@ -106,7 +108,8 @@ const pageGcd = (req, res) => {
         pageHeader : "Greatest common divisor of two numbers",
         formClass : "gcd",
         action : "/getGcd",
-        buttonText : "Find greatest common divisor"
+        buttonText : "Find greatest common divisor",
+        layout : 'pagesLayout'
     };
 
     res.render('gcd', data);
@@ -125,7 +128,8 @@ const pageCount = (req, res) => {
         pageHeader : "Count Numbers Within A Range",
         formClass : "count",
         action : "/getCount",
-        buttonText : "Get count"
+        buttonText : "Get count",
+        layout : 'pagesLayout'
     }
 
     res.render('count', data);
@@ -161,7 +165,8 @@ const pageQuickSort = (req, res) => {
         pageHeader : "Sort an array using Quick Sort method",
         formClass : "quickSort",
         action : "/getQuickSortedArray",
-        buttonText : "Sort the array"
+        buttonText : "Sort the array",
+        layout : 'pagesLayout'
     };
 
     res.render('quickSort', data);
@@ -199,7 +204,8 @@ const pageSum = (req, res) => {
         pageHeader : "Calculate the sum of numbers inside an array",
         formClass : "sum",
         action : "/getSum",
-        buttonText : "Get sum of numbers"
+        buttonText : "Get sum of numbers",
+        layout : 'pagesLayout'
     };
 
     res.render('sum', data);
