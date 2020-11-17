@@ -4,7 +4,7 @@ const formatArray = require("./utils/formatArray");
 const pageIndex = (req, res) => {
 
     const data = {
-        layout : 'indexLayout',
+        layout : 'index.ejs',
         hrefCss: "/styles/page-index.css",
         title: "Kevin's First Web Page | Basic Algorithms",
         menu: [
@@ -52,7 +52,7 @@ const pagePrime = (req, res) => {
         formClass : "prime-tester",
         action : "/testIfPrime",
         buttonText : "Test if the number is prime",
-        layout : 'pagesLayout'
+        layout : 'layout'
     };
 
     res.render('prime', data);
@@ -72,7 +72,7 @@ const pageFibonacci = (req, res) => {
         formClass : "fibonacci-element",
         action : "/getFibonacciElement",
         buttonText : "Get element",
-        layout : 'pagesLayout'
+        layout : 'layout'
     };
 
     res.render('fibonacci', data);
@@ -109,7 +109,7 @@ const pageGcd = (req, res) => {
         formClass : "gcd",
         action : "/getGcd",
         buttonText : "Find greatest common divisor",
-        layout : 'pagesLayout'
+        layout : 'layout'
     };
 
     res.render('gcd', data);
@@ -129,7 +129,7 @@ const pageCount = (req, res) => {
         formClass : "count",
         action : "/getCount",
         buttonText : "Get count",
-        layout : 'pagesLayout'
+        layout : 'layout'
     }
 
     res.render('count', data);
@@ -166,7 +166,7 @@ const pageQuickSort = (req, res) => {
         formClass : "quickSort",
         action : "/getQuickSortedArray",
         buttonText : "Sort the array",
-        layout : 'pagesLayout'
+        layout : 'layout'
     };
 
     res.render('quickSort', data);
@@ -205,7 +205,7 @@ const pageSum = (req, res) => {
         formClass : "sum",
         action : "/getSum",
         buttonText : "Get sum of numbers",
-        layout : 'pagesLayout'
+        layout : 'layout'
     };
 
     res.render('sum', data);
