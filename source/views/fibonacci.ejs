@@ -1,28 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <%- include("./partials/head") %>
-</head>
-
-<body>
-    <div class="menu">
-        <h1 class="page-title">Show the i-<i>th</i> element in a Fibonacci sequence</h1>
-        <form class="fibonacci-element" action="getFibonacciElement" method="POST">
-            <label for="element-number">Insert a number</label>
-            <% if(inputNumber){ %>
-                <input id="element-number" class="input-number" type="number" name="inputNumber" value="<%= inputNumber%>" min="1" onfocus="this.placeholder = ''"
-                onblur="this.placeholder = 'Number greater than 0'" placeholder="Number greater than 0">
-            <% } else { %>
-                <input id="element-number" class="input-number" type="number" name="inputNumber" min="1" onfocus="this.placeholder = ''"
-                onblur="this.placeholder = 'Number greater than 0'" placeholder="Number greater than 0">
-            <% } %>
-            <button class="run" type="submit">Get element</button>
-            <p id="result"><%= result %></p>
-        </form>
-        <%- include("./partials/back") %>
-        <%- include("./partials/madeby") %>
-    </div>
-</body>
-
-</html>
+<%- contentFor('inputField') %>
+<label for="element-number">Insert a number</label>
+<% if(inputNumber){ %>
+<input id="element-number" class="input-number" type="number" name="inputNumber" value="<%= inputNumber%>" min="1"
+    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Number greater than 0'"
+    placeholder="Number greater than 0">
+<% } else { %>
+<input id="element-number" class="input-number" type="number" name="inputNumber" min="1" onfocus="this.placeholder = ''"
+    onblur="this.placeholder = 'Number greater than 0'" placeholder="Number greater than 0">
+<% } %>

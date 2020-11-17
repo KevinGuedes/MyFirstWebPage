@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
+const expressLayout = require('express-ejs-layouts');
 const {
     pageIndex,
     pagePrime,
@@ -14,15 +15,17 @@ const server = express();
 const port = 3001;
 
 
-//Configurando Servidor
 server
     .use(express.static('public'))
     .use(bodyParser.urlencoded({ extended: true }))
+    .use(expressLayout);
+
+
+server
     .set('view engine', 'ejs')
     .set('views', path.join(__dirname, '/views'));
 
 
-//Rotas
 server
     .get("/", pageIndex)
     .get("/prime", pagePrime)
@@ -30,17 +33,16 @@ server
     .get("/gcd", pageGcd)
     .get("/count", pageCount)
     .get("/quickSort", pageQuickSort)
-    .get("/sum", pageSum)
+    .get("/sum", pageSum);
 
     
-//Post
 server
     .post("/testIfPrime", pagePrime)
     .post("/getFibonacciElement", pageFibonacci)
     .post("/getGcd", pageGcd)
     .post("/getCount", pageCount)
     .post("/getQuickSortedArray", pageQuickSort)
-    .post("/getSum", pageSum)
+    .post("/getSum", pageSum);
 
 
 server.listen(port, function () {
