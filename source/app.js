@@ -18,12 +18,13 @@ const port = 3001;
 server
     .use(express.static('public'))
     .use(bodyParser.urlencoded({ extended: true }))
-    .use(expressLayout)
+    .use(expressLayout);
 
 
 server
     .set('view engine', 'ejs')
-    .set('views', path.join(__dirname, '/views'))
+    .set('views', path.join(__dirname, '/views'));
+
 
 server
     .get("/", pageIndex)
@@ -32,7 +33,7 @@ server
     .get("/gcd", pageGcd)
     .get("/count", pageCount)
     .get("/quickSort", pageQuickSort)
-    .get("/sum", pageSum)
+    .get("/sum", pageSum);
 
     
 server
@@ -41,7 +42,7 @@ server
     .post("/getGcd", pageGcd)
     .post("/getCount", pageCount)
     .post("/getQuickSortedArray", pageQuickSort)
-    .post("/getSum", pageSum)
+    .post("/getSum", pageSum);
 
 
 server.listen(port, function () {

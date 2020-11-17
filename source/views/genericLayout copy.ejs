@@ -1,12 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- contentFor('menuContent') %>
+<form class="<%= formClass %>" action="<%= action %>" method="POST"></form>
+    <label for="input-number">Insert a number</label>
+    <% if(inputNumber){ %>
+    <input id="input-number" class="input-number" type="number" name="inputNumber" value="<%= inputNumber%>" min="1"
+        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Number greater than 0'"
+        placeholder="Number greater than 0">
+    <% } else { %>
+    <input id="input-number" class="input-number" type="number" name="inputNumber" min="1" onfocus="this.placeholder = ''"
+        onblur="this.placeholder = 'Number greater than 0'" placeholder="Number greater than 0">
+    <% } %>
 
-<head>
-    <%- include("./partials/head") %>
-</head>
-
-<body>
-    <%- bodyContent %>
-</body>
-
-</html>
+    <%- include("./partials/result") %>
+    <%- include("./partials/back") %>
+</form>

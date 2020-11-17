@@ -6,7 +6,11 @@
 </head>
 
 <body>
-    <%- bodyContent %>
+    <div class="menu">
+        <h1 class="page-title"><%= pageHeader %></h1>
+        <%- menuContent %>
+        <%- include("./partials/madeby") %>
+    </div>
 </body>
 
 </html>
