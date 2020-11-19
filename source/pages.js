@@ -43,10 +43,15 @@ const pageIndex = (req, res) => {
 const pagePrime = (req, res) => {
 
     var inputNumber = parseInt(req.body.inputNumber);
+    var result = "";
+
+    if(inputNumber){
+        result = mathFunctions.testIfPrime(inputNumber);
+    }
 
     const data = {
         inputNumber : inputNumber,
-        result : inputNumber ? mathFunctions.testIfPrime(inputNumber) : "",
+        result : result,
         hrefCss : "/styles/page-prime.css",
         title : "Prime Numbers",
         pageHeader : "Check if a number is prime or not",
@@ -63,10 +68,15 @@ const pagePrime = (req, res) => {
 const pageFibonacci = (req, res) => {
 
     var inputNumber = parseInt(req.body.inputNumber);
+    var result = "";
+
+    if(inputNumber){
+        result = mathFunctions.getFibonacciElement(inputNumber);
+    }
 
     const data = {
         inputNumber: inputNumber,
-        result: inputNumber ? mathFunctions.getFibonacciElement(inputNumber) : "",
+        result: result,
         hrefCss: "/styles/page-fibonacci.css",
         title: "Fibonacci Sequence",
         pageHeader : "Show the i-th element in a Fibonacci sequence",
@@ -87,7 +97,7 @@ const pageGcd = (req, res) => {
     var result;
     var both = firstNumber && secondNumber;
 
-    if (both) {
+    if (both || (firstNumber === 0 && secondNumber == 1) || (firstNumber === 1 && secondNumber == 0)) {
         result = mathFunctions.getGcd(firstNumber, secondNumber);
     }
     else if (firstNumber === 0 && secondNumber === 0) {
@@ -120,10 +130,15 @@ const pageGcd = (req, res) => {
 const pageCount = (req, res) => {
 
     var inputNumber = parseInt(req.body.inputNumber);
+    var result = "";
+
+    if(inputNumber){
+        result = mathFunctions.getCount(inputNumber) 
+    }
 
     const data = {
         inputNumber : inputNumber,
-        result : inputNumber ? mathFunctions.getCount(inputNumber) : "",
+        result : result,
         hrefCss : "/styles/page-count.css",
         title : "Count Numbers",
         pageHeader : "Count Numbers Within A Range",
@@ -140,8 +155,8 @@ const pageCount = (req, res) => {
 const pageQuickSort = (req, res) => {
 
     var inputArray = req.body.inputArray;
+    var copiedInputArray;
     var result = "";
-    var copiedInputArray = "";
 
     if (inputArray) {
 
@@ -149,8 +164,6 @@ const pageQuickSort = (req, res) => {
         inputArray = formatArray.stringToArray(inputArray);
 
         if (arrayValidator.numericArrayValidator(inputArray)) {
-            copiedInputArray = inputArray.slice();
-            copiedInputArray = formatArray.arrayToString(copiedInputArray);
             var result = "Your 'Quick Sorted' array is: " + formatArray.arrayToString(mathFunctions.getQuickSortedArray(inputArray, 0, inputArray.length - 1));
         }
         else {
@@ -186,8 +199,6 @@ const pageSum = (req, res) => {
         inputArray = formatArray.stringToArray(inputArray);
 
         if (formatArray.numericArrayValidator(inputArray)) {
-            copiedInputArray = inputArray.slice();
-            copiedInputArray = formatArray.arrayToString(copiedInputArray);
             var result = "The sum is " + mathFunctions.getSumOfNumbers(inputArray);
             inputArray = formatArray.arrayToString(inputArray);
         }

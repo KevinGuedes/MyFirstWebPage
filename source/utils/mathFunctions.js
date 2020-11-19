@@ -120,8 +120,9 @@ const partition = (arr, leftPointer, rightPointer) => {
 };
 
 
-const getQuickSortedArray = (arr, leftPointer, rightPointer) => {
-    
+const getQuickSortedArray = (inputArray, leftPointer, rightPointer) => {
+
+    var arr = inputArray.slice();
     var index;
     if (arr.length > 1) {
 
@@ -141,7 +142,8 @@ const getQuickSortedArray = (arr, leftPointer, rightPointer) => {
 
 
 //Sum of numbers
-const getSumOfNumbers = (arr) => {
+const getSumOfNumbers = (inputArray) => {
+    var arr = inputArray.slice();
     var sum = 0;
     arr.forEach(element => {
         sum += element;
