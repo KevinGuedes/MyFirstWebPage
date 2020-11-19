@@ -1,5 +1,6 @@
 const mathFunctions = require("./utils/mathFunctions");
 const formatArray = require("./utils/formatArray");
+const arrayValidator = require("./utils/arrayValidator")
 
 const pageIndex = (req, res) => {
 
@@ -147,7 +148,7 @@ const pageQuickSort = (req, res) => {
         copiedInputArray = inputArray;
         inputArray = formatArray.stringToArray(inputArray);
 
-        if (formatArray.numericArrayValidator(inputArray)) {
+        if (arrayValidator.numericArrayValidator(inputArray)) {
             copiedInputArray = inputArray.slice();
             copiedInputArray = formatArray.arrayToString(copiedInputArray);
             var result = "Your 'Quick Sorted' array is: " + formatArray.arrayToString(mathFunctions.getQuickSortedArray(inputArray, 0, inputArray.length - 1));

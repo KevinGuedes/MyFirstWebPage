@@ -17,3 +17,4 @@ Projeto finalizado. Todo o site está funcional. O código, porém, tem pontos a
 - [x] Criar um layout ejs
 - [ ] Os dados enviados deverão ser sem código, só o dado bruto pós processamento
 - [ ] Criar validator do Array como outro documento
+- [ ] Entrada 1 e 0 na gcd cai no resultado errado
