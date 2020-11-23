@@ -155,16 +155,14 @@ const pageCount = (req, res) => {
 const pageQuickSort = (req, res) => {
 
     var inputArray = req.body.inputArray;
-    var copiedInputArray;
     var result = "";
 
     if (inputArray) {
 
-        copiedInputArray = inputArray;
-        inputArray = formatArray.stringToArray(inputArray);
+        processmentArray = formatArray.stringToArray(inputArray);
 
-        if (arrayValidator.numericArrayValidator(inputArray)) {
-            var result = "Your 'Quick Sorted' array is: " + formatArray.arrayToString(mathFunctions.getQuickSortedArray(inputArray, 0, inputArray.length - 1));
+        if (arrayValidator.numericArrayValidator(processmentArray)) {
+            var result = "Your 'Quick Sorted' array is: " + formatArray.arrayToString(mathFunctions.getQuickSortedArray(processmentArray, 0, processmentArray.length - 1));
         }
         else {
             result = "Please verify your array";
@@ -172,7 +170,7 @@ const pageQuickSort = (req, res) => {
     };
 
     const data = {
-        inputArray : copiedInputArray,
+        inputArray : inputArray,
         result : result,
         hrefCss : "/styles/page-quickSort.css",
         title : "Quick Sort",
@@ -191,16 +189,13 @@ const pageSum = (req, res) => {
 
     var inputArray = req.body.inputArray;
     var result = "";
-    var copiedInputArray = "";
 
     if (inputArray) {
 
-        copiedInputArray = inputArray
-        inputArray = formatArray.stringToArray(inputArray);
+        var processmentArray = formatArray.stringToArray(inputArray);
 
-        if (formatArray.numericArrayValidator(inputArray)) {
-            var result = "The sum is " + mathFunctions.getSumOfNumbers(inputArray);
-            inputArray = formatArray.arrayToString(inputArray);
+        if (arrayValidator.numericArrayValidator(processmentArray)) {
+            var result = "The sum is " + mathFunctions.getSumOfNumbers(processmentArray);
         }
         else {
             result = "Please verify your array";
@@ -209,7 +204,7 @@ const pageSum = (req, res) => {
     };
 
     const data = {
-        inputArray : copiedInputArray,
+        inputArray : inputArray,
         result : result,
         hrefCss : "/styles/page-sum.css",
         title : "Sum",
