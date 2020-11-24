@@ -162,7 +162,7 @@ const pageQuickSort = (req, res) => {
         processmentArray = formatArray.stringToArray(inputArray);
 
         if (arrayValidator.numericArrayValidator(processmentArray)) {
-            var result = "Your 'Quick Sorted' array is: " + formatArray.arrayToString(mathFunctions.getQuickSortedArray(processmentArray, 0, processmentArray.length - 1));
+            var result = "Your 'Quick Sorted' array is: " + formatArray.arrayToString(mathFunctions.getQuickSortedArray(processmentArray));
         }
         else {
             result = "Please verify your array";

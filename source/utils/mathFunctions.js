@@ -87,57 +87,31 @@ const getCount = (number) => {
 
 
 //Quicksort
-const swap = (arr, leftIndex, rightIndex) => {
-
-    var temp = arr[leftIndex];
-    arr[leftIndex] = arr[rightIndex];
-    arr[rightIndex] = temp;
-};
-
-const partition = (arr, leftPointer, rightPointer) => {
-
-    var pivot = arr[Math.floor((rightPointer + leftPointer) / 2)];
-    var i = leftPointer;
-    var j = rightPointer;
-
-    while (i <= j) {
-
-        while (arr[i] < pivot) {
-            i++
-        }
-        while (arr[j] > pivot) {
-            j--;
-        }
-
-        if (i <= j) {
-            swap(arr, i, j);
-            i++;
-            j--;
-        }
-    }
-
-    return i;
-};
-
-
-const getQuickSortedArray = (inputArray, leftPointer, rightPointer) => {
+function getQuickSortedArray(inputArray) {
 
     var arr = inputArray.slice();
-    var index;
-    if (arr.length > 1) {
+    
+	if (arr.length <= 1) { 
+		return arr;
+    } 
+    else {
 
-        index = partition(arr, leftPointer, rightPointer);
+		var left = [];
+		var right = [];
+		var newArray = [];
+		var pivot = arr.pop();
+		var length = arr.length;
 
-        if (leftPointer < index - 1) {
-            getQuickSortedArray(arr, leftPointer, index - 1);
-        }
+		for (var i = 0; i < length; i++) {
+			if (arr[i] <= pivot) {
+				left.push(arr[i]);
+			} else {
+				right.push(arr[i]);
+			}
+		}
 
-        if (index < rightPointer) {
-            getQuickSortedArray(arr, index, rightPointer);
-        }
-    }
-
-    return arr;
+		return newArray.concat(getQuickSortedArray(left), pivot, getQuickSortedArray(right));
+	}
 };
 
 
