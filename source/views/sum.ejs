@@ -3,8 +3,8 @@
 <% if(inputArray){ %>
 <input id="input-array" class="input-array" type="text" name="inputArray" value="<%= inputArray %>"
     onfocus="this.placeholder = ''" onblur="this.placeholder = 'Numbers separeted by comma'"
-    placeholder="Numbers separeted by comma">
+    placeholder="Numbers separeted by comma" required>
 <% } else { %>
 <input id="input-array" class="input-array" type="text" name="inputArray" onfocus="this.placeholder = ''"
-    onblur="this.placeholder = 'Numbers separeted by comma'" placeholder="Numbers separeted by comma">
+    onblur="this.placeholder = 'Numbers separeted by comma'" placeholder="Numbers separeted by comma" required>
 <% } %>
