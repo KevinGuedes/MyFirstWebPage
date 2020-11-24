@@ -12,8 +12,7 @@ const {
     pageSum
 } = require("./pages");
 const server = express();
-const port = 3001;
-
+const port = process.env.PORT || 5000;
 
 server
     .use(express.static('public'))
