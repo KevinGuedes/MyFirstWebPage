@@ -22,6 +22,15 @@ const stringToArray = (arr) => {
 };
 
 
+// const stringToArray = (arr) => {
+//     return arr
+//         .replace(/[^,0-9]/g, '')
+//         .split(',')
+//         .filter(Boolean)
+//         .map(element => +element);
+// };
+
+
 module.exports = {
     arrayToString,
     stringToArray,
