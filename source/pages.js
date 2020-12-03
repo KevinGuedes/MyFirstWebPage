@@ -5,7 +5,7 @@ const arrayValidator = require("./utils/arrayValidator")
 const pageIndex = (req, res) => {
 
     const data = {
-        layout : 'index.ejs',
+        layout : 'index',
         hrefCss: "/styles/page-index.css",
         title: "Kevin's First Web Page | Basic Algorithms",
         menu: [
