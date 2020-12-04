@@ -60,8 +60,7 @@ const pagePrime = (req, res) => {
             "input" : inputNumber,
             "result" : result
         })
-
-    };
+    }
     
     const data = {
         inputNumber : inputNumber,
