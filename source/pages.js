@@ -4,10 +4,12 @@ const arrayValidator = require("./utils/arrayValidator");
 const { generateUniqueId } = require("./utils/uniqueIdGenerator");
 const { db } = require("../database/database");
 
+
 const saveData = (data) => {
     let operationBaseRef = db.collection('Operations').doc(generateUniqueId());
     operationBaseRef.set(data);
 };
+
 
 const pageIndex = (req, res) => {
 
@@ -197,7 +199,7 @@ const pageQuickSort = (req, res) => {
             
             saveData({
                 "operation" : "Quick Sort",
-                "input" : inputArray,
+                "input" : processmentArray,
                 "result" : result
             })
         }
