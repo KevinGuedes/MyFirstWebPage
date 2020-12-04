@@ -15,3 +15,8 @@ Projeto finalizado. Todo o site está funcional. O código, porém, tem pontos a
 - [ ] Os dados enviados deverão ser sem código, só o dado bruto pós processamento (Faltando só a gcd)
 - [x] Criar validator do Array como outro documento
 - [x] Entrada 1 e 0 na gcd cai no resultado errado
+- [ ] Criar uma model para deixar os dados enviados para as páginas
+
+# Criação da Base de Dados
+![70%](https://progress-bar.dev/70)
+- [ ] Criar uma base para coletar erros
