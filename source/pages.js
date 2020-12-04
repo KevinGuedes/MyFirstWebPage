@@ -1,6 +1,13 @@
 const mathFunctions = require("./utils/mathFunctions");
 const formatArray = require("./utils/formatArray");
-const arrayValidator = require("./utils/arrayValidator")
+const arrayValidator = require("./utils/arrayValidator");
+const { generateUniqueId } = require("./utils/uniqueIdGenerator");
+const { db } = require("../database/database");
+
+const saveData = (data) => {
+    let operationBaseRef = db.collection('Operations').doc(generateUniqueId());
+    operationBaseRef.set(data);
+};
 
 const pageIndex = (req, res) => {
 
@@ -47,8 +54,15 @@ const pagePrime = (req, res) => {
 
     if(inputNumber){
         result = mathFunctions.testIfPrime(inputNumber);
-    }
 
+        saveData({
+            "operation" : "Test if prime",
+            "input" : inputNumber,
+            "result" : result
+        })
+        
+    };
+    
     const data = {
         inputNumber : inputNumber,
         result : result,
