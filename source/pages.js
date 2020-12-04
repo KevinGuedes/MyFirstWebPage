@@ -56,11 +56,11 @@ const pagePrime = (req, res) => {
         result = mathFunctions.testIfPrime(inputNumber);
 
         saveData({
-            "operation" : "Test if prime",
+            "operation" : "Prime",
             "input" : inputNumber,
             "result" : result
         })
-        
+
     };
     
     const data = {
@@ -86,6 +86,12 @@ const pageFibonacci = (req, res) => {
 
     if(inputNumber){
         result = mathFunctions.getFibonacciElement(inputNumber);
+        
+        saveData({
+            "operation" : "Fibonacci",
+            "input" : inputNumber,
+            "result" : result
+        })
     }
 
     const data = {
@@ -113,6 +119,12 @@ const pageGcd = (req, res) => {
 
     if (both || (firstNumber === 0 && secondNumber == 1) || (firstNumber === 1 && secondNumber == 0)) {
         result = mathFunctions.getGcd(firstNumber, secondNumber);
+
+        saveData({
+            "operation" : "Greatest Common Divisor",
+            "input" : [firstNumber, secondNumber],
+            "result" : result
+        })
     }
     else if (firstNumber === 0 && secondNumber === 0) {
         result = "Invalid numbers. They cannot be both 0";
@@ -147,7 +159,13 @@ const pageCount = (req, res) => {
     var result = "";
 
     if(inputNumber){
-        result = mathFunctions.getCount(inputNumber) 
+        result = mathFunctions.getCount(inputNumber);
+
+        saveData({
+            "operation" : "Count",
+            "input" : inputNumber,
+            "result" : result
+        })
     }
 
     const data = {
@@ -176,7 +194,13 @@ const pageQuickSort = (req, res) => {
         processmentArray = formatArray.stringToArray(inputArray);
 
         if (arrayValidator.numericArrayValidator(processmentArray)) {
-            var result = "Your 'Quick Sorted' array is: " + formatArray.arrayToString(mathFunctions.getQuickSortedArray(processmentArray));
+            result = "Your 'Quick Sorted' array is: " + formatArray.arrayToString(mathFunctions.getQuickSortedArray(processmentArray));
+            
+            saveData({
+                "operation" : "Quick Sort",
+                "input" : inputArray,
+                "result" : result
+            })
         }
         else {
             result = "Please verify your array";
@@ -210,6 +234,12 @@ const pageSum = (req, res) => {
 
         if (arrayValidator.numericArrayValidator(processmentArray)) {
             var result = "The sum is " + mathFunctions.getSumOfNumbers(processmentArray);
+
+            saveData({
+                "operation" : "Sum",
+                "input" : inputArray,
+                "result" : result
+            })
         }
         else {
             result = "Please verify your array";
