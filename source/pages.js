@@ -1,8 +1,8 @@
 const mathFunctions = require("./utils/mathFunctions");
 const formatArray = require("./utils/formatArray");
-const arrayValidator = require("./utils/arrayValidator");
+const arrayValidator = require("./validators/arrayValidator");
 const { generateUniqueId } = require("./utils/uniqueIdGenerator");
-const { db } = require("../database/database");
+const { db, saveData } = require("./database/database");
 const {
     indexData,
     primeData,
@@ -11,13 +11,7 @@ const {
     countData,
     quickSortData,
     sumData
-} = require('./model/pagesModel')
-
-
-const saveData = (data) => {
-    let operationBaseRef = db.collection('Operations').doc(generateUniqueId());
-    operationBaseRef.set(data);
-};
+} = require("./model/pagesModel");
 
 
 const pageIndex = (req, res) => {
@@ -31,16 +25,16 @@ const pagePrime = (req, res) => {
     var inputNumber = parseInt(req.body.inputNumber);
     var result = "";
 
-    if(inputNumber){
+    if (inputNumber) {
         result = mathFunctions.testIfPrime(inputNumber);
 
-        saveData({
-            "operation" : "Prime",
-            "input" : inputNumber,
-            "result" : result
+        saveData('Operations', {
+            "operation": "Prime",
+            "input": inputNumber,
+            "result": result
         })
     }
-    
+
     data = primeData(inputNumber, result);
 
     res.render('prime', data);
@@ -52,13 +46,13 @@ const pageFibonacci = (req, res) => {
     var inputNumber = parseInt(req.body.inputNumber);
     var result = "";
 
-    if(inputNumber){
+    if (inputNumber) {
         result = mathFunctions.getFibonacciElement(inputNumber);
-        
-        saveData({
-            "operation" : "Fibonacci",
-            "input" : inputNumber,
-            "result" : result
+
+        saveData('Operations', {
+            "operation": "Fibonacci",
+            "input": inputNumber,
+            "result": result
         })
     }
 
@@ -78,17 +72,17 @@ const pageGcd = (req, res) => {
     if (both || (firstNumber === 0 && secondNumber == 1) || (firstNumber === 1 && secondNumber == 0)) {
         result = mathFunctions.getGcd(firstNumber, secondNumber);
 
-        saveData({
-            "operation" : "Greatest Common Divisor",
-            "input" : [firstNumber, secondNumber],
-            "result" : result
+        saveData('Operations', {
+            "operation": "Greatest Common Divisor",
+            "input": [firstNumber, secondNumber],
+            "result": result
         })
     }
     else if (firstNumber === 0 && secondNumber === 0) {
         result = "Invalid numbers. They cannot be both 0";
     }
     else if (Number.isNaN(firstNumber) && Number.isNaN(secondNumber)) {
-        result = ""; 
+        result = "";
     }
     else {
         result = "Insert both numbers";
@@ -105,13 +99,13 @@ const pageCount = (req, res) => {
     var inputNumber = parseInt(req.body.inputNumber);
     var result = "";
 
-    if(inputNumber){
+    if (inputNumber) {
         result = mathFunctions.getCount(inputNumber);
 
-        saveData({
-            "operation" : "Count",
-            "input" : inputNumber,
-            "result" : result
+        saveData('Operations', {
+            "operation": "Count",
+            "input": inputNumber,
+            "result": result
         })
     }
 
@@ -132,11 +126,11 @@ const pageQuickSort = (req, res) => {
 
         if (arrayValidator.numericArrayValidator(processmentArray)) {
             result = "Your 'Quick Sorted' array is: " + formatArray.arrayToString(mathFunctions.getQuickSortedArray(processmentArray));
-            
-            saveData({
-                "operation" : "Quick Sort",
-                "input" : processmentArray,
-                "result" : result
+
+            saveData('Operations', {
+                "operation": "Quick Sort",
+                "input": processmentArray,
+                "result": result
             })
         }
         else {
@@ -162,10 +156,10 @@ const pageSum = (req, res) => {
         if (arrayValidator.numericArrayValidator(processmentArray)) {
             var result = "The sum is " + mathFunctions.getSumOfNumbers(processmentArray);
 
-            saveData({
-                "operation" : "Sum",
-                "input" : inputArray,
-                "result" : result
+            saveData('Operations', {
+                "operation": "Sum",
+                "input": inputArray,
+                "result": result
             })
         }
         else {

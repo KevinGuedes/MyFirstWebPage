@@ -14,8 +14,15 @@ firebase.initializeApp(firebaseConfig);
 
 db = firebase.firestore();
 
+const saveData = (collectionName, data) => {
+    let operationBaseRef = db.collection(collectionName).doc(generateUniqueId());
+    operationBaseRef.set(data);
+};
+
+
 module.exports = {
-    db
+    db,
+    saveData
 }
 
 
