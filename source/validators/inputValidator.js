@@ -3,6 +3,7 @@ const {
     firstGcdInputMessages,
     secondGcdInputMessages
 } = require("../model/inputValidatorModel");
+const { numericArrayValidator } = require("./arrayValidator");
 
 
 const numberIsNotZero = (number, message) => {
@@ -106,9 +107,20 @@ const gcdInputValidator = (firstInput, secondInput) => {
 }
 
 
+const quickSortValidator = (input) => {
+    numericArrayValidator(input);
+}
+
+const sumValidator = (input) => {
+    numericArrayValidator(input);
+}
+
+
 module.exports = {
     primeInputValidator,
     fibonacciInputValidator,
     countInputValidator,
-    gcdInputValidator
+    gcdInputValidator,
+    quickSortValidator,
+    sumValidator
 }

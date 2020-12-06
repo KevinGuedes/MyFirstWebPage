@@ -1,8 +1,19 @@
 const numericArrayValidator = (arr) => {
-    return Array.isArray(arr) && 
-        arr.length && 
-        arr.every(function (element) { return typeof element === 'number'}) && 
-        !arr.includes(NaN);
+    if (Array.isArray(input) &&
+        input.length &&
+        input.every(function (element) { return typeof element === 'number' }) &&
+        !input.includes(NaN)) {
+        return {
+            isValidInput: true,
+            message: "Correct input"
+        }
+    }
+    else {
+        return {
+            isValidInput: false,
+            message: "Please, verify your array"
+        }
+    }
 };
 
 
