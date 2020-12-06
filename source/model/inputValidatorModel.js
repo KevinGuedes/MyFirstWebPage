@@ -1,8 +1,8 @@
 const commonMessages = {
     numberGreaterThanZero: "Insert numbers greater than zero",
     integerNumber: "Insert integer numbers",
-    validNumber: "Insert numbers only",
-    equalToZero: "The number cannot be zero"
+    isNumber: "Insert numbers only",
+    numberIsNotZero: "The number cannot be zero"
 }
 
 const gcdInputMessages = (inputName) => {
