@@ -1,11 +1,21 @@
-const { 
+const {
     commonMessages,
     firstGcdInputMessages,
     secondGcdInputMessages
 } = require("../model/inputValidatorModel");
 
-const numberGreaterThanZero = (number, message) => {
-    if (number < 0) {
+
+const numberIsNotZero = (number, message) => {
+    if (number === 0) { //Não aceita zero
+        throw {
+            isValidInput: false,
+            message: message
+        }
+    }
+}
+
+const positiveNumberOrZero = (number, message) => {
+    if (number < 0) { //Aceita 0
         throw {
             isValidInput: false,
             message: message
@@ -32,11 +42,20 @@ const validNumber = (number, message) => {
 }
 
 
-const basicValidation = (number, messages) => {
+
+
+
+
+const basicValidation = (number, messages, notZero = false) => {
     try {
-        numberGreaterThanZero(number, messages.numberGreaterThanZero);
         integerNumber(number, messages.integerNumber);
         validNumber(number, messages.validNumber);
+        positiveNumberOrZero(number, messages.numberGreaterThanZero);
+
+        if (notZero) {
+            numberIsNotZero(number, messages.equalToZero);
+        }
+
     }
     catch (exception) {
         return exception;
@@ -49,28 +68,40 @@ const basicValidation = (number, messages) => {
 }
 
 const primeInputValidator = (input) => {
-    return basicValidation(input, commonMessages);
+    return basicValidation(input, commonMessages, false);
 };
 
 
 const fibonacciInputValidator = (input) => {
-    return basicValidation(input, commonMessages);
+    return basicValidation(input, commonMessages, true);
 };
 
 
 const countInputValidator = (input) => {
-    return basicValidation(input, commonMessages);
+    return basicValidation(input, commonMessages, true);
 };
 
 const gcdInputValidator = (firstInput, secondInput) => {
-    let firstInputValidation = basicValidation(firstInput, firstGcdInputMessages);
-    if(!firstInputValidation.isValidInput) {
+    let firstInputValidation = basicValidation(firstInput, firstGcdInputMessages, false);
+    if (!firstInputValidation.isValidInput) {
         return firstInputValidation;
     }
 
-    let secondInputValidation = basicValidation(secondInput, secondGcdInputMessages);
-    if(!secondInputValidation.isValidInput) {
+    let secondInputValidation = basicValidation(secondInput, secondGcdInputMessages, false);
+    if (!secondInputValidation.isValidInput) {
         return secondInputValidation;
+    }
+
+    if (firstInput === 0 && secondInput === 0) {
+        return {
+            isValidInput: false,
+            message: "The numbers cannot be both zero"
+        }
+    }
+
+    return {
+        isValidInput: true,
+        message: "Correct input"
     }
 }
 
