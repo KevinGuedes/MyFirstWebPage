@@ -9,7 +9,7 @@ const numericArrayValidator = (arr) => {
         }
     }
     else {
-        return {
+        throw {
             isValidInput: false,
             message: "Please, verify your array"
         }

@@ -10,7 +10,7 @@ const {
     positiveNumberOrZero,
     integerNumber,
     isNumber
-} = require ("./numberValidator")
+} = require("./numberValidator")
 
 
 const basicValidation = (number, messages, notZero = false) => {
@@ -74,11 +74,21 @@ const gcdInputValidator = (firstInput, secondInput) => {
 
 
 const quickSortValidator = (input) => {
-    numericArrayValidator(input);
+    try {
+        numericArrayValidator(input);
+    }
+    catch (exception) {
+        return exception;
+    }
 }
 
 const sumValidator = (input) => {
-    numericArrayValidator(input);
+    try {
+        numericArrayValidator(input);
+    }
+    catch (exception) {
+        return exception;
+    }
 }
 
 
