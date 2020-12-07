@@ -1,7 +1,6 @@
 const mathFunctions = require("./utils/mathFunctions");
 const formatArray = require("./utils/formatArray");
 const arrayValidator = require("./validators/arrayValidator");
-const { generateUniqueId } = require("./utils/uniqueIdGenerator");
 const { db, saveData } = require("./database/database");
 const {
     indexData,

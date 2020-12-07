@@ -1,4 +1,5 @@
 const firebase = require('firebase');
+const { generateUniqueId } = require("../utils/uniqueIdGenerator");
 
 const firebaseConfig = {
     apiKey: "AIzaSyDx2oN2zHZPSoglCpHsG8JNk32w_Zfk9vw",
