@@ -34,9 +34,28 @@ const isNumber = (number, message) => {
     }
 }
 
+const basicValidation = (number, messages, notZero = false) => {
+    try {
+        integerNumber(number, messages.integerNumber);
+        isNumber(number, messages.isNumber);
+        positiveNumberOrZero(number, messages.numberGreaterThanZero);
+
+        if (notZero) {
+            numberIsNotZero(number, messages.numberIsNotZero);
+        }
+
+    }
+    catch (exception) {
+        return exception;
+    }
+
+    return {
+        isValidInput: true,
+        message: "Correct input"
+    }
+}
+
+
 module.exports = {
-    numberIsNotZero,
-    positiveNumberOrZero,
-    integerNumber,
-    isNumber
+    basicValidation
 }

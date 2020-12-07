@@ -1,38 +1,11 @@
+const { arrayValidator } = require("./arrayValidator");
+const { basicValidation } = require("./numberValidator");
 const {
     commonMessages,
     firstGcdInputMessages,
     secondGcdInputMessages
 } = require("../model/inputValidatorModel");
-const { numericArrayValidator } = require("./arrayValidator");
 
-const {
-    numberIsNotZero,
-    positiveNumberOrZero,
-    integerNumber,
-    isNumber
-} = require("./numberValidator")
-
-
-const basicValidation = (number, messages, notZero = false) => {
-    try {
-        integerNumber(number, messages.integerNumber);
-        isNumber(number, messages.isNumber);
-        positiveNumberOrZero(number, messages.numberGreaterThanZero);
-
-        if (notZero) {
-            numberIsNotZero(number, messages.numberIsNotZero);
-        }
-
-    }
-    catch (exception) {
-        return exception;
-    }
-
-    return {
-        isValidInput: true,
-        message: "Correct input"
-    }
-}
 
 const primeInputValidator = (input) => {
     return basicValidation(input, commonMessages, false);
@@ -70,26 +43,15 @@ const gcdInputValidator = (firstInput, secondInput) => {
         isValidInput: true,
         message: "Correct input"
     }
-}
-
+};
 
 const quickSortValidator = (input) => {
-    try {
-        numericArrayValidator(input);
-    }
-    catch (exception) {
-        return exception;
-    }
-}
+    return arrayValidator(input);
+};
 
 const sumValidator = (input) => {
-    try {
-        numericArrayValidator(input);
-    }
-    catch (exception) {
-        return exception;
-    }
-}
+    return arrayValidator(input);
+};
 
 
 module.exports = {
