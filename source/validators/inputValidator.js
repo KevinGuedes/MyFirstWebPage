@@ -21,6 +21,7 @@ const countInputValidator = (input) => {
     return basicValidation(input, commonMessages, true);
 };
 
+
 const gcdInputValidator = (firstInput, secondInput) => {
     let firstInputValidation = basicValidation(firstInput, firstGcdInputMessages, false);
     if (!firstInputValidation.isValidInput) {
@@ -45,9 +46,11 @@ const gcdInputValidator = (firstInput, secondInput) => {
     }
 };
 
+
 const quickSortValidator = (input) => {
     return arrayValidator(input);
 };
+
 
 const sumValidator = (input) => {
     return arrayValidator(input);
