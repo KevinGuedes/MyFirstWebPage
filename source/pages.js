@@ -11,6 +11,14 @@ const {
     quickSortData,
     sumData
 } = require("./model/pagesModel");
+const {
+    primeInputValidator,
+    fibonacciInputValidator,
+    countInputValidator,
+    gcdInputValidator,
+    quickSortValidator,
+    sumValidator
+} = require("./validators/inputValidator")
 
 
 const pageIndex = (req, res) => {
@@ -21,20 +29,18 @@ const pageIndex = (req, res) => {
 
 const pagePrime = (req, res) => {
 
-    var inputNumber = parseInt(req.body.inputNumber);
-    var result = "";
+    let validatorResult = primeInputValidator((parseInt(req.body.inputNumber)))
 
-    if (inputNumber) {
+    if (validatorResult.isValidInput) {
         result = mathFunctions.testIfPrime(inputNumber);
-
-        saveData('Operations', {
-            "operation": "Prime",
-            "input": inputNumber,
-            "result": result
-        })
+        saveData('Operations', "Prime", inputNumber, result);
+    }
+    else {
+        result = validatorResult.message
+        saveData('Errors', "Prime", inputNumber, result);
     }
 
-    data = primeData(inputNumber, result);
+    data = primeData(req.body.inputNumber, result);
 
     res.render('prime', data);
 };

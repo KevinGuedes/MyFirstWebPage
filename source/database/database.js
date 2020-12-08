@@ -15,7 +15,12 @@ firebase.initializeApp(firebaseConfig);
 
 db = firebase.firestore();
 
-const saveData = (collectionName, data) => {
+const saveData = (collectionName, operationName, input, result) => {
+    let data = {
+        "operation": operationName,
+        "input": input,
+        "result": result
+    }
     let operationBaseRef = db.collection(collectionName).doc(generateUniqueId());
     operationBaseRef.set(data);
 };
