@@ -15,7 +15,7 @@ firebase.initializeApp(firebaseConfig);
 
 db = firebase.firestore();
 
-const saveData = (collectionName, operationName, input, result) => {
+const save = (collectionName, operationName, input, result) => {
     let data = {
         "operation": operationName,
         "input": input,
@@ -28,7 +28,7 @@ const saveData = (collectionName, operationName, input, result) => {
 
 module.exports = {
     db,
-    saveData
+    save
 }
 
 

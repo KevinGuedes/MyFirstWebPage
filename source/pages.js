@@ -1,7 +1,7 @@
 const mathFunctions = require("./utils/mathFunctions");
 const formatArray = require("./utils/formatArray");
 const arrayValidator = require("./validators/arrayValidator");
-const { db, saveData } = require("./database/database");
+const { db, save } = require("./database/database");
 const {
     indexData,
     primeData,
@@ -30,14 +30,15 @@ const pageIndex = (req, res) => {
 const pagePrime = (req, res) => {
 
     let validatorResult = primeInputValidator((parseInt(req.body.inputNumber)))
+    let result;
 
     if (validatorResult.isValidInput) {
-        result = mathFunctions.testIfPrime(inputNumber);
-        saveData('Operations', "Prime", inputNumber, result);
+        result = mathFunctions.testIfPrime(parseInt(req.body.inputNumber));
+        save('Operations', "Prime", inputNumber, result);
     }
     else {
         result = validatorResult.message
-        saveData('Errors', "Prime", inputNumber, result);
+        save('Errors', "Prime", inputNumber, result);
     }
 
     data = primeData(req.body.inputNumber, result);
@@ -48,20 +49,19 @@ const pagePrime = (req, res) => {
 
 const pageFibonacci = (req, res) => {
 
-    var inputNumber = parseInt(req.body.inputNumber);
-    var result = "";
+    let validatorResult = fibonacciInputValidator((parseInt(req.body.inputNumber)))
+    let result;
 
-    if (inputNumber) {
-        result = mathFunctions.getFibonacciElement(inputNumber);
-
-        saveData('Operations', {
-            "operation": "Fibonacci",
-            "input": inputNumber,
-            "result": result
-        })
+    if (validatorResult.isValidInput) {
+        result = mathFunctions.getFibonacciElement(parseInt(req.body.inputNumber));
+        save('Operations', "Fibonacci", inputNumber, result);
     }
-
-    data = fibonacciData(indexData, result);
+    else {
+        result = validatorResult.message
+        save('Errors', "Fibonacci", inputNumber, result);
+    }
+    
+    data = fibonacciData(req.body.inputNumber, result);
 
     res.render('fibonacci', data);
 };
@@ -77,7 +77,7 @@ const pageGcd = (req, res) => {
     if (both || (firstNumber === 0 && secondNumber == 1) || (firstNumber === 1 && secondNumber == 0)) {
         result = mathFunctions.getGcd(firstNumber, secondNumber);
 
-        saveData('Operations', {
+        save('Operations', {
             "operation": "Greatest Common Divisor",
             "input": [firstNumber, secondNumber],
             "result": result
@@ -107,7 +107,7 @@ const pageCount = (req, res) => {
     if (inputNumber) {
         result = mathFunctions.getCount(inputNumber);
 
-        saveData('Operations', {
+        save('Operations', {
             "operation": "Count",
             "input": inputNumber,
             "result": result
@@ -132,7 +132,7 @@ const pageQuickSort = (req, res) => {
         if (arrayValidator.numericArrayValidator(processmentArray)) {
             result = "Your 'Quick Sorted' array is: " + formatArray.arrayToString(mathFunctions.getQuickSortedArray(processmentArray));
 
-            saveData('Operations', {
+            save('Operations', {
                 "operation": "Quick Sort",
                 "input": processmentArray,
                 "result": result
@@ -161,7 +161,7 @@ const pageSum = (req, res) => {
         if (arrayValidator.numericArrayValidator(processmentArray)) {
             var result = "The sum is " + mathFunctions.getSumOfNumbers(processmentArray);
 
-            saveData('Operations', {
+            save('Operations', {
                 "operation": "Sum",
                 "input": inputArray,
                 "result": result
