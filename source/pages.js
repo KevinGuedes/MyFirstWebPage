@@ -1,6 +1,6 @@
 const mathFunctions = require("./utils/mathFunctions");
 const formatArray = require("./utils/formatArray");
-const arrayValidator = require("./utils/arrayValidator");
+const arrayValidator = require("./validators/arrayValidator");
 const { saveOperation } = require("../database/database");
 const {
     indexData,
@@ -100,17 +100,16 @@ const pageQuickSort = (req, res) => {
     var result = "";
 
     if (inputArray) {
-
-        processmentArray = formatArray.stringToArray(inputArray);
-
-        if (arrayValidator.numericArrayValidator(processmentArray)) {
+        try {
+            let processmentArray = formatArray.stringToArray(inputArray);
+            arrayValidator.numericArrayValidator(processmentArray);
             result = "Your 'Quick Sorted' array is: " + formatArray.arrayToString(mathFunctions.getQuickSortedArray(processmentArray));
             saveOperation("Quick Sort", processmentArray, result);
         }
-        else {
-            result = "Please verify your array";
+        catch (exception) {
+            result = exception.message;
         }
-    };
+    }
 
     data = quickSortData(inputArray, result);
 
@@ -122,20 +121,18 @@ const pageSum = (req, res) => {
 
     var inputArray = req.body.inputArray;
     var result = "";
-
+    
     if (inputArray) {
-
-        var processmentArray = formatArray.stringToArray(inputArray);
-
-        if (arrayValidator.numericArrayValidator(processmentArray)) {
-            var result = "The sum is " + mathFunctions.getSumOfNumbers(processmentArray);
+        try {
+            let processmentArray = formatArray.stringToArray(inputArray);
+            arrayValidator.numericArrayValidator(processmentArray);
+            result = "The sum is: " + mathFunctions.getSumOfNumbers(processmentArray);
             saveOperation("Sum", processmentArray, result);
         }
-        else {
-            result = "Please verify your array";
+        catch (exception) {
+            result = exception.message;
         }
-
-    };
+    }
 
     const data = sumData(inputArray, result);
 
