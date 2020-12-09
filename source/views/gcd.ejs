@@ -1,16 +1,16 @@
 <%- contentFor('inputField') %>
 <label for="first-number">Insert a number</label>
 <% if(firstNumber || firstNumber == 0){ %>
-    <input id="first-number" class="input-number" type="number" name="firstNumber" value="<%= firstNumber %>" min="0" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Number greater or equal to 0'" placeholder="Number greater or equal to 0" pattern="^[\d.,]+$" required>    
+    <input id="first-number" class="input-number" type="number" name="firstNumber" value="<%= firstNumber %>" min="0" step="1" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Number greater or equal to 0'" placeholder="Number greater or equal to 0" pattern="^[\d.,]+$" required>    
 <% } else { %>
-    <input id="first-number" class="input-number" type="number" name="firstNumber" min="0" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Number greater or equal to 0'" placeholder="Number greater or equal to 0" pattern="^[\d.,]+$" required>  
+    <input id="first-number" class="input-number" type="number" name="firstNumber" min="0" step="1" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Number greater or equal to 0'" placeholder="Number greater or equal to 0" pattern="^[\d.,]+$" required>  
 <% } %>
 
 <label for="second-number">Insert another number</label>
 <% if(secondNumber || secondNumber == 0){ %>
-    <input id="second-number" class="input-number" type="number" name="secondNumber" value ="<%= secondNumber %>" min="0" onfocus="this.placeholder = ''"
+    <input id="second-number" class="input-number" type="number" name="secondNumber" value ="<%= secondNumber %>" min="0" step="1" onfocus="this.placeholder = ''"
     onblur="this.placeholder = 'Number greater or equal to 0'" placeholder="Number greater or equal to 0" pattern="^[\d.,]+$" required>
 <% } else { %>
-    <input id="second-number" class="input-number" type="number" name="secondNumber" min="0" onfocus="this.placeholder = ''"
+    <input id="second-number" class="input-number" type="number" name="secondNumber" min="0" step="1" onfocus="this.placeholder = ''"
     onblur="this.placeholder = 'Number greater or equal to 0'" placeholder="Number greater or equal to 0" pattern="^[\d.,]+$" required>
 <% } %> 

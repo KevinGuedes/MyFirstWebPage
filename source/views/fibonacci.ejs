@@ -1,10 +1,8 @@
 <%- contentFor('inputField') %>
 <label for="element-number">Insert a number</label>
 <% if(inputNumber){ %>
-<input id="element-number" class="input-number" type="number" name="inputNumber" value="<%= inputNumber%>" min="1"
-    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Number greater than 0'"
+    <input id="element-number" class="input-number" type="number" name="inputNumber" value="<%= inputNumber%>" min="1" step="1" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Number greater than 0'"
     placeholder="Number greater than 0" pattern="^[\d.,]+$" required>
 <% } else { %>
-<input id="element-number" class="input-number" type="number" name="inputNumber" min="1" onfocus="this.placeholder = ''"
-    onblur="this.placeholder = 'Number greater than 0'" placeholder="Number greater than 0" pattern="^[\d.,]+$" required>
+    <input id="element-number" step="1" class="input-number" type="number" name="inputNumber" min="1" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Number greater than 0'" placeholder="Number greater than 0" pattern="^[\d.,]+$" required>
 <% } %>
