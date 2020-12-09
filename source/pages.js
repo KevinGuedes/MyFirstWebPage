@@ -29,16 +29,17 @@ const pageIndex = (req, res) => {
 
 const pagePrime = (req, res) => {
 
-    let validatorResult = primeInputValidator((parseInt(req.body.inputNumber)))
+    let inputNumber = req.body.inputNumber;
+    let validatorResult = primeInputValidator((parseInt(inputNumber)))
     let result;
 
     if (validatorResult.isValidInput) {
-        result = mathFunctions.testIfPrime(parseInt(req.body.inputNumber));
+        result = mathFunctions.testIfPrime(parseInt(inputNumber));
         save('Operations', "Prime", inputNumber, result);
     }
     else {
         result = validatorResult.message
-        save('Errors', "Prime", inputNumber, result);
+        //save('Errors', "Prime", inputNumber, result);
     }
 
     data = primeData(req.body.inputNumber, result);
@@ -49,18 +50,22 @@ const pagePrime = (req, res) => {
 
 const pageFibonacci = (req, res) => {
 
-    let validatorResult = fibonacciInputValidator((parseInt(req.body.inputNumber)))
+    let inputNumber = "undefined";
+    let validatorResult = fibonacciInputValidator((parseInt(inputNumber)))
     let result;
 
     if (validatorResult.isValidInput) {
-        result = mathFunctions.getFibonacciElement(parseInt(req.body.inputNumber));
+        result = mathFunctions.getFibonacciElement(parseInt(inputNumber));
         save('Operations', "Fibonacci", inputNumber, result);
     }
-    else {
-        result = validatorResult.message
-        save('Errors', "Fibonacci", inputNumber, result);
+    else if (!validatorResult.isValidInput && inputNumber == undefined){
+        result = "";
     }
-    
+    else {
+        result = validatorResult.message;
+        //save('Errors', "Fibonacci", inputNumber, validatorResult.message);
+    }
+
     data = fibonacciData(req.body.inputNumber, result);
 
     res.render('fibonacci', data);
@@ -99,19 +104,20 @@ const pageGcd = (req, res) => {
 };
 
 
+
 const pageCount = (req, res) => {
+    let inputNumber = req.body.inputNumber;
+    let validatorResult = countInputValidator((parseInt(inputNumber)))
+    let result;
 
-    var inputNumber = parseInt(req.body.inputNumber);
-    var result = "";
-
-    if (inputNumber) {
-        result = mathFunctions.getCount(inputNumber);
-
-        save('Operations', {
-            "operation": "Count",
-            "input": inputNumber,
-            "result": result
-        })
+    if (validatorResult.isValidInput) {
+        
+        result = mathFunctions.getCount(parseInt(inputNumber));
+        save('Operations', "Count", inputNumber, result);
+    }
+    else {
+        result = validatorResult.message;
+        //saver('Errors', "Count", inputNumber, result);
     }
 
     const data = countData(inputNumber, result);
