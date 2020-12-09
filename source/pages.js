@@ -2,6 +2,7 @@ const mathFunctions = require("./utils/mathFunctions");
 const formatArray = require("./utils/formatArray");
 const arrayValidator = require("./validators/arrayValidator");
 const { saveOperation } = require("../database/database");
+const gcdValidator = require("./validators/gcdValidator");
 const {
     indexData,
     primeData,
@@ -55,22 +56,18 @@ const pageGcd = (req, res) => {
 
     var firstNumber = parseInt(req.body.firstNumber);
     var secondNumber = parseInt(req.body.secondNumber);
-    var result;
-    var both = firstNumber && secondNumber;
+    var result = "";
 
-    if (both || (firstNumber === 0 && secondNumber == 1) || (firstNumber === 1 && secondNumber == 0)) {
+   
+    try {
+        gcdValidator.gcdInputValidator(firstNumber, secondNumber);
         result = mathFunctions.getGcd(firstNumber, secondNumber);
         saveOperation("Greatest Common Divisor", [firstNumber, secondNumber], result);
     }
-    else if (firstNumber === 0 && secondNumber === 0) {
-        result = "Invalid numbers. They cannot be both 0";
+    catch (exception) {
+        result = exception.message;
     }
-    else if (Number.isNaN(firstNumber) && Number.isNaN(secondNumber)) {
-        result = "";
-    }
-    else {
-        result = "Insert both numbers";
-    };
+    
 
     const data = gcdData(firstNumber, secondNumber, result);
 
@@ -121,7 +118,7 @@ const pageSum = (req, res) => {
 
     var inputArray = req.body.inputArray;
     var result = "";
-    
+
     if (inputArray) {
         try {
             let processmentArray = formatArray.stringToArray(inputArray);
