@@ -1,7 +1,8 @@
 const mathFunctions = require("./utils/mathFunctions");
 const formatArray = require("./utils/formatArray");
-const arrayValidator = require("./utils/arrayValidator");
+const arrayValidator = require("./validators/arrayValidator");
 const { saveOperation } = require("../database/database");
+const gcdValidator = require("./validators/gcdValidator");
 const {
     indexData,
     primeData,
@@ -55,22 +56,18 @@ const pageGcd = (req, res) => {
 
     var firstNumber = parseInt(req.body.firstNumber);
     var secondNumber = parseInt(req.body.secondNumber);
-    var result;
-    var both = firstNumber && secondNumber;
+    var result = "";
 
-    if (both || (firstNumber === 0 && secondNumber == 1) || (firstNumber === 1 && secondNumber == 0)) {
+   
+    try {
+        gcdValidator.gcdInputValidator(firstNumber, secondNumber);
         result = mathFunctions.getGcd(firstNumber, secondNumber);
         saveOperation("Greatest Common Divisor", [firstNumber, secondNumber], result);
     }
-    else if (firstNumber === 0 && secondNumber === 0) {
-        result = "Invalid numbers. They cannot be both 0";
+    catch (exception) {
+        result = exception.message;
     }
-    else if (Number.isNaN(firstNumber) && Number.isNaN(secondNumber)) {
-        result = "";
-    }
-    else {
-        result = "Insert both numbers";
-    };
+    
 
     const data = gcdData(firstNumber, secondNumber, result);
 
@@ -100,17 +97,16 @@ const pageQuickSort = (req, res) => {
     var result = "";
 
     if (inputArray) {
-
-        processmentArray = formatArray.stringToArray(inputArray);
-
-        if (arrayValidator.numericArrayValidator(processmentArray)) {
+        try {
+            let processmentArray = formatArray.stringToArray(inputArray);
+            arrayValidator.numericArrayValidator(processmentArray);
             result = "Your 'Quick Sorted' array is: " + formatArray.arrayToString(mathFunctions.getQuickSortedArray(processmentArray));
             saveOperation("Quick Sort", processmentArray, result);
         }
-        else {
-            result = "Please verify your array";
+        catch (exception) {
+            result = exception.message;
         }
-    };
+    }
 
     data = quickSortData(inputArray, result);
 
@@ -124,18 +120,16 @@ const pageSum = (req, res) => {
     var result = "";
 
     if (inputArray) {
-
-        var processmentArray = formatArray.stringToArray(inputArray);
-
-        if (arrayValidator.numericArrayValidator(processmentArray)) {
-            var result = "The sum is " + mathFunctions.getSumOfNumbers(processmentArray);
+        try {
+            let processmentArray = formatArray.stringToArray(inputArray);
+            arrayValidator.numericArrayValidator(processmentArray);
+            result = "The sum is: " + mathFunctions.getSumOfNumbers(processmentArray);
             saveOperation("Sum", processmentArray, result);
         }
-        else {
-            result = "Please verify your array";
+        catch (exception) {
+            result = exception.message;
         }
-
-    };
+    }
 
     const data = sumData(inputArray, result);
 
