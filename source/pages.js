@@ -1,8 +1,8 @@
-const mathFunctions = require("./utils/mathFunctions");
-const formatArray = require("./utils/formatArray");
-const arrayValidator = require("./validators/arrayValidator");
-const { saveOperation } = require("../database/database");
-const gcdValidator = require("./validators/gcdValidator");
+const mathFunctions = require('./utils/mathFunctions')
+const formatArray = require('./utils/formatArray')
+const arrayValidator = require('./validators/arrayValidator')
+const { saveOperation } = require('../database/database')
+const gcdValidator = require('./validators/gcdValidator')
 const {
     indexData,
     primeData,
@@ -16,128 +16,125 @@ const {
 
 const pageIndex = (req, res) => {
 
-    res.render('index', indexData);
+    res.render('index', indexData)
 }
 
 
 const pagePrime = (req, res) => {
 
-    var inputNumber = parseInt(req.body.inputNumber);
-    var result = "";
+    let inputNumber = parseInt(req.body.inputNumber)
+    let result = ''
 
     if (inputNumber) {
-        result = mathFunctions.testIfPrime(inputNumber);
-        saveOperation("Prime", inputNumber, result);
+        result = mathFunctions.testIfPrime(inputNumber)
+        saveOperation('Prime', inputNumber, result)
     }
 
-    data = primeData(inputNumber, result);
+    data = primeData(inputNumber, result)
 
-    res.render('prime', data);
-};
+    res.render('prime', data)
+}
 
 
 const pageFibonacci = (req, res) => {
 
-    var inputNumber = parseInt(req.body.inputNumber);
-    var result = "";
+    let inputNumber = parseInt(req.body.inputNumber)
+    let result = ''
 
     if (inputNumber) {
-        result = mathFunctions.getFibonacciElement(inputNumber);
-        saveOperation("Fibonacci", inputNumber, result);
+        result = mathFunctions.getFibonacciElement(inputNumber)
+        saveOperation('Fibonacci', inputNumber, result)
     }
 
-    data = fibonacciData(indexData, result);
+    data = fibonacciData(indexData, result)
 
-    res.render('fibonacci', data);
-};
+    res.render('fibonacci', data)
+}
 
 
 const pageGcd = (req, res) => {
 
-    var firstNumber = parseInt(req.body.firstNumber);
-    var secondNumber = parseInt(req.body.secondNumber);
-    var result = "";
+    let firstNumber = parseInt(req.body.firstNumber)
+    let secondNumber = parseInt(req.body.secondNumber)
+    let result = ''
 
-   
-    if(!isNaN(firstNumber) && !isNaN(secondNumber)){
+    if (!isNaN(firstNumber) && !isNaN(secondNumber)) {
         try {
-            gcdValidator.gcdInputValidator(firstNumber, secondNumber);
-            result = mathFunctions.getGcd(firstNumber, secondNumber);
-            saveOperation("Greatest Common Divisor", [firstNumber, secondNumber], result);
+            gcdValidator.gcdInputValidator(firstNumber, secondNumber)
+            result = mathFunctions.getGcd(firstNumber, secondNumber)
+            saveOperation('Greatest Common Divisor', [firstNumber, secondNumber], result)
         }
         catch (exception) {
-            result = exception.message;
+            result = exception.message
         }
     }
-    
-    
 
-    const data = gcdData(firstNumber, secondNumber, result);
+    const data = gcdData(firstNumber, secondNumber, result)
 
-    res.render('gcd', data);
-};
+    res.render('gcd', data)
+}
 
 
 const pageCount = (req, res) => {
 
-    var inputNumber = parseInt(req.body.inputNumber);
-    var result = "";
+    let inputNumber = parseInt(req.body.inputNumber)
+    let result = ''
 
     if (inputNumber) {
-        result = mathFunctions.getCount(inputNumber);
-        saveOperation("Count", inputNumber, result);
+        result = mathFunctions.getCount(inputNumber)
+        saveOperation('Count', inputNumber, result)
     }
 
-    const data = countData(inputNumber, result);
+    const data = countData(inputNumber, result)
 
-    res.render('count', data);
-};
+    res.render('count', data)
+}
 
 
 const pageQuickSort = (req, res) => {
 
-    var inputArray = req.body.inputArray;
-    var result = "";
+    let inputArray = req.body.inputArray
+    let result = ''
 
     if (inputArray) {
         try {
-            let processmentArray = formatArray.stringToArray(inputArray);
-            arrayValidator.numericArrayValidator(processmentArray);
-            result = "Your 'Quick Sorted' array is: " + formatArray.arrayToString(mathFunctions.getQuickSortedArray(processmentArray));
-            saveOperation("Quick Sort", processmentArray, result);
+            let processmentArray = formatArray.stringToArray(inputArray)
+            arrayValidator.numericArrayValidator(processmentArray)
+            result = "Your 'Quick Sorted' array is: " + formatArray.arrayToString(mathFunctions.getQuickSortedArray(processmentArray))
+            saveOperation('Quick Sort', processmentArray, result)
         }
         catch (exception) {
-            result = exception.message;
+            result = exception.message
         }
     }
 
-    data = quickSortData(inputArray, result);
+    data = quickSortData(inputArray, result)
 
-    res.render('quickSort', data);
-};
+    res.render('quickSort', data)
+}
 
 
 const pageSum = (req, res) => {
 
-    var inputArray = req.body.inputArray;
-    var result = "";
+    let inputArray = req.body.inputArray
+    let result = ''
 
     if (inputArray) {
         try {
-            let processmentArray = formatArray.stringToArray(inputArray);
-            arrayValidator.numericArrayValidator(processmentArray);
-            result = "The sum is: " + mathFunctions.getSumOfNumbers(processmentArray);
-            saveOperation("Sum", processmentArray, result);
+            let processmentArray = formatArray.stringToArray(inputArray)
+            arrayValidator.numericArrayValidator(processmentArray)
+            result = 'The sum is: ' + mathFunctions.getSumOfNumbers(processmentArray)
+            saveOperation('Sum', processmentArray, result)
         }
         catch (exception) {
-            result = exception.message;
+            result = exception.message
         }
     }
 
-    const data = sumData(inputArray, result);
+    const data = sumData(inputArray, result)
 
-    res.render('sum', data);
-};
+    res.render('sum', data)
+}
 
 
 module.exports = {
