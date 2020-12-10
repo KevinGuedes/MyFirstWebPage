@@ -21,7 +21,8 @@ const saveOperation = (operationName, input, result) => {
     let data = {
         "operation": operationName,
         "input": input,
-        "result": result
+        "result": result,
+        "Date": new Date()
     }
     operationBaseRef.set(data) 
 }
