@@ -22,8 +22,8 @@ const pageIndex = (req, res) => {
 
 const pagePrime = (req, res) => {
 
-    var inputNumber = parseInt(req.body.inputNumber);
-    var result = "";
+    let inputNumber = parseInt(req.body.inputNumber);
+    let result = "";
 
     if (inputNumber) {
         result = mathFunctions.testIfPrime(inputNumber);
@@ -38,8 +38,8 @@ const pagePrime = (req, res) => {
 
 const pageFibonacci = (req, res) => {
 
-    var inputNumber = parseInt(req.body.inputNumber);
-    var result = "";
+    let inputNumber = parseInt(req.body.inputNumber);
+    let result = "";
 
     if (inputNumber) {
         result = mathFunctions.getFibonacciElement(inputNumber);
@@ -54,9 +54,9 @@ const pageFibonacci = (req, res) => {
 
 const pageGcd = (req, res) => {
 
-    var firstNumber = parseInt(req.body.firstNumber);
-    var secondNumber = parseInt(req.body.secondNumber);
-    var result = "";
+    let firstNumber = parseInt(req.body.firstNumber);
+    let secondNumber = parseInt(req.body.secondNumber);
+    let result = "";
 
    
     if(!isNaN(firstNumber) && !isNaN(secondNumber)){
@@ -80,8 +80,8 @@ const pageGcd = (req, res) => {
 
 const pageCount = (req, res) => {
 
-    var inputNumber = parseInt(req.body.inputNumber);
-    var result = "";
+    let inputNumber = parseInt(req.body.inputNumber);
+    let result = "";
 
     if (inputNumber) {
         result = mathFunctions.getCount(inputNumber);
@@ -96,8 +96,8 @@ const pageCount = (req, res) => {
 
 const pageQuickSort = (req, res) => {
 
-    var inputArray = req.body.inputArray;
-    var result = "";
+    let inputArray = req.body.inputArray;
+    let result = "";
 
     if (inputArray) {
         try {
@@ -119,8 +119,8 @@ const pageQuickSort = (req, res) => {
 
 const pageSum = (req, res) => {
 
-    var inputArray = req.body.inputArray;
-    var result = "";
+    let inputArray = req.body.inputArray;
+    let result = "";
 
     if (inputArray) {
         try {

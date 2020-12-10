@@ -1,5 +1,5 @@
 const arrayToString = (arr) => {
-    var stringfiedArray = "";
+    let stringfiedArray = "";
    
     for (let i = 0; i < arr.length; i++) {
         if (i == arr.length - 1) {

@@ -1,7 +1,7 @@
 //Prime Number
 const testIfPrime = (number) => {
 
-    var count = 0;
+    let count = 0;
 
     if (number === 1 || number === 0) {
         return "The number " + number + " is neither a prime nor a composite number";
@@ -68,7 +68,7 @@ const getGcd = (firstNumber, secondNumber) => {
 //Count
 const getCount = (number) => {
 
-    var count = 0;
+    let count = 0;
 
     if (number <= 0) {
         return "Insert a number greanter than zero";
@@ -77,7 +77,7 @@ const getCount = (number) => {
         return "Insert an integer number";
     }
     else {
-        for (var i = 1; i <= number; i++) {
+        for (let i = 1; i <= number; i++) {
             count++;
         }
         return "There are " + count + " integer numbers between 1 and " + number + "!";
@@ -89,20 +89,20 @@ const getCount = (number) => {
 //Quicksort
 function getQuickSortedArray(inputArray) {
 
-    var arr = inputArray.slice();
+    let arr = inputArray.slice();
     
 	if (arr.length <= 1) { 
 		return arr;
     } 
     else {
 
-		var left = [];
-		var right = [];
-		var newArray = [];
-		var pivot = arr.pop();
-		var length = arr.length;
+		let left = [];
+		let right = [];
+		let newArray = [];
+		let pivot = arr.pop();
+		let length = arr.length;
 
-		for (var i = 0; i < length; i++) {
+		for (let i = 0; i < length; i++) {
 			if (arr[i] <= pivot) {
 				left.push(arr[i]);
 			} else {
@@ -117,8 +117,8 @@ function getQuickSortedArray(inputArray) {
 
 //Sum of numbers
 const getSumOfNumbers = (inputArray) => {
-    var arr = inputArray.slice();
-    var sum = 0;
+    let arr = inputArray.slice();
+    let sum = 0;
     arr.forEach(element => {
         sum += element;
     });
