@@ -59,14 +59,17 @@ const pageGcd = (req, res) => {
     var result = "";
 
    
-    try {
-        gcdValidator.gcdInputValidator(firstNumber, secondNumber);
-        result = mathFunctions.getGcd(firstNumber, secondNumber);
-        saveOperation("Greatest Common Divisor", [firstNumber, secondNumber], result);
+    if(!isNaN(firstNumber) && !isNaN(secondNumber)){
+        try {
+            gcdValidator.gcdInputValidator(firstNumber, secondNumber);
+            result = mathFunctions.getGcd(firstNumber, secondNumber);
+            saveOperation("Greatest Common Divisor", [firstNumber, secondNumber], result);
+        }
+        catch (exception) {
+            result = exception.message;
+        }
     }
-    catch (exception) {
-        result = exception.message;
-    }
+    
     
 
     const data = gcdData(firstNumber, secondNumber, result);
