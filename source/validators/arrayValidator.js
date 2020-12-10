@@ -4,10 +4,10 @@ const numericArrayValidator = (arr) => {
         arr.every(function (element) { return typeof element === 'number' }) &&
         !arr.includes(NaN))) {
         throw {
-            message: "Please verify your array"
+            message: 'Please verify your array'
         }
     }
-};
+}
 
 
 module.exports = {
