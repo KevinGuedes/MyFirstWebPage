@@ -4,7 +4,6 @@ const arrayValidator = require('./validators/arrayValidator')
 const { saveOperation } = require('../database/database')
 const gcdValidator = require('./validators/gcdValidator')
 const {
-    indexData,
     primeData,
     fibonacciData,
     gcdData,
@@ -12,12 +11,6 @@ const {
     quickSortData,
     sumData
 } = require('./model/pagesModel')
-
-
-const pageIndex = (req, res) => {
-
-    res.render('index', indexData)
-}
 
 
 const pagePrime = (req, res) => {
