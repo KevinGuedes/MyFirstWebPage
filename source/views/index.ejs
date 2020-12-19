@@ -9,32 +9,19 @@
     <div class="menu">
         <img src="/images/menu.jpg" alt="Math Symbols">
         <h1>Choose An Algorithm</h1>
-
+    
         <div class="menu-items">
-            <ol>
-                <% menu.map(item=> { %>
+           <ol>
+                <% menu.map(item => { %>
                     <br>
                     <li>
                         <a class="item" href="<%= item.href %>">
                             <%= item.method %>
                         </a>
                     </li>
-                    <% }) %>
-            </ol>
+                <% }) %>
+           </ol>
         </div>
-
-        <h1 id="database">Database</h1>
-        <div class="menu-items">
-            <ul>
-                <br>
-                <li>
-                    <a class="item" href="/operations">
-                        Check all successful operations made
-                    </a>
-                </li>
-            </ul>
-        </div>
-
         <%- include("./partials/madeby") %>
     </div>
 </body>
