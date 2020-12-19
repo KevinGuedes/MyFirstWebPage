@@ -1,35 +1,3 @@
-const indexData = {
-    layout: 'index',
-    hrefCss: '/styles/page-index.css',
-    title: "Kevin's First Web Page | Basic Algorithms",
-    menu: [
-        {
-            href: '/prime',
-            method: 'Test if a number is prime or not'
-        },
-        {
-            href: '/fibonacci',
-            method: 'Show the i-th element in a Fibonacci sequence'
-        },
-        {
-            href: '/gcd',
-            method: 'Show the greatest common divisor of two numbers'
-        },
-        {
-            href: '/count',
-            method: 'Count numbers within a range'
-        },
-        {
-            href: '/quickSort',
-            method: 'Sort an array using Quick Sort method'
-        },
-        {
-            href: '/sum',
-            method: 'Calculate the sum of numbers inside an array'
-        }
-    ]
-}
-
 const primeData = (inputNumber, result) => {
     return {
         inputNumber: inputNumber,
@@ -38,7 +6,7 @@ const primeData = (inputNumber, result) => {
         title: 'Prime Numbers',
         pageHeader: 'Check if a number is prime or not',
         formClass: 'prime-tester',
-        action: '/testIfPrime',
+        action: '/prime/testIfPrime',
         buttonText: 'Test if the number is prime',
         layout: 'layout'
     }
@@ -52,7 +20,7 @@ const fibonacciData = (inputNumber, result) => {
         title: 'Fibonacci Sequence',
         pageHeader: 'Show the i-th element in a Fibonacci sequence',
         formClass: 'fibonacci-element',
-        action: '/getFibonacciElement',
+        action: '/fibonacci/getFibonacciElement',
         buttonText: 'Get element',
         layout: 'layout'
     }
@@ -67,7 +35,7 @@ const gcdData = (firstNumber, secondNumber, result) => {
         title: 'Greatest Common Divisor',
         pageHeader: 'Greatest common divisor of two numbers',
         formClass: 'gcd',
-        action: '/getGcd',
+        action: '/gcd/getGcd',
         buttonText: 'Find greatest common divisor',
         layout: 'layout'
     }
@@ -81,7 +49,7 @@ const countData = (inputNumber, result) => {
         title: 'Count Numbers',
         pageHeader: 'Count Numbers Within A Range',
         formClass: 'count',
-        action: '/getCount',
+        action: '/count/getCount',
         buttonText: 'Get count',
         layout: 'layout'
     }
@@ -95,7 +63,7 @@ const quickSortData = (inputArray, result) => {
         title: 'Quick Sort',
         pageHeader: 'Sort an array using Quick Sort method',
         formClass: 'quickSort',
-        action: '/getQuickSortedArray',
+        action: '/quickSort/getQuickSortedArray',
         buttonText: 'Sort the array',
         layout: 'layout'
     }
@@ -109,15 +77,13 @@ const sumData = (inputArray, result) => {
         title: 'Sum',
         pageHeader: 'Calculate the sum of numbers inside an array',
         formClass: 'sum',
-        action: '/getSum',
+        action: '/sum/getSum',
         buttonText: 'Get sum of numbers',
         layout: 'layout'
     }
-
 }
 
 module.exports = {
-    indexData,
     primeData,
     fibonacciData,
     gcdData,
