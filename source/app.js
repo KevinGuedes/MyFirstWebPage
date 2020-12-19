@@ -4,9 +4,7 @@ const bodyParser = require('body-parser')
 const expressLayout = require('express-ejs-layouts')
 const server = express()
 const port = process.env.PORT || 5000
-const {
-    router
-} = require('./routes/routes')
+const { router } = require('./routes/routes')
 const {
     pagePrime,
     pageGcd,
