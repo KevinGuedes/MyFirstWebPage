@@ -1,10 +1,4 @@
-const primeData = (inputNumber, result, empty = false) => {
-
-    if(empty){
-        inputNumber = ""
-        result = ""
-    }
-
+const primeData = (inputNumber, result) => {
     return {
         inputNumber: inputNumber,
         result: result,
@@ -18,13 +12,7 @@ const primeData = (inputNumber, result, empty = false) => {
     }
 }
 
-const fibonacciData = (inputNumber, result, empty = false) => {
-
-    if(empty){
-        inputNumber = ""
-        result = ""
-    }
-
+const fibonacciData = (inputNumber, result) => {
     return {
         inputNumber: inputNumber,
         result: result,
@@ -39,13 +27,6 @@ const fibonacciData = (inputNumber, result, empty = false) => {
 }
 
 const gcdData = (firstNumber, secondNumber, result) => {
-    
-    if(empty){
-        firstNumber = ""
-        secondNumber = ""
-        result = ""
-    }
-
     return {
         firstNumber: !Number.isNaN(firstNumber) ? firstNumber : '',
         secondNumber: !Number.isNaN(secondNumber) ? secondNumber : '',
@@ -60,13 +41,7 @@ const gcdData = (firstNumber, secondNumber, result) => {
     }
 }
 
-const countData = (inputNumber, result, empty = false) => {
-    
-    if(empty){
-        inputNumber = ""
-        result = ""
-    }
-
+const countData = (inputNumber, result) => {
     return {
         inputNumber: inputNumber,
         result: result,
@@ -80,13 +55,7 @@ const countData = (inputNumber, result, empty = false) => {
     }
 }
 
-const quickSortData = (inputArray, result, empty = false) => {
-    
-    if(empty){
-        inputArray = ""
-        result = ""
-    }
-
+const quickSortData = (inputArray, result) => {
     return {
         inputArray: inputArray,
         result: result,
@@ -100,13 +69,7 @@ const quickSortData = (inputArray, result, empty = false) => {
     }
 }
 
-const sumData = (inputArray, result, empty = false) => {
-
-    if(empty){
-        inputArray = ""
-        result = ""
-    }
-
+const sumData = (inputArray, result) => {
     return {
         inputArray: inputArray,
         result: result,

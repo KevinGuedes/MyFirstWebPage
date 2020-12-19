@@ -39,7 +39,7 @@ const pageFibonacci = (req, res) => {
         saveOperation('Fibonacci', inputNumber, result)
     }
 
-    data = fibonacciData(indexData, result)
+    data = fibonacciData(inputNumber, result)
 
     res.render('fibonacci', data)
 }
@@ -131,7 +131,6 @@ const pageSum = (req, res) => {
 
 
 module.exports = {
-    pageIndex,
     pagePrime,
     pageFibonacci,
     pageGcd,
