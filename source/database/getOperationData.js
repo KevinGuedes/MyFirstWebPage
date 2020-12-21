@@ -1,39 +1,49 @@
 const { FireSQL } = require('firesql')
 const { db } = require('./database')
+const { operationMapper } = require('../mapper/operationMapper')
 const fireSQL = new FireSQL(db)
 
-const getOperationData = (operationName) => {
+const getOperationData = () => {
 
-    let operationData = new Array();
+    try {
+        const operationPromise = fireSQL.query
+            (`
+                SELECT *
+                FROM Operations
+                ORDER BY Date DESC
+            `)
 
-    const operationPromise = fireSQL.query(`
-        SELECT *
-        FROM Operations
-        WHERE operation = '${operationName}'
-        ORDER BY Date DESC
-    `)
+        return operationPromise.then(operations => {
 
-    operationPromise.then(operations => {
-        for (let operation of operations) {
-            // operationData.push(1)
-            console.log(
-                `${new Date(operation.Date)}: ${operation.operation} - Input: ${operation.input}  - Result: ${operation.result}`
-            )
-            operationData.push({
-                date: new Date(operation.Date),
-                input: operation.input,
-                result: operation.result,
-                operation: operation.operation
-            })
-        }
-        return operationData;
-    })
+            let data = {
+                'prime': [],
+                'fibonacci': [],
+                'gcd': [],
+                'count': [],
+                'quickSort': [],
+                'sum': []
+            }
 
-    
+            for (let operation of operations) {
+                operation = operationMapper(operation)
+                let operationName = (operation.operationName).toLowerCase() 
+                if(data.hasOwnProperty(operationName))
+                    data[operationName].push(operation)
+            }
+
+            return data
+        })
+    }
+    catch (error) {
+        console.log(error)
+    }
+}
+
+
+module.exports = {
+    getOperationData
 }
 
 
 
-let teste = getOperationData('Prime')
 
-console.log(teste)
