@@ -1,8 +1,8 @@
 const operationMapper = (operation) => {
     return data = {
-        date: new Date(operation.Date).toLocaleDateString(),
+        date: new Date(operation.date).toLocaleDateString(),
         input: operation.input,
-        name: operation.operation
+        name: operation.name
     }
 }
 

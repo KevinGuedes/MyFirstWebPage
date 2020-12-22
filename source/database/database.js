@@ -19,7 +19,7 @@ const saveOperation = (operationName, input, result) => {
 
     let operationBaseRef = db.collection('Operations').doc(generateUniqueId()) 
     let data = {
-        "operationName": operationName,
+        "name": operationName,
         "input": input,
         "result": result,
         "date": new Date().getTime()

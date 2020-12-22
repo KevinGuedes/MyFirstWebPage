@@ -1,5 +1,5 @@
 const indexData = {
-    layout: 'index',
+    layout: './layouts/layout',
     hrefCss: '/styles/page-index.css',
     title: "Kevin's First Web Page | Basic Algorithms",
     menu: [

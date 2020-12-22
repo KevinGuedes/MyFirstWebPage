@@ -41,6 +41,41 @@ router.get('/sum', (req, res) => {
     res.render('sum', sumEmptyData)
 })
 
+router.get('/operations', (req, res) => {
+
+    data = {
+        layout: './layouts/layout',
+        hrefCss: '/styles/page-operations.css',
+        title: "Operations",
+
+        operations: {
+            prime: [
+                {
+                    'x': 1,
+                    'teste': "olá mundo1"
+                },
+                {
+                    'x': 2,
+                    'teste': "olá mundo2"
+                }
+            ],
+            fibonacci: [
+                {
+                    'x': 3,
+                    'teste': "olá mundo3"
+                },
+                {
+                    'x': 4,
+                    'teste': "olá mundo4"
+                }
+            ]
+        }
+    }
+
+
+    res.render('operations', data)
+})
+
 module.exports = {
     router
 }

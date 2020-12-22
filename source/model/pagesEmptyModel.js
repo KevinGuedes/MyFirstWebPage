@@ -7,7 +7,7 @@ const primeEmptyData = {
     formClass: 'prime-tester',
     action: '/prime/testIfPrime',
     buttonText: 'Test if the number is prime',
-    layout: 'layout'
+    layout: './layouts/algorithmLayout'
 }
 
 const fibonacciEmptyData = {
@@ -19,7 +19,7 @@ const fibonacciEmptyData = {
     formClass: 'fibonacci-element',
     action: '/fibonacci/getFibonacciElement',
     buttonText: 'Get element',
-    layout: 'layout'
+    layout: './layouts/algorithmLayout'
 }
 
 const gcdEmptyData = {
@@ -32,7 +32,7 @@ const gcdEmptyData = {
     formClass: 'gcd',
     action: '/gcd/getGcd',
     buttonText: 'Find greatest common divisor',
-    layout: 'layout'
+    layout: './layouts/algorithmLayout'
 }
 
 const countEmptyData = {
@@ -44,7 +44,7 @@ const countEmptyData = {
     formClass: 'count',
     action: '/count/getCount',
     buttonText: 'Get count',
-    layout: 'layout'
+    layout: './layouts/algorithmLayout'
 }
 
 const quickSortEmptyData = {
@@ -56,7 +56,7 @@ const quickSortEmptyData = {
     formClass: 'quickSort',
     action: '/quickSort/getQuickSortedArray',
     buttonText: 'Sort the array',
-    layout: 'layout'
+    layout: './layouts/algorithmLayout'
 }
 
 const sumEmptyData = {
@@ -68,7 +68,7 @@ const sumEmptyData = {
     formClass: 'sum',
     action: '/sum/getSum',
     buttonText: 'Get sum of numbers',
-    layout: 'layout'
+    layout: './layouts/algorithmLayout'
 }
 
 module.exports = {

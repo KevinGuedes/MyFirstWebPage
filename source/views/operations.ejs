@@ -1,0 +1,18 @@
+<%- contentFor('menuContent') %>
+
+<h1>Operations</h1>
+<% for(let operationName in data.operations) { %>
+    <h1 class="operation-name"><%= operationName %></h1>
+    <div class="menu-items">
+        <ul>
+        <% for(let operation of data.operations[operationName]) { %>
+            <br>
+            <li>
+                <p>
+                    <%= operation.x %> <%= operation.teste %>
+                </p>
+            </li>
+        <% } %>
+        </ul>
+    </div>
+<% } %>
