@@ -15,13 +15,31 @@ const getOperationData = () => {
 
         return operationPromise.then(operations => {
 
-            let data = {
-                prime: [],
-                fibonacci: [],
-                gcd: [],
-                count: [],
-                quicksort: [],
-                sum: []
+            let operationsInfo = {
+                prime: {
+                    name: 'Prime',
+                    data: []
+                },
+                fibonacci: {
+                    name: 'Fibonacci',
+                    data: []
+                },
+                gcd: {
+                    name: 'Greatest Common Divisor',
+                    data: []
+                },
+                count: {
+                    name: 'Count',
+                    data: []
+                },
+                quicksort: {
+                    name: 'Quick Sort',
+                    data: []
+                },
+                sum: {
+                    name: 'Sum',
+                    data: []
+                }
             }
 
             for (let operation of operations) {
@@ -29,11 +47,11 @@ const getOperationData = () => {
                 operation = operationMapper(operation)
 
                 let operationName = (operation.name).toLowerCase() 
-                if(data.hasOwnProperty(operationName))
-                    data[operationName].push(operation)
+                if(operationsInfo.hasOwnProperty(operationName))
+                    operationsInfo[operationName].data.push(operation)
             }
 
-            return data
+            return operationsInfo
         })
     }
     catch (error) {

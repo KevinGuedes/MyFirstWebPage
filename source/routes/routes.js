@@ -45,6 +45,7 @@ router.get('/operations', (req, res) => {
     try {
         getOperationData().then(result => {
             operationsData.operations = result
+            console.log(operationsData)
             console.log('Data READY')
             res.render('operations', operationsData)
         })

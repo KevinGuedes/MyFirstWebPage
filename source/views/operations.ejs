@@ -3,10 +3,10 @@
 <h1>Operations</h1>
 <% for(let operationName in operations) { %>
     <br>
-    <h1 class="operation-name"><%= operationName[0].toUpperCase() + operationName.slice(1) %></h1>
+    <h1 class="operation-name"><%= operations[operationName].name %></h1>
     <div class="menu-items">
         <ul>
-        <% for(let operation of operations[operationName]) { %>
+        <% for(let operation of operations[operationName].data) { %>
             <li>
                 <p>
                     Input: <%= operation.input %> / Date: <%= operation.date %> 
