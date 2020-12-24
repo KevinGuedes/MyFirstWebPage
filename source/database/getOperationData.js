@@ -6,6 +6,7 @@ const fireSQL = new FireSQL(db)
 const getOperationData = () => {
 
     try {
+
         const operationPromise = fireSQL.query
             (`
                 SELECT *
@@ -43,11 +44,11 @@ const getOperationData = () => {
             }
 
             for (let operation of operations) {
-                
+
                 operation = operationMapper(operation)
 
-                let operationName = (operation.name).toLowerCase() 
-                if(operationsInfo.hasOwnProperty(operationName))
+                let operationName = (operation.name).toLowerCase()
+                if (operationsInfo.hasOwnProperty(operationName))
                     operationsInfo[operationName].data.push(operation)
             }
 
@@ -55,6 +56,7 @@ const getOperationData = () => {
         })
     }
     catch (error) {
+
         console.log(error)
     }
 }
