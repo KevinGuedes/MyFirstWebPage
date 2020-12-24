@@ -25,7 +25,9 @@ const getOperationData = () => {
             }
 
             for (let operation of operations) {
+                
                 operation = operationMapper(operation)
+
                 let operationName = (operation.name).toLowerCase() 
                 if(data.hasOwnProperty(operationName))
                     data[operationName].push(operation)
