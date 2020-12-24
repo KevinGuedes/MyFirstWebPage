@@ -1,15 +1,15 @@
 <%- contentFor('menuContent') %>
 
 <h1>Operations</h1>
-<% for(let operationName in data.operations) { %>
+<% for(let operationName in operations) { %>
     <br>
     <h1 class="operation-name"><%= operationName[0].toUpperCase() + operationName.slice(1) %></h1>
     <div class="menu-items">
         <ul>
-        <% for(let operation of data.operations[operationName]) { %>
+        <% for(let operation of operations[operationName]) { %>
             <li>
                 <p>
-                    Input: <%= operation.x %> / Date: <%= operation.teste %>
+                    Input: <%= operation.input %> / Date: <%= operation.date %> 
                 </p>
             </li>
         <% } %>

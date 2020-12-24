@@ -1,8 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const {
-    indexData
-} = require('../model/indexModel')
+const { indexData } = require('../model/indexModel')
 const {
     primeEmptyData,
     fibonacciEmptyData,
@@ -11,7 +9,8 @@ const {
     quickSortEmptyData,
     sumEmptyData
 } = require('../model/pagesEmptyModel')
-
+const { operationsData } = require('../model/operationsModel')
+const { getOperationData } = require('../database/getOperationData')
 
 router.get('/', (req, res) => {
     res.render('index', indexData)
@@ -42,38 +41,11 @@ router.get('/sum', (req, res) => {
 })
 
 router.get('/operations', (req, res) => {
-
-    data = {
-        layout: './layouts/layout',
-        hrefCss: '/styles/page-operations.css',
-        title: "Operations",
-
-        operations: {
-            prime: [
-                {
-                    'x': 1,
-                    'teste': "olá mundo1"
-                },
-                {
-                    'x': 2,
-                    'teste': "olá mundo2"
-                }
-            ],
-            fibonacci: [
-                {
-                    'x': 3,
-                    'teste': "olá mundo3"
-                },
-                {
-                    'x': 4,
-                    'teste': "olá mundo4"
-                }
-            ]
-        }
-    }
-
-
-    res.render('operations', data)
+    getOperationData().then(result => {
+        operationsData.operations = result
+        console.log(operationsData)
+        res.render('operations', operationsData)
+    })
 })
 
 module.exports = {

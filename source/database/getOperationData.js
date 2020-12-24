@@ -20,7 +20,7 @@ const getOperationData = () => {
                 fibonacci: [],
                 gcd: [],
                 count: [],
-                quickSort: [],
+                quicksort: [],
                 sum: []
             }
 
