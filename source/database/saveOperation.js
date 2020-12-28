@@ -17,7 +17,5 @@ const saveOperation = (operationName, input, result) => {
 }
 
 module.exports = {
-
     saveOperation,
-
 }

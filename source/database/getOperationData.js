@@ -9,8 +9,7 @@ const getOperationData = async () => {
 
         const fireSQL = new FireSQL(db)
 
-        const operations = await fireSQL.query
-        (`
+        const operations = await fireSQL.query(`
             SELECT *
             FROM Operations
             ORDER BY date DESC
@@ -67,9 +66,7 @@ const getOperationData = async () => {
 }
 
 module.exports = {
-
     getOperationData,
-
 }
 
 

@@ -1,9 +1,9 @@
 const operationsModel = {
     layout: './layouts/layout',
     hrefCss: '/styles/page-operations.css',
-    title: "Operations"
+    title: 'Operations',
 }
 
 module.exports = {
-    operationsModel
+    operationsModel,
 }
