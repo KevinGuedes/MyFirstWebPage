@@ -1,4 +1,4 @@
-const primeEmptyData = {
+const primeEmptyModel = {
     inputNumber: "",
     result: "",
     hrefCss: '/styles/page-prime.css',
@@ -10,7 +10,7 @@ const primeEmptyData = {
     layout: './layouts/algorithmLayout'
 }
 
-const fibonacciEmptyData = {
+const fibonacciEmptyModel = {
     inputNumber: "",
     result: "",
     hrefCss: '/styles/page-fibonacci.css',
@@ -22,7 +22,7 @@ const fibonacciEmptyData = {
     layout: './layouts/algorithmLayout'
 }
 
-const gcdEmptyData = {
+const gcdEmptyModel = {
     firstNumber: "",
     secondNumber: "",
     result: "",
@@ -35,7 +35,7 @@ const gcdEmptyData = {
     layout: './layouts/algorithmLayout'
 }
 
-const countEmptyData = {
+const countEmptyModel = {
     inputNumber: "",
     result: "",
     hrefCss: '/styles/page-count.css',
@@ -47,7 +47,7 @@ const countEmptyData = {
     layout: './layouts/algorithmLayout'
 }
 
-const quickSortEmptyData = {
+const quickSortEmptyModel = {
     inputArray: "",
     result: "",
     hrefCss: '/styles/page-quickSort.css',
@@ -59,7 +59,7 @@ const quickSortEmptyData = {
     layout: './layouts/algorithmLayout'
 }
 
-const sumEmptyData = {
+const sumEmptyModel = {
     inputArray: "",
     result: "",
     hrefCss: '/styles/page-sum.css',
@@ -72,10 +72,10 @@ const sumEmptyData = {
 }
 
 module.exports = {
-    primeEmptyData,
-    fibonacciEmptyData,
-    gcdEmptyData,
-    countEmptyData,
-    quickSortEmptyData,
-    sumEmptyData
+    primeEmptyModel,
+    fibonacciEmptyModel,
+    gcdEmptyModel,
+    countEmptyModel,
+    quickSortEmptyModel,
+    sumEmptyModel
 }

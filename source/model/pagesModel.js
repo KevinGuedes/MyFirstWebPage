@@ -1,4 +1,4 @@
-const primeData = (inputNumber, result) => {
+const primeModel = (inputNumber, result) => {
     return {
         inputNumber: inputNumber,
         result: result,
@@ -12,7 +12,7 @@ const primeData = (inputNumber, result) => {
     }
 }
 
-const fibonacciData = (inputNumber, result) => {
+const fibonacciModel = (inputNumber, result) => {
     return {
         inputNumber: inputNumber,
         result: result,
@@ -26,7 +26,7 @@ const fibonacciData = (inputNumber, result) => {
     }
 }
 
-const gcdData = (firstNumber, secondNumber, result) => {
+const gcdModel = (firstNumber, secondNumber, result) => {
     return {
         firstNumber: !Number.isNaN(firstNumber) ? firstNumber : '',
         secondNumber: !Number.isNaN(secondNumber) ? secondNumber : '',
@@ -41,7 +41,7 @@ const gcdData = (firstNumber, secondNumber, result) => {
     }
 }
 
-const countData = (inputNumber, result) => {
+const countModel = (inputNumber, result) => {
     return {
         inputNumber: inputNumber,
         result: result,
@@ -55,7 +55,7 @@ const countData = (inputNumber, result) => {
     }
 }
 
-const quickSortData = (inputArray, result) => {
+const quickSortModel = (inputArray, result) => {
     return {
         inputArray: inputArray,
         result: result,
@@ -69,7 +69,7 @@ const quickSortData = (inputArray, result) => {
     }
 }
 
-const sumData = (inputArray, result) => {
+const sumModel = (inputArray, result) => {
     return {
         inputArray: inputArray,
         result: result,
@@ -84,10 +84,10 @@ const sumData = (inputArray, result) => {
 }
 
 module.exports = {
-    primeData,
-    fibonacciData,
-    gcdData,
-    countData,
-    quickSortData,
-    sumData
+    primeModel,
+    fibonacciModel,
+    gcdModel,
+    countModel,
+    quickSortModel,
+    sumModel
 }

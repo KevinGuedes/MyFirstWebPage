@@ -1,53 +1,52 @@
 const express = require('express')
 const router = express.Router()
-const { indexData } = require('../model/indexModel')
-const { operationsData } = require('../model/operationsModel')
+const { indexModel } = require('../model/indexModel')
+const { operationsModel } = require('../model/operationsModel')
 const { getOperationData } = require('../database/getOperationData')
 const {
-    primeEmptyData,
-    fibonacciEmptyData,
-    gcdEmptyData,
-    countEmptyData,
-    quickSortEmptyData,
-    sumEmptyData
+    primeEmptyModel,
+    fibonacciEmptyModel,
+    gcdEmptyModel,
+    countEmptyModel,
+    quickSortEmptyModel,
+    sumEmptyModel
 } = require('../model/pagesEmptyModel')
 
 
 router.get('/', (req, res) => {
-    res.render('index', indexData)
+    res.render('index', indexModel)
 })
 
 router.get('/prime', (req, res) => {
-    res.render('prime', primeEmptyData)
+    res.render('prime', primeEmptyModel)
 })
 
 router.get('/fibonacci', (req, res) => {
-    res.render('fibonacci', fibonacciEmptyData)
+    res.render('fibonacci', fibonacciEmptyModel)
 })
 
 router.get('/gcd', (req, res) => {
-    res.render('gcd', gcdEmptyData)
+    res.render('gcd', gcdEmptyModel)
 })
 
 router.get('/count', (req, res) => {
-    res.render('count', countEmptyData)
+    res.render('count', countEmptyModel)
 })
 
 router.get('/quickSort', (req, res) => {
-    res.render('quickSort', quickSortEmptyData)
+    res.render('quickSort', quickSortEmptyModel)
 })
 
 router.get('/sum', (req, res) => {
-    res.render('sum', sumEmptyData)
+    res.render('sum', sumEmptyModel)
 })
 
 router.get('/operations', (req, res) => {
     try {
         getOperationData().then(result => {
-            operationsData.operations = result
-            console.log(operationsData)
+            operationsModel.operations = result
             console.log('Data READY')
-            res.render('operations', operationsData)
+            res.render('operations', operationsModel)
         })
     }
     catch (error) {

@@ -1,5 +1,4 @@
 const firebase = require('firebase')
-const { generateUniqueId } = require("../utils/uniqueIdGenerator")
 
 const firebaseConfig = {
     apiKey: "AIzaSyDx2oN2zHZPSoglCpHsG8JNk32w_Zfk9vw",
@@ -15,22 +14,8 @@ firebase.initializeApp(firebaseConfig)
 
 const db = firebase.firestore()
 
-const saveOperation = (operationName, input, result) => {
-
-    let data = {
-        "name": operationName,
-        "input": input,
-        "result": result,
-        "date": new Date().getTime()
-    }
-    
-    let operationBaseRef = db.collection('Operations').doc(generateUniqueId())
-    operationBaseRef.set(data)
-}
-
 module.exports = {
     db,
-    saveOperation
 }
 
 
