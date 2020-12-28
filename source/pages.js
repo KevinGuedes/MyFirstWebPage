@@ -1,15 +1,15 @@
 const mathFunctions = require('./utils/mathFunctions')
 const formatArray = require('./utils/formatArray')
 const arrayValidator = require('./validators/arrayValidator')
-const { saveOperation } = require('./database/database')
+const { saveOperation } = require('./database/saveOperation')
 const gcdValidator = require('./validators/gcdValidator')
 const {
-    primeData,
-    fibonacciData,
-    gcdData,
-    countData,
-    quickSortData,
-    sumData
+    primeModel,
+    fibonacciModel,
+    gcdModel,
+    countModel,
+    quickSortModel,
+    sumModel
 } = require('./model/pagesModel')
 
 
@@ -20,10 +20,10 @@ const pagePrime = (req, res) => {
 
     if (inputNumber) {
         result = mathFunctions.testIfPrime(inputNumber)
-        saveOperation('Prime', inputNumber, result)
+        saveOperation('prime', inputNumber, result)
     }
 
-    data = primeData(inputNumber, result)
+    data = primeModel(inputNumber, result)
 
     res.render('prime', data)
 }
@@ -36,10 +36,10 @@ const pageFibonacci = (req, res) => {
 
     if (inputNumber) {
         result = mathFunctions.getFibonacciElement(inputNumber)
-        saveOperation('Fibonacci', inputNumber, result)
+        saveOperation('fibonacci', inputNumber, result)
     }
 
-    data = fibonacciData(inputNumber, result)
+    data = fibonacciModel(inputNumber, result)
 
     res.render('fibonacci', data)
 }
@@ -55,14 +55,14 @@ const pageGcd = (req, res) => {
         try {
             gcdValidator.gcdInputValidator(firstNumber, secondNumber)
             result = mathFunctions.getGcd(firstNumber, secondNumber)
-            saveOperation('Greatest Common Divisor', [firstNumber, secondNumber], result)
+            saveOperation('gcd', [firstNumber, secondNumber], result)
         }
         catch (exception) {
             result = exception.message
         }
     }
 
-    const data = gcdData(firstNumber, secondNumber, result)
+    const data = gcdModel(firstNumber, secondNumber, result)
 
     res.render('gcd', data)
 }
@@ -75,10 +75,10 @@ const pageCount = (req, res) => {
 
     if (inputNumber) {
         result = mathFunctions.getCount(inputNumber)
-        saveOperation('Count', inputNumber, result)
+        saveOperation('count', inputNumber, result)
     }
 
-    const data = countData(inputNumber, result)
+    const data = countModel(inputNumber, result)
 
     res.render('count', data)
 }
@@ -94,14 +94,14 @@ const pageQuickSort = (req, res) => {
             let processmentArray = formatArray.stringToArray(inputArray)
             arrayValidator.numericArrayValidator(processmentArray)
             result = "Your 'Quick Sorted' array is: " + formatArray.arrayToString(mathFunctions.getQuickSortedArray(processmentArray))
-            saveOperation('Quick Sort', processmentArray, result)
+            saveOperation('quickSort', processmentArray, result)
         }
         catch (exception) {
             result = exception.message
         }
     }
 
-    data = quickSortData(inputArray, result)
+    data = quickSortModel(inputArray, result)
 
     res.render('quickSort', data)
 }
@@ -117,14 +117,14 @@ const pageSum = (req, res) => {
             let processmentArray = formatArray.stringToArray(inputArray)
             arrayValidator.numericArrayValidator(processmentArray)
             result = 'The sum is: ' + mathFunctions.getSumOfNumbers(processmentArray)
-            saveOperation('Sum', processmentArray, result)
+            saveOperation('sum', processmentArray, result)
         }
         catch (exception) {
             result = exception.message
         }
     }
 
-    const data = sumData(inputArray, result)
+    const data = sumModel(inputArray, result)
 
     res.render('sum', data)
 }

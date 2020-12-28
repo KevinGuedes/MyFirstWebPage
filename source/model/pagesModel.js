@@ -1,4 +1,4 @@
-const primeData = (inputNumber, result) => {
+const primeModel = (inputNumber, result) => {
     return {
         inputNumber: inputNumber,
         result: result,
@@ -8,11 +8,11 @@ const primeData = (inputNumber, result) => {
         formClass: 'prime-tester',
         action: '/prime/testIfPrime',
         buttonText: 'Test if the number is prime',
-        layout: 'layout'
+        layout: './layouts/algorithmLayout'
     }
 }
 
-const fibonacciData = (inputNumber, result) => {
+const fibonacciModel = (inputNumber, result) => {
     return {
         inputNumber: inputNumber,
         result: result,
@@ -22,11 +22,11 @@ const fibonacciData = (inputNumber, result) => {
         formClass: 'fibonacci-element',
         action: '/fibonacci/getFibonacciElement',
         buttonText: 'Get element',
-        layout: 'layout'
+        layout: './layouts/algorithmLayout'
     }
 }
 
-const gcdData = (firstNumber, secondNumber, result) => {
+const gcdModel = (firstNumber, secondNumber, result) => {
     return {
         firstNumber: !Number.isNaN(firstNumber) ? firstNumber : '',
         secondNumber: !Number.isNaN(secondNumber) ? secondNumber : '',
@@ -37,11 +37,11 @@ const gcdData = (firstNumber, secondNumber, result) => {
         formClass: 'gcd',
         action: '/gcd/getGcd',
         buttonText: 'Find greatest common divisor',
-        layout: 'layout'
+        layout: './layouts/algorithmLayout'
     }
 }
 
-const countData = (inputNumber, result) => {
+const countModel = (inputNumber, result) => {
     return {
         inputNumber: inputNumber,
         result: result,
@@ -51,11 +51,11 @@ const countData = (inputNumber, result) => {
         formClass: 'count',
         action: '/count/getCount',
         buttonText: 'Get count',
-        layout: 'layout'
+        layout: './layouts/algorithmLayout'
     }
 }
 
-const quickSortData = (inputArray, result) => {
+const quickSortModel = (inputArray, result) => {
     return {
         inputArray: inputArray,
         result: result,
@@ -65,11 +65,11 @@ const quickSortData = (inputArray, result) => {
         formClass: 'quickSort',
         action: '/quickSort/getQuickSortedArray',
         buttonText: 'Sort the array',
-        layout: 'layout'
+        layout: './layouts/algorithmLayout'
     }
 }
 
-const sumData = (inputArray, result) => {
+const sumModel = (inputArray, result) => {
     return {
         inputArray: inputArray,
         result: result,
@@ -79,15 +79,15 @@ const sumData = (inputArray, result) => {
         formClass: 'sum',
         action: '/sum/getSum',
         buttonText: 'Get sum of numbers',
-        layout: 'layout'
+        layout: './layouts/algorithmLayout'
     }
 }
 
 module.exports = {
-    primeData,
-    fibonacciData,
-    gcdData,
-    countData,
-    quickSortData,
-    sumData
+    primeModel,
+    fibonacciModel,
+    gcdModel,
+    countModel,
+    quickSortModel,
+    sumModel
 }

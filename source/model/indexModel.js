@@ -1,5 +1,5 @@
-const indexData = {
-    layout: 'index',
+const indexModel = {
+    layout: './layouts/layout',
     hrefCss: '/styles/page-index.css',
     title: "Kevin's First Web Page | Basic Algorithms",
     menu: [
@@ -31,5 +31,5 @@ const indexData = {
 }
 
 module.exports = {
-    indexData
+    indexModel
 }

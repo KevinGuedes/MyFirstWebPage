@@ -13,14 +13,12 @@ const arrayToString = (arr) => {
     return stringfiedArray
 }
 
-
 const stringToArray = (arr) => {
     return arr.replace(/\s/g, '')
         .split(',')
         .filter(Boolean)
         .map(element => +element)
 }
-
 
 // const stringToArray = (arr) => {
 //     return arr
@@ -29,7 +27,6 @@ const stringToArray = (arr) => {
 //         .filter(Boolean)
 //         .map(element => +element) 
 // } 
-
 
 module.exports = {
     arrayToString,

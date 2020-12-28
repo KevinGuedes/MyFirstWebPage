@@ -1,10 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- contentFor('menuContent') %>
+<img src="/images/menu.jpg" alt="Math Symbols">
+<h1>Choose An Algorithm</h1>
 
-<head>
-    <%- include("./partials/head") %>
-</head>
+<div class="menu-items">
+    <ol>
+        <% menu.map(item=> { %>
+            <br>
+            <li>
+                <a class="item" href="<%= item.href %>">
+                    <%= item.method %>
+                </a>
+            </li>
+            <% }) %>
+    </ol>
+</div>
 
+<<<<<<< HEAD
 <body>
     <div class="menu">
         <img src="/images/menu.jpg" alt="Math Symbols">
@@ -27,3 +38,16 @@
 </body>
 
 </html>
+=======
+<h1 id="database">Database</h1>
+<div class="menu-items">
+    <ul>
+        <br>
+        <li>
+            <a class="item" href="/operations">
+                See all successful operations made
+            </a>
+        </li>
+    </ul>
+</div>
+>>>>>>> View-de-operações-realizadas
