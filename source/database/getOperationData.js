@@ -1,11 +1,13 @@
 const { FireSQL } = require('firesql')
 const { db } = require('./database')
 const { operationMapper } = require('../mapper/operationMapper')
-const fireSQL = new FireSQL(db)
+
 
 const getOperationData = async () => {
 
     try {
+
+        const fireSQL = new FireSQL(db)
 
         const operations = await fireSQL.query
             (`

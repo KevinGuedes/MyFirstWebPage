@@ -9,7 +9,6 @@ const numericArrayValidator = (arr) => {
     }
 }
 
-
 module.exports = {
     numericArrayValidator
 }
