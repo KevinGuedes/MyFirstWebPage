@@ -35,7 +35,7 @@ li {
     text-align: center;
 }
 
-ol {
+ol {    
     list-style-position: inside;
 }
 
@@ -45,6 +45,6 @@ ol {
 
 html,
 body {
-    height: 120vh;
+    height: 100vh;
 }
 
