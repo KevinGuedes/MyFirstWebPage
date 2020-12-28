@@ -18,7 +18,7 @@ Projeto finalizado. Todo o site está funcional. O código, porém, tem pontos a
 - [x] Criar uma model para deixar os dados enviados para as páginas
 
 # Criação da Base de Dados
-![90%](https://progress-bar.dev/90)
-- [ ] Criar uma base para coletar erros
+![100%](https://progress-bar.dev/100)
+- [x] Criar uma base para coletar erros (Alguns algoritmos nãoa ceitam operações 'erradas' e.g. Números racionais ou strings no processamento)
 - [x] Delegar validação das funções para um código na validators
 - [x] Ajustar nomenclatura do objeto data na getOperationData
