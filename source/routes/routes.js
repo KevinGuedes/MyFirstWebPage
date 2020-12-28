@@ -41,15 +41,15 @@ router.get('/sum', (req, res) => {
     res.render('sum', sumEmptyModel)
 })
 
-router.get('/operations', (req, res) => {
+router.get('/operations', async (req, res) => {
     try {
-        getOperationData().then(result => {
-            operationsModel.operations = result
-            console.log('Data READY')
-            res.render('operations', operationsModel)
-        })
+        operationsModel.operations = await getOperationData()
+        console.log('Data READY')
+        console.log(operationsModel)
+        res.render('operations', operationsModel)
     }
     catch (error) {
+        console.log('Data NOT READY')
         console.log(error)
     }
 })
