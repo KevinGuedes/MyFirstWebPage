@@ -1,6 +1,6 @@
-const { FireSQL } = require('firesql')
-const { db } = require('./database')
-const { operationMapper } = require('../mapper/operationMapper')
+const {FireSQL} = require('firesql')
+const {db} = require('./database')
+const {operationMapper} = require('../mapper/operationMapper')
 
 
 const getOperationData = async () => {
@@ -10,60 +10,66 @@ const getOperationData = async () => {
         const fireSQL = new FireSQL(db)
 
         const operations = await fireSQL.query
-            (`
-                SELECT *
-                FROM Operations
-                ORDER BY date DESC
-            `)
+        (`
+            SELECT *
+            FROM Operations
+            ORDER BY date DESC
+        `)
 
-        let operationsData = {
+        const operationsData = {
             prime: {
                 name: 'Prime',
-                data: []
+                data: [],
             },
             fibonacci: {
                 name: 'Fibonacci',
-                data: []
+                data: [],
             },
             gcd: {
                 name: 'Greatest Common Divisor',
-                data: []
+                data: [],
             },
             count: {
                 name: 'Count',
-                data: []
+                data: [],
             },
             quicksort: {
                 name: 'Quick Sort',
-                data: []
+                data: [],
             },
             sum: {
                 name: 'Sum',
-                data: []
-            }
+                data: [],
+            },
         }
 
         for (let operation of operations) {
 
             operation = operationMapper(operation)
 
-            let operationName = (operation.name).toLowerCase()
-            if (operationsData.hasOwnProperty(operationName))
+            const operationName = (operation.name).toLowerCase()
+            if (operationsData.hasOwnProperty(operationName)) {
+
                 operationsData[operationName].data.push(operation)
+
+            }
+
         }
 
         return operationsData
-    }
-    catch (error) {
+
+    } catch (error) {
 
         console.log(error)
+
     }
+
 }
 
 module.exports = {
-    getOperationData
+
+    getOperationData,
+
 }
-
-
 
 
