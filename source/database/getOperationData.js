@@ -14,7 +14,6 @@ const getOperationData = async () => {
                 ORDER BY date DESC
             `)
 
-
         let operationsData = {
             prime: {
                 name: 'Prime',
