@@ -20,4 +20,5 @@ Projeto finalizado. Todo o site está funcional. O código, porém, tem pontos a
 # Criação da Base de Dados
 ![90%](https://progress-bar.dev/90)
 - [ ] Criar uma base para coletar erros
+- [x] Delegar validação das funções para um código na validators
 - [x] Ajustar nomenclatura do objeto data na getOperationData

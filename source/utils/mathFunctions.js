@@ -1,13 +1,9 @@
-//Prime Number
 const testIfPrime = (number) => {
 
     let count = 0
 
     if (number === 1 || number === 0) {
         return 'The number ' + number + ' is neither a prime nor a composite number'
-    }
-    else if (Number.isNaN(number) || number < 0) {
-        return 'Insert a number greater than 0'
     }
     else {
         for (let i = 1; i <= number; i++) {
@@ -24,8 +20,6 @@ const testIfPrime = (number) => {
     }
 }
 
-
-// Fibonacci
 const getFibonacciElement = (elementNumber) => {
 
     let sequence = [0, 1]
@@ -34,16 +28,10 @@ const getFibonacciElement = (elementNumber) => {
         sequence.push(sequence[i - 2] + sequence[i - 1])
     }
 
-    if (elementNumber <= 0) {
-        return 'Insert a number greater than 0'
-    }
-    else {
-        return 'The element #' + elementNumber + ' is: ' + sequence[elementNumber - 1]
-    }
+    return 'The element #' + elementNumber + ' is: ' + sequence[elementNumber - 1]
+
 }
 
-
-//Greatest Common Divisor
 const calculateGcd = (firstNumber, secondNumber) => {
     if (!secondNumber) {
         return firstNumber
@@ -64,29 +52,17 @@ const getGcd = (firstNumber, secondNumber) => {
     return 'The greatest common divisor of ' + firstNumber + ' and ' + secondNumber + ' is ' + calculateGcd(firstNumber, secondNumber)
 }
 
-
-//Count
 const getCount = (number) => {
 
     let count = 0
 
-    if (number <= 0) {
-        return 'Insert a number greanter than zero'
+    for (let i = 1; i <= number; i++) {
+        count++
     }
-    else if (!Number.isInteger(number)) {
-        return 'Insert an integer number'
-    }
-    else {
-        for (let i = 1; i <= number; i++) {
-            count++
-        }
-        return 'There are ' + count + ' integer numbers between 1 and ' + number + '!'
-    }
+
+    return 'There are ' + count + ' integer numbers between 1 and ' + number + '!'
 }
 
-
-
-//Quicksort
 function getQuickSortedArray(inputArray) {
 
     let arr = inputArray.slice()
@@ -114,17 +90,15 @@ function getQuickSortedArray(inputArray) {
     }
 }
 
-
-//Sum of numbers
 const getSumOfNumbers = (inputArray) => {
-    let arr = inputArray.slice()
     let sum = 0
-    arr.forEach(element => {
-        sum += element
-    })
+
+    for (number of inputArray) {
+        sum += number
+    }
+
     return sum
 }
-
 
 module.exports = {
     testIfPrime,
