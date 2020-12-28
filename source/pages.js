@@ -23,11 +23,8 @@ const pagePrime = (req, res) => {
         saveOperation('prime', inputNumber, result)
     }
 
-    data = primeModel(inputNumber, result)
-
-    res.render('prime', data)
+    res.render('prime', primeModel(inputNumber, result))
 }
-
 
 const pageFibonacci = (req, res) => {
 
@@ -39,11 +36,8 @@ const pageFibonacci = (req, res) => {
         saveOperation('fibonacci', inputNumber, result)
     }
 
-    data = fibonacciModel(inputNumber, result)
-
-    res.render('fibonacci', data)
+    res.render('fibonacci', fibonacciModel(inputNumber, result))
 }
-
 
 const pageGcd = (req, res) => {
 
@@ -62,11 +56,8 @@ const pageGcd = (req, res) => {
         }
     }
 
-    const data = gcdModel(firstNumber, secondNumber, result)
-
-    res.render('gcd', data)
+    res.render('gcd', gcdModel(firstNumber, secondNumber, result))
 }
-
 
 const pageCount = (req, res) => {
 
@@ -78,11 +69,8 @@ const pageCount = (req, res) => {
         saveOperation('count', inputNumber, result)
     }
 
-    const data = countModel(inputNumber, result)
-
-    res.render('count', data)
+    res.render('count', countModel(inputNumber, result))
 }
-
 
 const pageQuickSort = (req, res) => {
 
@@ -101,11 +89,8 @@ const pageQuickSort = (req, res) => {
         }
     }
 
-    data = quickSortModel(inputArray, result)
-
-    res.render('quickSort', data)
+    res.render('quickSort', quickSortModel(inputArray, result))
 }
-
 
 const pageSum = (req, res) => {
 
@@ -124,11 +109,8 @@ const pageSum = (req, res) => {
         }
     }
 
-    const data = sumModel(inputArray, result)
-
-    res.render('sum', data)
+    res.render('sum', sumModel(inputArray, result))
 }
-
 
 module.exports = {
     pagePrime,
