@@ -51,6 +51,16 @@ test('Fibonacci - 22', () => {
     expect(actual).toBe(expected)
 
 })
+
+test('Fibonacci - 13', () => {
+
+    const input = 13
+    const expected = 'The element #13 is: 144'
+    const actual = getFibonacciElement(input)
+
+    expect(actual).toBe(expected)
+
+})
 // #endregion
 
 // #region Greatest Common Divisor
