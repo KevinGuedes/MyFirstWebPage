@@ -4,20 +4,20 @@ const bodyParser = require('body-parser')
 const expressLayout = require('express-ejs-layouts')
 const server = express()
 const port = process.env.PORT || 5000
-const { router } = require('./routes/routes')
+const {router} = require('./routes/routes')
 const {
     pagePrime,
     pageGcd,
     pageFibonacci,
     pageCount,
     pageQuickSort,
-    pageSum
+    pageSum,
 } = require('./pages')
 
 
 server
     .use(express.static('public'))
-    .use(bodyParser.urlencoded({ extended: true }))
+    .use(bodyParser.urlencoded({extended: true}))
     .use(expressLayout)
     .use(router)
 
@@ -33,6 +33,6 @@ server
     .post('/quickSort/getQuickSortedArray', pageQuickSort)
     .post('/sum/getSum', pageSum)
 
-server.listen(port, function () {
+server.listen(port, function() {
     console.log(`http://localhost:${port}/`)
-}) 
+})

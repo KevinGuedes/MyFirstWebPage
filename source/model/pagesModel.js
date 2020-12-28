@@ -1,4 +1,5 @@
 const primeModel = (inputNumber, result) => {
+
     return {
         inputNumber: inputNumber,
         result: result,
@@ -8,11 +9,13 @@ const primeModel = (inputNumber, result) => {
         formClass: 'prime-tester',
         action: '/prime/testIfPrime',
         buttonText: 'Test if the number is prime',
-        layout: './layouts/algorithmLayout'
+        layout: './layouts/algorithmLayout',
     }
+
 }
 
 const fibonacciModel = (inputNumber, result) => {
+
     return {
         inputNumber: inputNumber,
         result: result,
@@ -22,11 +25,13 @@ const fibonacciModel = (inputNumber, result) => {
         formClass: 'fibonacci-element',
         action: '/fibonacci/getFibonacciElement',
         buttonText: 'Get element',
-        layout: './layouts/algorithmLayout'
+        layout: './layouts/algorithmLayout',
     }
+
 }
 
 const gcdModel = (firstNumber, secondNumber, result) => {
+
     return {
         firstNumber: !Number.isNaN(firstNumber) ? firstNumber : '',
         secondNumber: !Number.isNaN(secondNumber) ? secondNumber : '',
@@ -37,11 +42,13 @@ const gcdModel = (firstNumber, secondNumber, result) => {
         formClass: 'gcd',
         action: '/gcd/getGcd',
         buttonText: 'Find greatest common divisor',
-        layout: './layouts/algorithmLayout'
+        layout: './layouts/algorithmLayout',
     }
+
 }
 
 const countModel = (inputNumber, result) => {
+
     return {
         inputNumber: inputNumber,
         result: result,
@@ -51,11 +58,13 @@ const countModel = (inputNumber, result) => {
         formClass: 'count',
         action: '/count/getCount',
         buttonText: 'Get count',
-        layout: './layouts/algorithmLayout'
+        layout: './layouts/algorithmLayout',
     }
+
 }
 
 const quickSortModel = (inputArray, result) => {
+
     return {
         inputArray: inputArray,
         result: result,
@@ -65,11 +74,13 @@ const quickSortModel = (inputArray, result) => {
         formClass: 'quickSort',
         action: '/quickSort/getQuickSortedArray',
         buttonText: 'Sort the array',
-        layout: './layouts/algorithmLayout'
+        layout: './layouts/algorithmLayout',
     }
+
 }
 
 const sumModel = (inputArray, result) => {
+
     return {
         inputArray: inputArray,
         result: result,
@@ -79,8 +90,9 @@ const sumModel = (inputArray, result) => {
         formClass: 'sum',
         action: '/sum/getSum',
         buttonText: 'Get sum of numbers',
-        layout: './layouts/algorithmLayout'
+        layout: './layouts/algorithmLayout',
     }
+
 }
 
 module.exports = {
@@ -89,5 +101,5 @@ module.exports = {
     gcdModel,
     countModel,
     quickSortModel,
-    sumModel
+    sumModel,
 }
