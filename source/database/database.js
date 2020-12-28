@@ -1,13 +1,14 @@
 const firebase = require('firebase')
+const { keys } = require('../environment/keys')
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDx2oN2zHZPSoglCpHsG8JNk32w_Zfk9vw",
-    authDomain: "myfirstwebpage-16260.firebaseapp.com",
-    projectId: "myfirstwebpage-16260",
-    storageBucket: "myfirstwebpage-16260.appspot.com",
-    messagingSenderId: "482042499549",
-    appId: "1:482042499549:web:6782ffd5287ee512b4a634",
-    measurementId: "G-4V79LS6658"
+    apiKey: keys.API_KEY,
+    authDomain: keys.AUTH_DOMAIN,
+    projectId: keys.PROJECT_ID,
+    storageBucket: keys.STORAGE_BUCKET,
+    messagingSenderId: keys.MESSAGING_SENDER_ID,
+    appId: keys.APP_ID,
+    measurementId: keys.MEASUREMENT_ID
 }
 
 firebase.initializeApp(firebaseConfig)
@@ -15,7 +16,7 @@ firebase.initializeApp(firebaseConfig)
 const db = firebase.firestore()
 
 module.exports = {
-    db,
+    db
 }
 
 

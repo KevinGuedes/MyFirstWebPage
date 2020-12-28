@@ -58,7 +58,6 @@ const getOperationData = async () => {
     }
 }
 
-
 module.exports = {
     getOperationData
 }

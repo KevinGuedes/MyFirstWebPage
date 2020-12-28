@@ -45,7 +45,6 @@ router.get('/operations', async (req, res) => {
     try {
         operationsModel.operations = await getOperationData()
         console.log('Data READY')
-        console.log(operationsModel)
         res.render('operations', operationsModel)
     }
     catch (error) {
