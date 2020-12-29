@@ -107,7 +107,7 @@ test('Sum - [5.3, 3.7, -1.5]', () => {
 })
 // #endregion
 
-// #region Sum
+// #region Quick Sort
 test('Quick Sort - [5.3, 3.7, -1.5]', () => {
 
     const input = [5.3, 3.7, -1.5]

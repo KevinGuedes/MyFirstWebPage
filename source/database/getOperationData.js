@@ -7,40 +7,24 @@ const getOperationData = async () => {
 
     try {
 
-        const fireSQL = new FireSQL(db)
+        const properties = ['prime', 'fibonacci', 'gcd', 'count', 'quicksort', 'sum']
+        const operationsType = ['Prime', 'Fibonacci', 'Greatest Common Divisor', 'Count', 'Quick Sort', 'Sum']
+        const operationsData = {}
 
-        const operations = await fireSQL.query(`
+        for (let [index, propertie] of properties.entries()) {
+
+            operationsData[propertie] = {
+                name: operationsType[index],
+                data: [],
+            }
+
+        }
+
+        const operations = await new FireSQL(db).query(`
             SELECT *
             FROM Operations
             ORDER BY date DESC
         `)
-
-        const operationsData = {
-            prime: {
-                name: 'Prime',
-                data: [],
-            },
-            fibonacci: {
-                name: 'Fibonacci',
-                data: [],
-            },
-            gcd: {
-                name: 'Greatest Common Divisor',
-                data: [],
-            },
-            count: {
-                name: 'Count',
-                data: [],
-            },
-            quicksort: {
-                name: 'Quick Sort',
-                data: [],
-            },
-            sum: {
-                name: 'Sum',
-                data: [],
-            },
-        }
 
         for (let operation of operations) {
 
@@ -68,5 +52,3 @@ const getOperationData = async () => {
 module.exports = {
     getOperationData,
 }
-
-
