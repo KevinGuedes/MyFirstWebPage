@@ -7,9 +7,7 @@ const getOperationData = async () => {
 
     try {
 
-        const fireSQL = new FireSQL(db)
-
-        const operations = await fireSQL.query(`
+        const operations = await new FireSQL(db).query(`
             SELECT *
             FROM Operations
             ORDER BY date DESC
