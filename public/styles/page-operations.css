@@ -24,12 +24,6 @@ p {
     margin-top: 2rem;
     border: none;
 }
-
-html,
-body {
-    height: 100vh;
-}
-
 .operations {
     padding: 2rem;
     border-radius: 2rem;

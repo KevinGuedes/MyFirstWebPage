@@ -11,8 +11,6 @@
     border: 1px solid var(--color-gray-1);
     color: var(--color-gray-1);
 }
-
-html, 
-body{
-    height: 100vh;
+p#result {
+    padding-top: 20px;
 }

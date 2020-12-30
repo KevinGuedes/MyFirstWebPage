@@ -13,12 +13,5 @@
 }
 
 .input-array {
-    width: 40rem;
+    max-width: 40rem;
 }
-
-html, 
-body{
-    height: 100vh;
-}
-
-
