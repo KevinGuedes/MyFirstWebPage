@@ -4,16 +4,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 24rem;
+    min-height: 24rem;
     width: 90%;
     padding: 2rem;
     border-radius: 2rem;
     border: 1px solid var(--color-gray-1);
     color: var(--color-gray-1);
 }
-
-
-html, 
-body{
-    height: 100vh;
+p#result {
+    padding-top: 20px;
 }
