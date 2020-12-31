@@ -60,19 +60,14 @@ router.get('/operations', async (req, res) => {
     try {
 
         operationsModel.operations = await getOperationData()
-
-        if(operationsModel.operations){
-            console.log('Data READY')
-            res.render('operations', operationsModel)
-        }
-        else
-            throw new Error("Failed to load data")
-        
+        console.log('Data READY')
+        res.render('operations', operationsModel)
 
     } catch (error) {
 
+        console.log('Data NOT READY')
         console.log(error)
-        
+
     }
 
 })

@@ -7,6 +7,12 @@ const getOperationData = async () => {
 
     try {
 
+        const operations = await new FireSQL(db).query(`
+            SELECT *
+            FROM Operations
+            ORDER BY date DESC
+        `)
+
         const properties = ['prime', 'fibonacci', 'gcd', 'count', 'quicksort', 'sum']
         const operationsType = ['Prime', 'Fibonacci', 'Greatest Common Divisor', 'Count', 'Quick Sort', 'Sum']
         const operationsData = {}
@@ -19,12 +25,6 @@ const getOperationData = async () => {
             }
 
         }
-
-        const operations = await new FireSQL(db).query(`
-            SELECT *
-            FROM Operations
-            ORDER BY date DESC
-        `)
 
         for (let operation of operations) {
 

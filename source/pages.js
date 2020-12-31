@@ -61,7 +61,7 @@ const pageGcd = (req, res) => {
 
         } catch (exception) {
 
-            result = exception.message
+            result = exception
 
         }
 
@@ -103,7 +103,7 @@ const pageQuickSort = (req, res) => {
 
         } catch (exception) {
 
-            result = exception.message
+            result = exception
 
         }
 
@@ -129,7 +129,7 @@ const pageSum = (req, res) => {
 
         } catch (exception) {
 
-            result = exception.message
+            result = exception
 
         }
 
