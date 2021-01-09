@@ -1,14 +1,14 @@
 const firebase = require('firebase')
-const {keys} = require('../environment/keys')
+const {databaseKeys} = require('../environment/databaseKeys')
 
 const firebaseConfig = {
-    apiKey: keys.API_KEY,
-    authDomain: keys.AUTH_DOMAIN,
-    projectId: keys.PROJECT_ID,
-    storageBucket: keys.STORAGE_BUCKET,
-    messagingSenderId: keys.MESSAGING_SENDER_ID,
-    appId: keys.APP_ID,
-    measurementId: keys.MEASUREMENT_ID,
+    apiKey: databaseKeys.API_KEY,
+    authDomain: databaseKeys.AUTH_DOMAIN,
+    projectId: databaseKeys.PROJECT_ID,
+    storageBucket: databaseKeys.STORAGE_BUCKET,
+    messagingSenderId: databaseKeys.MESSAGING_SENDER_ID,
+    appId: databaseKeys.APP_ID,
+    measurementId: databaseKeys.MEASUREMENT_ID,
 }
 
 firebase.initializeApp(firebaseConfig)

@@ -1,15 +1,13 @@
+const {InputError} = require('../exceptions/exceptions')
+
 const numericArrayValidator = (arr) => {
 
     if (!(Array.isArray(arr) &&
         arr.length &&
-        arr.every(element => {
-
-            return typeof element === 'number'
-
-        }) &&
+        arr.every(element => typeof element === 'number') &&
         !arr.includes(NaN))) {
 
-        throw new Error('Please verify your array')
+        throw new InputError('Please verify your array')
 
     }
 

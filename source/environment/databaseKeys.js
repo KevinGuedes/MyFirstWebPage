@@ -1,4 +1,4 @@
-const keys = {
+const databaseKeys = {
     API_KEY: "AIzaSyDx2oN2zHZPSoglCpHsG8JNk32w_Zfk9vw",
     AUTH_DOMAIN: "myfirstwebpage-16260.firebaseapp.com",
     PROJECT_ID: "myfirstwebpage-16260",
@@ -9,5 +9,5 @@ const keys = {
 }
 
 module.exports = {
-    keys
+    databaseKeys,
 }
