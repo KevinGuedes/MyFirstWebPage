@@ -14,3 +14,14 @@
 p#result {
     padding-top: 20px;
 }
+
+@media screen and (max-width: 800px) {
+    .count {
+        font-size: 2.5rem;
+    }
+}
+@media screen and (max-width: 600px) {
+    .count {
+        font-size: 2rem;
+    }
+}
