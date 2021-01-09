@@ -14,3 +14,15 @@
 p#result {
     padding-top: 20px;
 }
+
+@media screen and (max-width:800px){
+    .prime-tester {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .prime-tester {
+        font-size: 2rem;
+    }
+}

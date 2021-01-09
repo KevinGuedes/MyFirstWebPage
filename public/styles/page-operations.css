@@ -35,3 +35,27 @@ p {
 #title {
     margin: 2rem;
 }
+
+@media screen and (max-width: 800px) {
+    #title {
+        font-size: 1.6em;
+    }
+    .operation-name {
+        font-size: 1.6em;
+    }
+}
+@media screen and (max-width: 600px) {
+    #title {
+        font-size: 1em;
+    }
+    .operations {
+        padding: 0rem;
+    }
+    .operation-name {
+        font-size: 0.8em;
+    }
+    .menu-items {
+        font-size: 1.6rem;
+        padding: 1rem 3rem;
+    }
+}
