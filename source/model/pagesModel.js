@@ -10,6 +10,7 @@ const primeModel = (inputNumber, result) => {
         action: '/prime/testIfPrime',
         buttonText: 'Test if the number is prime',
         layout: './layouts/algorithmLayout',
+        redirectEnabled: false,
     }
 
 }
@@ -26,6 +27,7 @@ const fibonacciModel = (inputNumber, result) => {
         action: '/fibonacci/getFibonacciElement',
         buttonText: 'Get element',
         layout: './layouts/algorithmLayout',
+        redirectEnabled: false,
     }
 
 }
@@ -43,6 +45,7 @@ const gcdModel = (firstNumber, secondNumber, result) => {
         action: '/gcd/getGcd',
         buttonText: 'Find greatest common divisor',
         layout: './layouts/algorithmLayout',
+        redirectEnabled: false,
     }
 
 }
@@ -59,6 +62,7 @@ const countModel = (inputNumber, result) => {
         action: '/count/getCount',
         buttonText: 'Get count',
         layout: './layouts/algorithmLayout',
+        redirectEnabled: false,
     }
 
 }
@@ -75,6 +79,7 @@ const quickSortModel = (inputArray, result) => {
         action: '/quickSort/getQuickSortedArray',
         buttonText: 'Sort the array',
         layout: './layouts/algorithmLayout',
+        redirectEnabled: false,
     }
 
 }
@@ -91,6 +96,7 @@ const sumModel = (inputArray, result) => {
         action: '/sum/getSum',
         buttonText: 'Get sum of numbers',
         layout: './layouts/algorithmLayout',
+        redirectEnabled: false,
     }
 
 }

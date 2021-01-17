@@ -8,6 +8,7 @@ const primeEmptyModel = {
     action: '/prime/testIfPrime',
     buttonText: 'Test if the number is prime',
     layout: './layouts/algorithmLayout',
+    redirectEnabled: false,
 }
 
 const fibonacciEmptyModel = {
@@ -20,6 +21,7 @@ const fibonacciEmptyModel = {
     action: '/fibonacci/getFibonacciElement',
     buttonText: 'Get element',
     layout: './layouts/algorithmLayout',
+    redirectEnabled: false,
 }
 
 const gcdEmptyModel = {
@@ -33,6 +35,7 @@ const gcdEmptyModel = {
     action: '/gcd/getGcd',
     buttonText: 'Find greatest common divisor',
     layout: './layouts/algorithmLayout',
+    redirectEnabled: false,
 }
 
 const countEmptyModel = {
@@ -45,6 +48,7 @@ const countEmptyModel = {
     action: '/count/getCount',
     buttonText: 'Get count',
     layout: './layouts/algorithmLayout',
+    redirectEnabled: false,
 }
 
 const quickSortEmptyModel = {
@@ -57,6 +61,7 @@ const quickSortEmptyModel = {
     action: '/quickSort/getQuickSortedArray',
     buttonText: 'Sort the array',
     layout: './layouts/algorithmLayout',
+    redirectEnabled: false,
 }
 
 const sumEmptyModel = {
@@ -69,6 +74,7 @@ const sumEmptyModel = {
     action: '/sum/getSum',
     buttonText: 'Get sum of numbers',
     layout: './layouts/algorithmLayout',
+    redirectEnabled: false,
 }
 
 module.exports = {
