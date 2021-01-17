@@ -2,6 +2,7 @@ const indexModel = {
     layout: './layouts/layout',
     hrefCss: '/styles/page-index.css',
     title: 'Kevin\'s First Web Page | Basic Algorithms',
+    redirectEnabled: false,
     menu: [
         {
             href: '/prime',

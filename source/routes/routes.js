@@ -71,6 +71,8 @@ router.get('/operations', async (req, res) => {
         
         console.log(error.message)
 
+        res.render('error', errorModel)
+        
     }
 
 })

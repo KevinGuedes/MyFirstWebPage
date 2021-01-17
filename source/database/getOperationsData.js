@@ -6,7 +6,7 @@ const { DatabaseError } = require('../exceptions/exceptions')
 const getOperationsData = async () => {
 
     return await new FireSQL(db).query(`
-        SELECT 
+        SELECT *
         FROM Operations
         ORDER BY date DESC
     `).then(
