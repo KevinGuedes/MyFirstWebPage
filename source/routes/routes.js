@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const { indexModel } = require('../model/indexModel')
 const { operationsModel } = require('../model/operationsModel')
-const { getOperationData } = require('../database/getOperationData')
+const { getOperationsData } = require('../database/getOperationsData')
 const {
     primeEmptyModel,
     fibonacciEmptyModel,
@@ -11,7 +11,8 @@ const {
     quickSortEmptyModel,
     sumEmptyModel,
 } = require('../model/pagesEmptyModel')
-const { DatabaseError } = require('../exceptions/exceptions')
+const { operationsMapper } = require('../mapper/operationsMapper')
+
 
 router.get('/', (req, res) => {
 
@@ -59,23 +60,16 @@ router.get('/operations', async (req, res) => {
 
     try {
 
-        operationsModel.operations = await getOperationData()
+        const operationsData = await getOperationsData()
+        operationsModel.operations = operationsMapper(operationsData)
+
         res.render('operations', operationsModel)
 
     } catch (error) {
-
-        console.log(new DatabaseError('Failed to load retrieve data from Firebase - Cloud Firestore'))
+        
         console.log(error.message)
+
     }
-    // getOperationData()
-    //     .then(operations => {
-    //         operationsModel.operations = operations
-    //     })
-    //     .catch(error => {
-    //         console.log(error)
-    //         res.redirect
-    //     })
-    //Add um alert e um redirect em caso de erro, usar o then na getOperationData
 
 })
 
