@@ -22,12 +22,14 @@
   },
   "homepage": "https://github.com/KevinGuedes/MyFirstWebPage#readme",
   "dependencies": {
+    "alert": "^5.0.9",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
     "express-ejs-layouts": "^2.5.0",
     "fibonacci": "^1.6.7",
     "firebase": "^8.1.1",
-    "firesql": "^2.0.2"
+    "firesql": "^2.0.2",
+    "node-popup": "^0.1.14"
   },
   "devDependencies": {
     "eslint": "^7.16.0",

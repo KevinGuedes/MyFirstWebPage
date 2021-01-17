@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router()
-const {indexModel} = require('../model/indexModel')
-const {operationsModel} = require('../model/operationsModel')
-const {getOperationData} = require('../database/getOperationData')
+const { indexModel } = require('../model/indexModel')
+const { operationsModel } = require('../model/operationsModel')
+const { getOperationsData } = require('../database/getOperationsData')
 const {
     primeEmptyModel,
     fibonacciEmptyModel,
@@ -11,6 +11,7 @@ const {
     quickSortEmptyModel,
     sumEmptyModel,
 } = require('../model/pagesEmptyModel')
+const { operationsMapper } = require('../mapper/operationsMapper')
 
 
 router.get('/', (req, res) => {
@@ -59,14 +60,14 @@ router.get('/operations', async (req, res) => {
 
     try {
 
-        operationsModel.operations = await getOperationData()
-        console.log('Data READY')
+        const operationsData = await getOperationsData()
+        operationsModel.operations = operationsMapper(operationsData)
+
         res.render('operations', operationsModel)
 
     } catch (error) {
-
-        console.log('Data NOT READY')
-        console.log(error)
+        
+        console.log(error.message)
 
     }
 
