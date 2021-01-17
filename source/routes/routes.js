@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const { indexModel } = require('../model/indexModel')
 const { operationsModel } = require('../model/operationsModel')
-const { getOperationsData } = require('../database/getOperationsData')
+const { errorModel } = require('../model/errorModel')
 const {
     primeEmptyModel,
     fibonacciEmptyModel,
@@ -11,11 +11,13 @@ const {
     quickSortEmptyModel,
     sumEmptyModel,
 } = require('../model/pagesEmptyModel')
+const { getOperationsData } = require('../database/getOperationsData')
 const { operationsMapper } = require('../mapper/operationsMapper')
 
 
 router.get('/', (req, res) => {
 
+    res.statusCode = 202
     res.render('index', indexModel)
 
 })
@@ -72,6 +74,13 @@ router.get('/operations', async (req, res) => {
     }
 
 })
+
+router.get('/error', (req, res) => {
+
+    res.render('error', errorModel)
+
+})
+
 
 module.exports = {
     router,
