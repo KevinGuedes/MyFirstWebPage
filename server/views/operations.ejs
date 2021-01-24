@@ -2,22 +2,22 @@
 <h1 id="title">Operations</h1>
 <div class="operations">
     <% for(let operationName in operations) { %>
-        <fieldset id="field-operation">
-            <h1 class="operation-name">
-                <%= operations[operationName].name %>
-            </h1>
-            <div class="menu-items">
-                <ul>
-                    <% for(let operation of operations[operationName].data) { %>
-                        <li>
-                            <p>
-                                Input: <%= operation.input %> / <%= operation.date %>
-                            </p>
-                        </li>
-                        <% } %>
-                </ul>
-            </div>
-        </fieldset>
+    <fieldset id="field-operation">
+        <h1 class="operation-name">
+            <%= operations[operationName].name %>
+        </h1>
+        <div class="menu-items">
+            <ul>
+                <% for(let operation of operations[operationName].data) { %>
+                <li>
+                    <p>
+                        Input: <%= operation.input %> - Made: <%= operation.date %>
+                    </p>
+                </li>
+                <% } %>
+            </ul>
+        </div>
+    </fieldset>
     <% } %>
 </div>
 
