@@ -1,14 +1,15 @@
 const firebase = require('firebase')
-const {databaseKeys} = require('../environment/databaseKeys')
+const path = require('path')
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') })
 
 const firebaseConfig = {
-    apiKey: databaseKeys.API_KEY,
-    authDomain: databaseKeys.AUTH_DOMAIN,
-    projectId: databaseKeys.PROJECT_ID,
-    storageBucket: databaseKeys.STORAGE_BUCKET,
-    messagingSenderId: databaseKeys.MESSAGING_SENDER_ID,
-    appId: databaseKeys.APP_ID,
-    measurementId: databaseKeys.MEASUREMENT_ID,
+    apiKey: process.env.API_KEY,
+    authDomain: process.env.AUTH_DOMAIN,
+    projectId: process.env.PROJECT_ID,
+    storageBucket: process.env.STORAGE_BUCKET,
+    messagingSenderId: process.env.MESSAGING_SENDER_ID,
+    appId: process.env.APP_ID,
+    measurementId: process.env.MEASUREMENT_ID,
 }
 
 firebase.initializeApp(firebaseConfig)

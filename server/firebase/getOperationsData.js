@@ -1,6 +1,6 @@
 const { FireSQL } = require('firesql')
 const { db } = require('./database')
-const { DatabaseError } = require('../exceptions/exceptions')
+const { DatabaseError } = require('../error/errors')
 
 
 const getOperationsData = async () => {

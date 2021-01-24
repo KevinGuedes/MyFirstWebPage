@@ -11,8 +11,8 @@ const {
     quickSortEmptyModel,
     sumEmptyModel,
 } = require('../model/pagesEmptyModel')
-const { getOperationsData } = require('../database/getOperationsData')
-const { operationsMapper } = require('../mapper/operationsMapper')
+const { getOperationsData } = require('../firebase/getOperationsData')
+const { operationsMapper } = require('../mappings/operationsMapper')
 
 
 router.get('/', (req, res) => {
@@ -68,11 +68,11 @@ router.get('/operations', async (req, res) => {
         res.render('operations', operationsModel)
 
     } catch (error) {
-        
+
         console.log(error.message)
 
         res.render('error', errorModel)
-        
+
     }
 
 })

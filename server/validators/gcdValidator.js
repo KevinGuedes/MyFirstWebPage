@@ -1,4 +1,4 @@
-const {InputError} = require('../exceptions/exceptions')
+const { InputError } = require('../error/errors')
 
 const gcdInputValidator = (firstInput, secondInput) => {
 

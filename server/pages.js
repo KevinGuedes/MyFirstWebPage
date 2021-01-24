@@ -1,7 +1,7 @@
 const mathFunctions = require('./utils/mathFunctions')
 const formatArray = require('./utils/formatArray')
 const arrayValidator = require('./validators/arrayValidator')
-const {saveOperation} = require('./database/saveOperation')
+const { saveOperation } = require('./firebase/saveOperation')
 const gcdValidator = require('./validators/gcdValidator')
 const {
     primeModel,

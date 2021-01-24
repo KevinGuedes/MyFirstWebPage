@@ -11,9 +11,22 @@
         "ecmaVersion": 12
     },
     "rules": {
-        "linebreak-style": ["off"],
-        "semi": ["off"],
-        "indent" : [2, 4],
-        "padded-blocks": ["error", "always"]
+        "linebreak-style": [
+            "off"
+        ],
+        "semi": [
+            "off"
+        ],
+        "indent": [
+            2,
+            4
+        ],
+        "padded-blocks": [
+            "error",
+            "always"
+        ],
+        "object-curly-spacing": [
+            "off"
+        ]
     }
 }
