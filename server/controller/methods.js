@@ -1,8 +1,8 @@
-const mathFunctions = require('./utils/mathFunctions')
-const formatArray = require('./utils/formatArray')
-const arrayValidator = require('./validators/arrayValidator')
-const { saveOperation } = require('./firebase/saveOperation')
-const gcdValidator = require('./validators/gcdValidator')
+const mathFunctions = require('../functions/mathFunctions')
+const formatArray = require('../utils/formatArray')
+const arrayValidator = require('../validators/arrayValidator')
+const { saveOperation } = require('../firebase/saveOperation')
+const gcdValidator = require('../validators/gcdValidator')
 const {
     primeModel,
     fibonacciModel,
@@ -10,7 +10,7 @@ const {
     countModel,
     quickSortModel,
     sumModel,
-} = require('./model/pagesModel')
+} = require('../model/pagesModel')
 
 
 const pagePrime = (req, res) => {

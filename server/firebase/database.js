@@ -1,6 +1,6 @@
 const firebase = require('firebase')
 const path = require('path')
-require('dotenv').config({ path: path.resolve(__dirname, '../.env') })
+require('dotenv').config({ path: './.env' })
 
 const firebaseConfig = {
     apiKey: process.env.API_KEY,

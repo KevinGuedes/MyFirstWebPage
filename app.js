@@ -4,7 +4,7 @@ const bodyParser = require('body-parser')
 const expressLayout = require('express-ejs-layouts')
 const server = express()
 const port = process.env.PORT || 5001
-const { router } = require('./routes/routes')
+const { router } = require('./server/routes/routes')
 const {
     pagePrime,
     pageGcd,
@@ -12,7 +12,7 @@ const {
     pageCount,
     pageQuickSort,
     pageSum,
-} = require('./pages')
+} = require('./server/controller/methods')
 
 server
     .use(express.static('public'))
@@ -22,7 +22,7 @@ server
 
 server
     .set('view engine', 'ejs')
-    .set('views', path.join(__dirname, '/views'))
+    .set('views', path.join(__dirname, 'server/views'))
 
 server
     .post('/prime/testIfPrime', pagePrime)
