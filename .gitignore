@@ -114,3 +114,6 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Debug config with 'Debbuger for Chrome' extension
+.vscode
