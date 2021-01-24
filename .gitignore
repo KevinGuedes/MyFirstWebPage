@@ -116,4 +116,4 @@ dist
 .pnp.*
 
 # Debug config with 'Debbuger for Chrome' extension
-.vscode
+.vscode/launch.json
