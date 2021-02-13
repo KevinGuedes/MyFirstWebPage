@@ -17,44 +17,43 @@ const { operationsMapper } = require('../mappings/operationsMapper')
 
 router.get('/', (req, res) => {
 
-    res.statusCode = 202
-    res.render('index', indexModel)
+    res.status(200).render('index', indexModel)
 
 })
 
 router.get('/prime', (req, res) => {
 
-    res.render('prime', primeEmptyModel)
+    res.status(200).render('prime', primeEmptyModel)
 
 })
 
 router.get('/fibonacci', (req, res) => {
 
-    res.render('fibonacci', fibonacciEmptyModel)
+    res.status(200).render('fibonacci', fibonacciEmptyModel)
 
 })
 
 router.get('/gcd', (req, res) => {
 
-    res.render('gcd', gcdEmptyModel)
+    res.status(200).render('gcd', gcdEmptyModel)
 
 })
 
 router.get('/count', (req, res) => {
 
-    res.render('count', countEmptyModel)
+    res.status(200).render('count', countEmptyModel)
 
 })
 
 router.get('/quickSort', (req, res) => {
 
-    res.render('quickSort', quickSortEmptyModel)
+    res.status(200).render('quickSort', quickSortEmptyModel)
 
 })
 
 router.get('/sum', (req, res) => {
 
-    res.render('sum', sumEmptyModel)
+    res.status(200).render('sum', sumEmptyModel)
 
 })
 
@@ -65,13 +64,13 @@ router.get('/operations', async (req, res) => {
         const operationsData = await getOperationsData()
         operationsModel.operations = operationsMapper(operationsData)
 
-        res.render('operations', operationsModel)
+        res.status(200).render('operations', operationsModel)
 
     } catch (error) {
 
         console.log(error.message)
 
-        res.render('error', errorModel)
+        res.status(200).render('error', errorModel)
 
     }
 
@@ -79,7 +78,7 @@ router.get('/operations', async (req, res) => {
 
 router.get('/error', (req, res) => {
 
-    res.render('error', errorModel)
+    res.status(200).render('error', errorModel)
 
 })
 

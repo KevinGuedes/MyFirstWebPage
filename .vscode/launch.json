@@ -1,13 +1,21 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        // Start da aplicação com debug
         {
-            "name": "Debug Node Application",
+            "name": "[Start] Debug Node App",
             "program": "${workspaceFolder}/app.js",
             "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "pwa-node"
+        },
+        // Attach de debug na aplicação em execução 'npm run dev'
+        {
+            "name": "[Attach] Debug Node App",
+            "request": "attach",
+            "restart": true,
             "skipFiles": [
                 "<node_internals>/**"
             ],

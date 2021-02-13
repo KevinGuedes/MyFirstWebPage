@@ -25,7 +25,7 @@ const pagePrime = (req, res) => {
 
     }
 
-    res.render('prime', primeModel(inputNumber, result))
+    res.status(200).render('prime', primeModel(inputNumber, result))
 
 }
 
@@ -41,7 +41,7 @@ const pageFibonacci = (req, res) => {
 
     }
 
-    res.render('fibonacci', fibonacciModel(inputNumber, result))
+    res.status(200).render('fibonacci', fibonacciModel(inputNumber, result))
 
 }
 
@@ -67,7 +67,7 @@ const pageGcd = (req, res) => {
 
     }
 
-    res.render('gcd', gcdModel(firstNumber, secondNumber, result))
+    res.status(200).render('gcd', gcdModel(firstNumber, secondNumber, result))
 
 }
 
@@ -83,7 +83,7 @@ const pageCount = (req, res) => {
 
     }
 
-    res.render('count', countModel(inputNumber, result))
+    res.status(200).render('count', countModel(inputNumber, result))
 
 }
 
@@ -109,7 +109,7 @@ const pageQuickSort = (req, res) => {
 
     }
 
-    res.render('quickSort', quickSortModel(inputArray, result))
+    res.status(200).render('quickSort', quickSortModel(inputArray, result))
 
 }
 
@@ -135,7 +135,7 @@ const pageSum = (req, res) => {
 
     }
 
-    res.render('sum', sumModel(inputArray, result))
+    res.status(200).render('sum', sumModel(inputArray, result))
 
 }
 
