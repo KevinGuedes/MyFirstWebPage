@@ -126,15 +126,11 @@ function getQuickSortedArray(inputArray) {
 
 const getSumOfNumbers = (inputArray) => {
 
-    let sum = 0
+    const result = inputArray.reduce((sum, actual) => {
+        return sum + actual
+    })
 
-    for (number of inputArray) {
-
-        sum += number
-
-    }
-
-    return sum
+    return result
 
 }
 

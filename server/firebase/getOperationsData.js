@@ -9,20 +9,21 @@ const getOperationsData = async () => {
         SELECT *
         FROM Operations
         ORDER BY date DESC
-    `).then(
-        result => {
+    `)
+        .then(
+            result => {
 
-            console.log('Data READY')
-            return result
+                console.log('Data READY')
+                return result
 
-        },
-        error => {
+            },
+            error => {
 
-            console.log(error.message)
-            throw new DatabaseError('Failed to load data from Firebase - Cloud Firestore')
+                console.log(error.message)
+                throw new DatabaseError('Failed to load data from Firebase - Cloud Firestore')
 
-        }
-    )
+            }
+        )
 
 }
 

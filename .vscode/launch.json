@@ -11,7 +11,7 @@
             ],
             "type": "pwa-node"
         },
-        // Attach de debug na aplicação em execução 'npm run dev'
+        // Attach de debug na aplicação em execução (pós 'npm run dev')
         {
             "name": "[Attach] Debug Node App",
             "request": "attach",

@@ -98,7 +98,7 @@ const pageQuickSort = (req, res) => {
 
             const processmentArray = formatArray.stringToArray(inputArray)
             arrayValidator.numericArrayValidator(processmentArray)
-            result = 'Your \'Quick Sorted\' array is: ' + formatArray.arrayToString(mathFunctions.getQuickSortedArray(processmentArray))
+            result = 'Your "Quick Sorted" array is: ' + formatArray.arrayToString(mathFunctions.getQuickSortedArray(processmentArray))
             saveOperation('quickSort', processmentArray, result)
 
         } catch (exception) {
